@@ -5,6 +5,7 @@ import base64
 import json
 import pathlib
 import re
+import time
 
 BASE = pathlib.Path(__file__).resolve().parent
 
@@ -45,6 +46,14 @@ const CONTENT_DATA = {json.dumps(data, ensure_ascii=False)};
 """
 
 (BASE / "artifact.html").write_text(html, encoding="utf-8")
+
+# stempel wersji w service workerze - inaczej telefon trzymalby stara tresc
+sw_path = BASE / "service-worker.js"
+sw = sw_path.read_text(encoding="utf-8")
+stamp = time.strftime("%Y%m%d-%H%M%S")
+sw = re.sub(r'const CACHE_NAME = "[^"]+";', f'const CACHE_NAME = "brainapp-{stamp}";', sw, count=1)
+sw_path.write_text(sw, encoding="utf-8")
+print("cache service workera:", stamp)
 
 counts = {k: len(v) for k, v in data.items()}
 print("kategorie:", counts)
