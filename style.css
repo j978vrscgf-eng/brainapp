@@ -11,6 +11,18 @@ html, body {
 }
 
 /* ---------------------------------------------------------------- zakladki */
+/* warstwa tla - siega pod pasek gestow iPhone'a, zeby nie bylo czarnego paska */
+#bg {
+  position: fixed;
+  inset: -2px;
+  z-index: -1;
+  background: linear-gradient(160deg, #16161c, #2a2a33);
+  transition: background 0.35s ease;
+}
+[data-theme="night"] #bg { filter: brightness(0.55) saturate(0.8); }
+[data-theme="anthracite"] #bg { background: #262624 !important; }
+[data-theme="nightlight"] #bg { background: #1c1712 !important; }
+
 #app {
   position: relative;
   height: 100dvh;
@@ -108,6 +120,7 @@ html, body {
 #pager::-webkit-scrollbar { display: none; }
 
 .pane {
+  background: transparent;
   flex: 0 0 100%;
   width: 100%;
   height: 100dvh;
@@ -236,4 +249,147 @@ html, body {
 }
 [data-theme="nightlight"] .card .sep {
   background: rgba(232,200,150,0.45);
+}
+
+/* ------------------------------------------------------------- notatnik */
+.pane-notes {
+  scroll-snap-type: none;
+}
+
+.notes-wrap {
+  min-height: 100dvh;
+  padding: calc(104px + env(safe-area-inset-top)) 18px calc(40px + env(safe-area-inset-bottom));
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.notes-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.notes-head h2 {
+  margin: 0;
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  font-size: 26px;
+}
+
+.notes-btn {
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.08);
+  color: white;
+  padding: 9px 15px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.notes-btn.danger {
+  border-color: rgba(255,120,110,0.35);
+  color: #ff8a80;
+}
+
+.notes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.note-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  width: 100%;
+  text-align: left;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.06);
+  border-radius: 14px;
+  padding: 13px 15px;
+  color: white;
+}
+.note-title {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.note-meta {
+  font-size: 11.5px;
+  opacity: 0.55;
+  font-variant-numeric: tabular-nums;
+}
+
+.notes-empty {
+  opacity: 0.6;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 10px 0;
+}
+
+.notes-link {
+  margin-top: auto;
+  align-self: flex-start;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.5);
+  font-size: 12.5px;
+  text-decoration: underline;
+  padding: 6px 0;
+}
+
+.note-title-input,
+.note-text {
+  width: 100%;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(0,0,0,0.22);
+  color: white;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-family: inherit;
+}
+.note-title-input {
+  font-size: 16px;
+  font-weight: 600;
+}
+.note-text {
+  flex: 1;
+  min-height: 42vh;
+  font-size: 16px;
+  line-height: 1.55;
+  resize: none;
+}
+
+.notes-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.rec-btn {
+  border: 1px solid rgba(255,90,80,0.45);
+  background: rgba(255,90,80,0.14);
+  color: #ff9a92;
+  padding: 11px 18px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.rec-btn.recording {
+  background: #d93025;
+  border-color: #d93025;
+  color: white;
+}
+
+.rec-status {
+  font-size: 12.5px;
+  opacity: 0.7;
+}
+
+.notes-tip {
+  font-size: 12px;
+  opacity: 0.5;
+  line-height: 1.5;
+  margin: 0;
 }

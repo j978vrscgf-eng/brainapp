@@ -34,6 +34,7 @@ html = f"""<meta charset="utf-8">
 </style>
 
 <div id="app" data-theme="day">
+  <div id="bg"></div>
   <div id="tabs"></div>
   <div id="pager"></div>
   <button id="theme-toggle" title="Tryb dzień / noc"></button>

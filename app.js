@@ -1,4 +1,18 @@
-const CATS = [
+const GRAD = {
+  all:             "linear-gradient(160deg,#16161c,#2a2a33)",
+  wloski:          "linear-gradient(160deg,#7a2b1a,#d9603a)",
+  gotowanie:       "linear-gradient(160deg,#7a5a05,#e0a63a)",
+  architektura:    "linear-gradient(160deg,#1e2a3a,#3f6e8f)",
+  angielski:       "linear-gradient(160deg,#241a4a,#5b3fa0)",
+  psychologia:     "linear-gradient(160deg,#4a1942,#a83279)",
+  dark_psychology: "linear-gradient(160deg,#1a0a0a,#6b1414)",
+  chemia:          "linear-gradient(160deg,#0a4a3f,#1fae8e)",
+  mowa_ciala:      "linear-gradient(160deg,#3a2e1f,#8a6d3f)",
+  rozwoj:          "linear-gradient(160deg,#10324f,#2f9bd8)",
+  notatnik:        "linear-gradient(160deg,#14161a,#20242b)"
+};
+
+const BASE_CATS = [
   { key: "all",             label: "Wszystko",                accent: "#9aa0a6", on: "#101014" },
   { key: "wloski",          label: "Włoski",                  accent: "#d9603a", on: "#ffffff" },
   { key: "gotowanie",       label: "Gotowanie",               accent: "#e0a63a", on: "#101014" },
@@ -10,6 +24,19 @@ const CATS = [
   { key: "mowa_ciala",      label: "Mowa ciała",              accent: "#a3833f", on: "#ffffff" },
   { key: "rozwoj",          label: "Najlepsza wersja siebie", accent: "#2f9bd8", on: "#ffffff" }
 ];
+
+// Notatnik jest prywatny: pojawia sie dopiero po jednorazowym wejsciu
+// na adres z koncowka #notatnik i zostaje juz tylko na tym urzadzeniu.
+const NOTES_FLAG = "brainapp-notes-on";
+if (location.hash === "#notatnik") {
+  try { localStorage.setItem(NOTES_FLAG, "1"); } catch (e) {}
+}
+let notesOn = false;
+try { notesOn = localStorage.getItem(NOTES_FLAG) === "1"; } catch (e) {}
+
+const CATS = notesOn
+  ? BASE_CATS.concat([{ key: "notatnik", label: "Notatnik", accent: "#7d8590", on: "#ffffff" }])
+  : BASE_CATS;
 
 const CAT_ORDER = CATS.map(c => c.key);
 const CAT_LABEL = Object.fromEntries(CATS.map(c => [c.key, c.label]));
@@ -77,7 +104,7 @@ function orderBySeen(list) {
 function buildQueues() {
   queues = { all: orderBySeen(allCards) };
   for (const cat of CAT_ORDER) {
-    if (cat === "all") continue;
+    if (cat === "all" || cat === "notatnik") continue;
     queues[cat] = orderBySeen(allCards.filter(c => c.cat === cat));
   }
 }
@@ -109,7 +136,7 @@ function cardHTML(item) {
     const { pl, it } = vocabParts(item);
     const plFirst = vocabDir === "pl-it";
     return `
-      <div class="card theme-${item.cat}" data-id="${esc(cardId(item))}" data-pl="${esc(pl)}" data-it="${esc(it)}">
+      <div class="card theme-${item.cat}" data-cat="${item.cat}" data-id="${esc(cardId(item))}" data-pl="${esc(pl)}" data-it="${esc(it)}">
         <div class="pill">${label} · <span class="dir">${plFirst ? "PL → IT" : "IT → PL"}</span></div>
         <div class="term">${plFirst ? pl : it}</div>
         <div class="sep"></div>
@@ -120,7 +147,7 @@ function cardHTML(item) {
   }
   if (item.type === "def") {
     return `
-      <div class="card theme-${item.cat}" data-id="${esc(cardId(item))}">
+      <div class="card theme-${item.cat}" data-cat="${item.cat}" data-id="${esc(cardId(item))}">
         <div class="pill">${label} · definicja</div>
         <div class="term">${item.term}</div>
         <div class="sep"></div>
@@ -130,7 +157,7 @@ function cardHTML(item) {
       </div>`;
   }
   return `
-    <div class="card theme-${item.cat}" data-id="${esc(cardId(item))}">
+    <div class="card theme-${item.cat}" data-cat="${item.cat}" data-id="${esc(cardId(item))}">
       <div class="pill">${label} · ciekawostka</div>
       <div class="body" style="font-size:22px;font-weight:600;">${item.text}</div>
       ${rep}
@@ -140,16 +167,26 @@ function cardHTML(item) {
 
 // Karta liczy sie jako przeczytana, gdy przewijanie zatrzyma sie na niej
 // w aktualnie ogladanej dziedzinie.
+const bgEl = document.getElementById("bg");
+function setBg(cat) {
+  if (bgEl && GRAD[cat]) bgEl.style.background = GRAD[cat];
+}
+
 function markSettled(cat) {
   if (cat !== currentCat) return;
   const pane = paneOf(cat);
   if (!pane || !pane.clientHeight) return;
   const el = pane.children[Math.round(pane.scrollTop / pane.clientHeight)];
-  if (!el || el.dataset.counted) return;
+  if (!el) return;
+  if (el.dataset.cat) setBg(el.dataset.cat);
+  if (el.dataset.counted) return;
   el.dataset.counted = "1";
   const id = el.dataset.id;
   if (id) {
     seenCounts[id] = (seenCounts[id] || 0) + 1;
+    if (seenCounts[id] > 1 && !el.querySelector(".rep")) {
+      el.insertAdjacentHTML("beforeend", '<div class="rep">∞</div>');
+    }
     saveState();
   }
 }
@@ -188,6 +225,7 @@ function buildPanes() {
   pager.innerHTML = CAT_ORDER.map(c => `<div class="pane" data-cat="${c}"></div>`).join("");
   for (const cat of CAT_ORDER) {
     const pane = paneOf(cat);
+    if (cat === "notatnik") { notes = loadNotes(); renderNotes(); continue; }
     appendBatch(cat, INITIAL_CARDS);
     pane.addEventListener("scroll", () => {
       scheduleMark(cat);
@@ -196,11 +234,13 @@ function buildPanes() {
       }
     }, { passive: true });
   }
-  paneOf("wloski").addEventListener("dblclick", toggleVocabDir);
+  const wl = paneOf("wloski");
+  if (wl) wl.addEventListener("dblclick", toggleVocabDir);
 }
 
 function setActive(cat) {
   currentCat = cat;
+  setBg(cat);
   document.querySelectorAll(".tab").forEach(t => {
     const on = t.dataset.cat === cat;
     t.classList.toggle("active", on);
@@ -220,6 +260,24 @@ pager.addEventListener("scroll", () => {
   const cat = CAT_ORDER[Math.max(0, Math.min(CAT_ORDER.length - 1, idx))];
   if (cat && cat !== currentCat) setActive(cat);
   scheduleMark(currentCat);
+}, { passive: true });
+
+// Wlasna obsluga podwojnego tapniecia: iOS czesto polyka natywne dblclick.
+let lastTapAt = 0, lastTapX = 0, lastTapY = 0;
+pager.addEventListener("pointerup", (e) => {
+  const now = Date.now();
+  const near = Math.abs(e.clientX - lastTapX) < 34 && Math.abs(e.clientY - lastTapY) < 34;
+  if (now - lastTapAt < 380 && near) {
+    const card = e.target && e.target.closest ? e.target.closest(".card") : null;
+    if (currentCat === "wloski" || (card && card.dataset.pl)) {
+      toggleVocabDir();
+      lastTapAt = 0;
+      return;
+    }
+  }
+  lastTapAt = now;
+  lastTapX = e.clientX;
+  lastTapY = e.clientY;
 }, { passive: true });
 
 function toggleVocabDir() {
@@ -310,3 +368,203 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
   const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
   applyTheme(prefersDark ? "night" : "day");
 })();
+
+/* =========================================================== NOTATNIK ===
+   Prywatna zakladka. Notatki i klucz API leza wylacznie w localStorage
+   tego urzadzenia - nic nie jest wysylane poza transkrypcja nagrania.        */
+
+const NOTES_STORE = "brainapp-notes";
+const GROQ_KEY_STORE = "brainapp-groq-key";
+const GROQ_URL = "https://api.groq.com/openai/v1/audio/transcriptions";
+const GROQ_MODEL = "whisper-large-v3-turbo";
+
+let notes = [];
+let openNoteId = null;
+let rec = null;
+let recChunks = [];
+let recStream = null;
+
+function loadNotes() {
+  try { return JSON.parse(localStorage.getItem(NOTES_STORE)) || []; } catch (e) { return []; }
+}
+function persistNotes() {
+  try { localStorage.setItem(NOTES_STORE, JSON.stringify(notes)); } catch (e) {}
+}
+function groqKey() {
+  try { return localStorage.getItem(GROQ_KEY_STORE) || ""; } catch (e) { return ""; }
+}
+
+function fmtDate(ts) {
+  const d = new Date(ts);
+  return d.toLocaleDateString("pl-PL", { day: "2-digit", month: "2-digit" }) + " " +
+         d.toLocaleTimeString("pl-PL", { hour: "2-digit", minute: "2-digit" });
+}
+
+function noteTitle(n) {
+  const t = (n.title || "").trim();
+  if (t) return t;
+  const first = (n.text || "").trim().split("\n")[0];
+  return first ? first.slice(0, 44) : "Bez tytułu";
+}
+
+function renderNotes() {
+  const pane = paneOf("notatnik");
+  if (!pane) return;
+  pane.classList.add("pane-notes");
+  const note = notes.find(n => n.id === openNoteId);
+  pane.innerHTML = note ? editorHTML(note) : listHTML();
+  wireNotes(pane);
+}
+
+function listHTML() {
+  const items = notes
+    .slice()
+    .sort((a, b) => b.updated - a.updated)
+    .map(n => `
+      <button class="note-item" data-open="${n.id}">
+        <span class="note-title">${esc(noteTitle(n))}</span>
+        <span class="note-meta">${fmtDate(n.updated)}</span>
+      </button>`).join("");
+
+  return `
+    <div class="notes-wrap">
+      <div class="notes-head">
+        <h2>Notatnik</h2>
+        <button class="notes-btn" data-new="1">+ Nowa</button>
+      </div>
+      ${notes.length ? `<div class="notes-list">${items}</div>`
+        : `<p class="notes-empty">Brak notatek.<br>Dotknij „+ Nowa", żeby zacząć — możesz pisać albo dyktować.</p>`}
+      <button class="notes-link" data-key="1">Klucz API do dyktowania${groqKey() ? " ✓" : " (nie ustawiony)"}</button>
+    </div>`;
+}
+
+function editorHTML(n) {
+  return `
+    <div class="notes-wrap">
+      <div class="notes-head">
+        <button class="notes-btn" data-back="1">← Wróć</button>
+        <button class="notes-btn danger" data-del="${n.id}">Usuń</button>
+      </div>
+      <input class="note-title-input" data-title="${n.id}" placeholder="Tytuł notatki" value="${esc(n.title || "")}">
+      <textarea class="note-text" data-text="${n.id}" placeholder="Pisz albo dyktuj...">${esc(n.text || "")}</textarea>
+      <div class="notes-actions">
+        <button class="rec-btn" data-rec="${n.id}">● Nagraj</button>
+        <span class="rec-status"></span>
+      </div>
+      <p class="notes-tip">Bez klucza API możesz dyktować mikrofonem na klawiaturze iPhone'a — działa w tym samym polu.</p>
+    </div>`;
+}
+
+function wireNotes(pane) {
+  const q = sel => pane.querySelector(sel);
+
+  const newBtn = q("[data-new]");
+  if (newBtn) newBtn.onclick = () => {
+    const n = { id: "n" + Date.now(), title: "", text: "", updated: Date.now() };
+    notes.push(n);
+    persistNotes();
+    openNoteId = n.id;
+    renderNotes();
+  };
+
+  pane.querySelectorAll("[data-open]").forEach(b => {
+    b.onclick = () => { openNoteId = b.dataset.open; renderNotes(); };
+  });
+
+  const back = q("[data-back]");
+  if (back) back.onclick = () => { openNoteId = null; renderNotes(); };
+
+  const del = q("[data-del]");
+  if (del) del.onclick = () => {
+    notes = notes.filter(n => n.id !== del.dataset.del);
+    persistNotes();
+    openNoteId = null;
+    renderNotes();
+  };
+
+  const keyBtn = q("[data-key]");
+  if (keyBtn) keyBtn.onclick = () => {
+    const current = groqKey();
+    const val = prompt("Klucz API Groq (zostaje tylko na tym urządzeniu):", current);
+    if (val === null) return;
+    try { localStorage.setItem(GROQ_KEY_STORE, val.trim()); } catch (e) {}
+    renderNotes();
+  };
+
+  const title = q("[data-title]");
+  if (title) title.oninput = () => {
+    const n = notes.find(x => x.id === title.dataset.title);
+    if (n) { n.title = title.value; n.updated = Date.now(); persistNotes(); }
+  };
+
+  const text = q("[data-text]");
+  if (text) text.oninput = () => {
+    const n = notes.find(x => x.id === text.dataset.text);
+    if (n) { n.text = text.value; n.updated = Date.now(); persistNotes(); }
+  };
+
+  const recBtn = q("[data-rec]");
+  if (recBtn) recBtn.onclick = () => toggleRec(recBtn, q(".rec-status"), q("[data-text]"));
+}
+
+async function toggleRec(btn, status, textarea) {
+  if (rec && rec.state === "recording") {
+    rec.stop();
+    btn.textContent = "● Nagraj";
+    btn.classList.remove("recording");
+    status.textContent = "Rozpoznaję mowę...";
+    return;
+  }
+  if (!navigator.mediaDevices || !window.MediaRecorder) {
+    status.textContent = "Ta przeglądarka nie pozwala nagrywać — użyj mikrofonu na klawiaturze.";
+    return;
+  }
+  try {
+    recStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+  } catch (e) {
+    status.textContent = "Brak zgody na mikrofon.";
+    return;
+  }
+  recChunks = [];
+  rec = new MediaRecorder(recStream);
+  rec.ondataavailable = e => { if (e.data.size) recChunks.push(e.data); };
+  rec.onstop = async () => {
+    recStream.getTracks().forEach(t => t.stop());
+    const blob = new Blob(recChunks, { type: rec.mimeType || "audio/mp4" });
+    const txt = await transcribe(blob, status);
+    if (txt) {
+      const sep = textarea.value && !textarea.value.endsWith("\n") ? "\n" : "";
+      textarea.value = textarea.value + sep + txt.trim();
+      textarea.dispatchEvent(new Event("input"));
+      status.textContent = "Gotowe.";
+    }
+  };
+  rec.start();
+  btn.textContent = "■ Zatrzymaj";
+  btn.classList.add("recording");
+  status.textContent = "Nagrywam...";
+}
+
+async function transcribe(blob, status) {
+  const key = groqKey();
+  if (!key) {
+    status.textContent = "Brak klucza API — ustaw go na liście notatek, albo dyktuj mikrofonem klawiatury.";
+    return null;
+  }
+  const fd = new FormData();
+  fd.append("file", blob, "nagranie.m4a");
+  fd.append("model", GROQ_MODEL);
+  fd.append("language", "pl");
+  try {
+    const r = await fetch(GROQ_URL, { method: "POST", headers: { Authorization: "Bearer " + key }, body: fd });
+    if (!r.ok) {
+      status.textContent = "Transkrypcja odrzucona (kod " + r.status + ").";
+      return null;
+    }
+    const j = await r.json();
+    return j.text || "";
+  } catch (e) {
+    status.textContent = "Nie udało się połączyć z usługą transkrypcji. Użyj mikrofonu na klawiaturze.";
+    return null;
+  }
+}
