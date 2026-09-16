@@ -1,0 +1,209 @@
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #0f0f13;
+  color: white;
+  font-family: -apple-system, "Segoe UI", Roboto, "DejaVu Sans", sans-serif;
+  overflow: hidden;
+}
+
+/* ---------------------------------------------------------------- zakladki */
+#tabs {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  padding: calc(12px + env(safe-area-inset-top)) 58px 14px 12px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.75), rgba(0,0,0,0.35) 60%, rgba(0,0,0,0));
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+#tabs::-webkit-scrollbar { display: none; }
+
+.tab {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  border: 1px solid rgba(255,255,255,0.16);
+  background: rgba(255,255,255,0.07);
+  color: rgba(255,255,255,0.78);
+  padding: 8px 14px 8px 11px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+  backdrop-filter: blur(8px);
+  transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+}
+
+.tab .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--c);
+  box-shadow: 0 0 7px var(--c);
+  flex: 0 0 auto;
+}
+
+.tab.active {
+  background: var(--c);
+  border-color: var(--c);
+  color: var(--on);
+}
+.tab.active .dot {
+  background: var(--on);
+  box-shadow: none;
+  opacity: 0.8;
+}
+
+#theme-toggle {
+  position: fixed;
+  top: calc(12px + env(safe-area-inset-top));
+  right: 12px;
+  z-index: 30;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(20,20,24,0.65);
+  color: white;
+  font-size: 15px;
+  line-height: 1;
+  backdrop-filter: blur(8px);
+}
+
+/* ------------------------------------------------- pager: dziedziny w bok */
+#pager {
+  display: flex;
+  height: 100dvh;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+  touch-action: manipulation;
+}
+#pager::-webkit-scrollbar { display: none; }
+
+.pane {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100dvh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-snap-align: start;
+  scrollbar-width: none;
+  overscroll-behavior-y: contain;
+}
+.pane::-webkit-scrollbar { display: none; }
+
+/* ------------------------------------------------------------------ karty */
+.card {
+  height: 100dvh;
+  width: 100%;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 96px 28px 60px;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.card .pill {
+  position: absolute;
+  top: calc(64px + env(safe-area-inset-top));
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  background: rgba(255,255,255,0.16);
+  padding: 5px 12px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.card .term {
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.25;
+  max-width: 560px;
+}
+
+.card .sep {
+  width: 40px;
+  height: 3px;
+  background: rgba(255,255,255,0.5);
+  border-radius: 3px;
+  margin: 22px 0;
+}
+
+.card .body {
+  font-size: 18px;
+  line-height: 1.5;
+  max-width: 520px;
+  opacity: 0.92;
+}
+
+.card .translation {
+  font-size: 24px;
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+.card .hint {
+  position: absolute;
+  bottom: calc(28px + env(safe-area-inset-bottom));
+  font-size: 12px;
+  opacity: 0.55;
+}
+
+/* ------------------------------------------- motywy kolorystyczne kategorii */
+.theme-wloski          { background: linear-gradient(160deg, #7a2b1a, #d9603a); }
+.theme-gotowanie       { background: linear-gradient(160deg, #7a5a05, #e0a63a); }
+.theme-architektura    { background: linear-gradient(160deg, #1e2a3a, #3f6e8f); }
+.theme-angielski       { background: linear-gradient(160deg, #241a4a, #5b3fa0); }
+.theme-psychologia     { background: linear-gradient(160deg, #4a1942, #a83279); }
+.theme-dark_psychology { background: linear-gradient(160deg, #1a0a0a, #6b1414); }
+.theme-chemia          { background: linear-gradient(160deg, #0a4a3f, #1fae8e); }
+.theme-mowa_ciala      { background: linear-gradient(160deg, #3a2e1f, #8a6d3f); }
+.theme-rozwoj          { background: linear-gradient(160deg, #10324f, #2f9bd8); }
+
+/* ------------------------------------------------------------------ tryby */
+[data-theme="night"] .card {
+  filter: brightness(0.55) saturate(0.8);
+}
+
+[data-theme="anthracite"] .card {
+  background: #262624;
+}
+[data-theme="anthracite"] .card .pill {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.14);
+}
+
+[data-theme="nightlight"] .card {
+  background: #1c1712;
+  color: #e8c896;
+}
+[data-theme="nightlight"] .card .pill {
+  background: rgba(232,200,150,0.12);
+  border: 1px solid rgba(232,200,150,0.22);
+}
+[data-theme="nightlight"] .card .sep {
+  background: rgba(232,200,150,0.45);
+}
