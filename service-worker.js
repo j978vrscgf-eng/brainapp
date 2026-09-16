@@ -1,4 +1,4 @@
-const CACHE_NAME = "brainapp-20260916-225142";
+const CACHE_NAME = "brainapp-20260916-225758";
 const ASSETS = [
   "./",
   "index.html",

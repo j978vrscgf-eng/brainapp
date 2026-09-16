@@ -101,19 +101,39 @@ function orderBySeen(list) {
   return shuffle(list).sort((a, b) => seenOf(a) - seenOf(b));
 }
 
+// Model talii: karty rozdaje sie z talii ulozonej wg tego, ile razy realnie
+// zostaly przeczytane (najmniej czytane na wierzchu). Karta rozdana znika z
+// talii az do jej wyczerpania - dopiero wtedy tasujemy nowa. Dzieki temu cala
+// dziedzina pokaze sie raz, zanim cokolwiek wroci, a licznik przeczytan jest
+// wspolny dla "Wszystko" i dziedzin, wiec nie dubluja sie nawzajem.
+function poolOf(cat) {
+  return cat === "all" ? allCards : allCards.filter(c => c.cat === cat);
+}
+
+function poolSize(cat) {
+  return poolOf(cat).length;
+}
+
+function refillDeck(cat) {
+  queues[cat] = orderBySeen(poolOf(cat));
+}
+
 function buildQueues() {
-  queues = { all: orderBySeen(allCards) };
+  queues = {};
   for (const cat of CAT_ORDER) {
-    if (cat === "all" || cat === "notatnik") continue;
-    queues[cat] = orderBySeen(allCards.filter(c => c.cat === cat));
+    if (cat === "notatnik") continue;
+    refillDeck(cat);
   }
 }
 
-function nextCard(cat) {
-  const q = queues[cat];
-  const item = q.shift();
-  q.push(item);
-  return item;
+function nextCard(cat, avoid) {
+  let deck = queues[cat];
+  if (!deck || !deck.length) { refillDeck(cat); deck = queues[cat]; }
+  if (avoid && avoid.size) {
+    const idx = deck.findIndex(it => !avoid.has(cardId(it)));
+    if (idx > 0) return deck.splice(idx, 1)[0];
+  }
+  return deck.shift();
 }
 
 // Znak nieskonczonosci = karta leci kolejny raz. Gdy pojawia sie wszedzie,
@@ -202,10 +222,16 @@ function paneOf(cat) {
 
 function appendBatch(cat, n = BATCH_CARDS) {
   const pane = paneOf(cat);
-  if (!pane) return;
-  const count = Math.min(n, queues[cat].length);
+  if (!pane || cat === "notatnik") return;
+  const count = Math.min(n, poolSize(cat));
+  const drawn = new Set();   // zadnych duplikatow w obrebie jednej partii
   const html = [];
-  for (let i = 0; i < count; i++) html.push(cardHTML(nextCard(cat)));
+  for (let i = 0; i < count; i++) {
+    const item = nextCard(cat, drawn);
+    if (!item) break;
+    drawn.add(cardId(item));
+    html.push(cardHTML(item));
+  }
   pane.insertAdjacentHTML("beforeend", html.join(""));
 }
 
