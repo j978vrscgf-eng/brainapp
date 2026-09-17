@@ -1,6 +1,7 @@
 const GRAD = {
   all:             "linear-gradient(160deg,#16161c,#2a2a33)",
-  wloski:          "linear-gradient(160deg,#7a2b1a,#d9603a)",
+  wloski:          "linear-gradient(165deg,#4d1a13,#8a3620 40%,#bc5a33 74%,#d97a45)",
+  wloski_hard:     "linear-gradient(165deg,#12002b,#3d0a63 38%,#7c159b 72%,#b52a93)",
   gotowanie:       "linear-gradient(160deg,#7a5a05,#e0a63a)",
   architektura:    "linear-gradient(160deg,#1e2a3a,#3f6e8f)",
   angielski:       "linear-gradient(160deg,#241a4a,#5b3fa0)",
@@ -16,6 +17,7 @@ const GRAD = {
 const BASE_CATS = [
   { key: "all",             label: "Wszystko",                accent: "#9aa0a6", on: "#101014" },
   { key: "wloski",          label: "Włoski",                  accent: "#d9603a", on: "#ffffff" },
+  { key: "wloski_hard",     label: "Włoski HARD",             accent: "#a93bc9", on: "#ffffff" },
   { key: "gotowanie",       label: "Gotowanie",               accent: "#e0a63a", on: "#101014" },
   { key: "architektura",    label: "Architektura",            accent: "#3f6e8f", on: "#ffffff" },
   { key: "angielski",       label: "Ciekawy angielski",       accent: "#7a5bc7", on: "#ffffff" },
@@ -26,21 +28,13 @@ const BASE_CATS = [
   { key: "rozwoj",          label: "Najlepsza wersja siebie", accent: "#2f9bd8", on: "#ffffff" }
 ];
 
-// Notatnik jest prywatny: odblokowuje go potrojne szybkie dotkniecie karty
-// (albo adres z koncowka #notatnik) i zostaje juz tylko na tym urzadzeniu.
-const NOTES_FLAG = "brainapp-notes-on";
-const GOTO_FLAG = "brainapp-goto";
-if (location.hash === "#notatnik") {
-  try { localStorage.setItem(NOTES_FLAG, "1"); } catch (e) {}
-}
-let notesOn = false;
-try { notesOn = localStorage.getItem(NOTES_FLAG) === "1"; } catch (e) {}
-
-const NOTES_CAT = { key: "notatnik", label: "Notatnik",  accent: "#7d8590", on: "#ffffff" };
-const FAV_CAT   = { key: "ulubione", label: "Ulubione ♥", accent: "#e0405e", on: "#ffffff" };
+// Notatnik nie jest zakladka i nie zostawia po sobie zadnego sladu w
+// interfejsie: otwiera go potrojne szybkie dotkniecie karty, zamyka strzalka.
+// Kto nie zna tego gestu, nie ma jak trafic na jego istnienie.
+const FAV_CAT = { key: "ulubione", label: "Ulubione ♥", accent: "#e0405e", on: "#ffffff" };
 
 // Ulubione zawsze na samym koncu paska zakladek.
-const CATS = BASE_CATS.concat(notesOn ? [NOTES_CAT] : []).concat([FAV_CAT]);
+const CATS = BASE_CATS.concat([FAV_CAT]);
 
 const CAT_ORDER = CATS.map(c => c.key);
 const CAT_LABEL = Object.fromEntries(CATS.map(c => [c.key, c.label]));
@@ -48,7 +42,7 @@ const CAT_LABEL = Object.fromEntries(CATS.map(c => [c.key, c.label]));
 const INITIAL_CARDS = 10;
 const BATCH_CARDS = 20;
 const STORE_KEY = "brainapp-state";
-const APP_VERSION = "20260917-232301";   // podmieniane przy budowaniu
+const APP_VERSION = "20260917-234313";   // podmieniane przy budowaniu
 
 let allCards = [];
 let queues = {};
@@ -128,7 +122,10 @@ function orderBySeen(list) {
 // wspolny dla "Wszystko" i dziedzin, wiec nie dubluja sie nawzajem.
 function poolOf(cat) {
   if (cat === "ulubione") return allCards.filter(c => favs[cardId(c)]);
-  return cat === "all" ? allCards : allCards.filter(c => c.cat === cat);
+  // Karty migajace to te same slowka co w zakladce Wloski, tylko w innym
+  // trybie - w "Wszystko" bylyby zwyklym dubletem, wiec ich tam nie ma.
+  if (cat === "all") return allCards.filter(c => c.cat !== "wloski_hard");
+  return allCards.filter(c => c.cat === cat);
 }
 
 function poolSize(cat) {
@@ -170,6 +167,64 @@ function vocabParts(item) {
     : { pl: item.back, it: item.front };
 }
 
+/* ------------------------------------------------- tryb HARD: RSVP z ORP */
+// Punkt optymalnego rozpoznania (ORP) to litera, na ktorej oko rozpoznaje
+// cale slowo. Trzymana nieruchomo i podswietlona sprawia, ze przy wymianie
+// slow oko w ogole nie musi skakac. Progi wg dlugosci slowa - jak w Spritzu.
+function orpIndex(w) {
+  const n = w.length;
+  if (n <= 1) return 0;
+  if (n <= 5) return 1;
+  if (n <= 9) return 2;
+  if (n <= 13) return 3;
+  return 4;
+}
+
+function orpHTML(w) {
+  const s = String(w);
+  const i = Math.min(orpIndex(s), s.length - 1);
+  return '<span class="rsvp-pre">' + esc(s.slice(0, i)) + '</span>'
+       + '<span class="rsvp-orp">' + esc(s[i]) + '</span>'
+       + '<span class="rsvp-post">' + esc(s.slice(i + 1)) + '</span>';
+}
+
+const FLASH_STEPS = 10;    // ile razy slowo mrugnie
+const FLASH_MS = 200;      // ile trwa jedno pokazanie
+
+let flashTimer = null;
+let flashEl = null;
+
+function stopFlash() {
+  if (flashTimer) { clearInterval(flashTimer); flashTimer = null; }
+  flashEl = null;
+}
+
+function startFlash(el) {
+  if (flashEl === el && flashTimer) return;   // juz leci na tej karcie
+  stopFlash();
+  const host = el.querySelector(".rsvp");
+  if (!host) return;
+  const pl = el.dataset.pl || "";
+  const it = el.dataset.it || "";
+  const first = vocabDir === "pl-it" ? pl : it;
+  const second = vocabDir === "pl-it" ? it : pl;
+
+  el.classList.remove("flash-done");
+  flashEl = el;
+  let i = 0;
+  const step = () => {
+    if (i >= FLASH_STEPS) {
+      stopFlash();
+      el.classList.add("flash-done");
+      return;
+    }
+    host.innerHTML = orpHTML(i % 2 === 0 ? first : second);
+    i++;
+  };
+  step();
+  flashTimer = setInterval(step, FLASH_MS);
+}
+
 // Serduszko jest zawsze w karcie, tylko gasnie - dzieki temu dodanie do
 // ulubionych jest samym przelaczeniem klasy, bez przebudowy karty.
 function favMark(item) {
@@ -187,12 +242,24 @@ function cardHTML(item) {
     // przypomnienia sobie slowa nauka jest samym czytaniem.
     return `
       <div class="card veiled theme-${item.cat}" data-cat="${item.cat}" data-id="${esc(cardId(item))}" data-pl="${esc(pl)}" data-it="${esc(it)}">
-        <div class="pill">${label} · <span class="dir">${plFirst ? "PL → IT" : "IT → PL"}</span></div>
+        <div class="pill">${label} · <span class="dir" role="button" title="Dotknij, aby odwrócić kierunek">${plFirst ? "PL → IT" : "IT → PL"}</span></div>
         <div class="term">${plFirst ? pl : it}</div>
         <div class="sep"></div>
         <div class="translation">${plFirst ? it : pl}</div>
         ${fav}${rep}
         <div class="hint">dotknij = odsłoń · dwuklik = ♥</div>
+      </div>`;
+  }
+  if (item.type === "flash") {
+    const { pl, it } = vocabParts(item);
+    const start = vocabDir === "pl-it" ? pl : it;
+    return `
+      <div class="card card-hard theme-${item.cat}" data-cat="${item.cat}" data-id="${esc(cardId(item))}" data-pl="${esc(pl)}" data-it="${esc(it)}" data-flash="1">
+        <div class="pill">${label}</div>
+        <div class="rsvp">${orpHTML(start)}</div>
+        <div class="pair"><span>${esc(pl)}</span> &nbsp;·&nbsp; <span>${esc(it)}</span></div>
+        ${fav}${rep}
+        <div class="hint">dotknij = powtórz błysk · dwuklik = ♥</div>
       </div>`;
   }
   if (item.type === "def") {
@@ -276,6 +343,8 @@ function markSettled(cat) {
   const el = pane.children[Math.round(pane.scrollTop / pane.clientHeight)];
   if (!el) return;
   if (el.dataset.cat) setBg(el.dataset.cat);
+  // Miganie rusza dopiero, gdy karta naprawde zatrzyma sie na ekranie.
+  if (el.dataset.flash) startFlash(el);
   if (el.dataset.counted) return;
   el.dataset.counted = "1";
   const id = el.dataset.id;
@@ -295,6 +364,21 @@ function markSettled(cat) {
 function scheduleMark(cat) {
   clearTimeout(settleTimers[cat]);
   settleTimers[cat] = setTimeout(() => markSettled(cat), 250);
+}
+
+// Tlo podaza za widoczna karta juz w trakcie przewijania, a nie dopiero po
+// jego zatrzymaniu. Karty same nie maluja tla - inaczej ich gradient jechalby
+// wzgledem nieruchomego tla i karta odcinalaby sie jak naklejony prostokat.
+let bgRaf = 0;
+function trackBg(cat) {
+  if (cat !== currentCat || bgRaf) return;
+  bgRaf = requestAnimationFrame(() => {
+    bgRaf = 0;
+    const pane = paneOf(cat);
+    if (!pane || !pane.clientHeight) return;
+    const el = pane.children[Math.round(pane.scrollTop / pane.clientHeight)];
+    if (el && el.dataset.cat) setBg(el.dataset.cat);
+  });
 }
 
 function paneOf(cat) {
@@ -339,9 +423,10 @@ function buildPanes() {
     try {
       const pane = paneOf(cat);
       if (!pane) continue;
-      if (cat === "notatnik") { notes = loadNotes(); renderNotes(); continue; }
       appendBatch(cat, INITIAL_CARDS);
       pane.addEventListener("scroll", () => {
+        stopFlash();
+        trackBg(cat);
         scheduleMark(cat);
         if (pane.scrollTop + pane.clientHeight >= pane.scrollHeight - window.innerHeight * 2) {
           appendBatch(cat);
@@ -415,15 +500,25 @@ function rebuildFavs() {
 }
 
 function openNotes() {
-  if (notesOn) { goToCat("notatnik"); return; }
-  // Odblokowanie zmienia liste zakladek, wiec najprosciej przeladowac -
-  // caly stan i tak siedzi w localStorage.
-  saveNow();
-  try {
-    localStorage.setItem(NOTES_FLAG, "1");
-    localStorage.setItem(GOTO_FLAG, "notatnik");
-  } catch (e) {}
-  location.replace(location.pathname);
+  let el = document.getElementById("notes-overlay");
+  if (!el) {
+    el = document.createElement("div");
+    el.id = "notes-overlay";
+    document.getElementById("app").appendChild(el);
+  }
+  notes = loadNotes();
+  openNoteId = null;
+  el.classList.add("open");
+  renderNotes();
+}
+
+function closeNotes() {
+  const el = document.getElementById("notes-overlay");
+  if (!el) return;
+  el.classList.remove("open");
+  openNoteId = null;
+  // Zawartosc znika z dokumentu - po zamknieciu nie ma po niej sladu.
+  el.innerHTML = "";
 }
 
 // Wlasna obsluga wielokrotnego tapniecia: iOS czesto polyka natywne dblclick.
@@ -439,6 +534,14 @@ pager.addEventListener("pointerup", (e) => {
   const near = Math.abs(e.clientX - lastTapX) < 34 && Math.abs(e.clientY - lastTapY) < 34;
   const card = e.target && e.target.closest ? e.target.closest(".card") : null;
 
+  // Strzalka kierunku u gory jest osobnym przelacznikiem: jedno dotkniecie
+  // odwraca PL/IT i nie liczy sie do kaskady odslon/serduszko/notatnik.
+  if (e.target && e.target.closest && e.target.closest(".dir")) {
+    toggleVocabDir();
+    tapCount = 0; tapCard = null; favApplied = null; lastTapAt = 0;
+    return;
+  }
+
   if (card && card === tapCard && near && now - lastTapAt < 420) tapCount++;
   else { tapCount = 1; tapCard = card; favApplied = null; }
 
@@ -447,7 +550,11 @@ pager.addEventListener("pointerup", (e) => {
   lastTapY = e.clientY;
   if (!card) return;
 
-  if (tapCount === 1) { card.classList.remove("veiled"); return; }
+  if (tapCount === 1) {
+    if (card.dataset.flash) startFlash(card);
+    else card.classList.remove("veiled");
+    return;
+  }
   if (tapCount === 2) { favApplied = toggleFav(card); return; }
   if (tapCount === 3) {
     if (favApplied !== null) toggleFav(card);
@@ -477,6 +584,15 @@ function start(data) {
     for (const item of data[cat]) allCards.push({ ...item, cat });
   }
 
+  // Zakladka HARD nie ma wlasnej tresci - bierze te same slowka co Wloski,
+  // tylko w trybie migania. Osobna kategoria daje im wlasne identyfikatory,
+  // wiec postep i ulubione nie mieszaja sie z trybem zwyklym.
+  allCards = allCards.concat(
+    allCards
+      .filter(c => c.cat === "wloski" && c.type === "vocab")
+      .map(c => ({ ...c, cat: "wloski_hard", type: "flash" }))
+  );
+
   const saved = loadState();
   if (saved.seen && typeof saved.seen === "object") seenCounts = saved.seen;
   if (saved.fav && typeof saved.fav === "object") favs = saved.fav;
@@ -487,15 +603,7 @@ function start(data) {
   buildPanes();
   scheduleMark(currentCat);
 
-  // Jednorazowe przekierowanie po odblokowaniu notatnika ma pierwszenstwo
-  // przed zakladka zapamietana z poprzedniej sesji.
-  let goto = null;
-  try {
-    goto = localStorage.getItem(GOTO_FLAG);
-    if (goto) localStorage.removeItem(GOTO_FLAG);
-  } catch (e) {}
-
-  const target = (goto && CAT_ORDER.includes(goto)) ? goto : saved.cat;
+  const target = saved.cat;
   if (target && CAT_ORDER.includes(target) && target !== "all") {
     requestAnimationFrame(() => {
       pager.scrollLeft = CAT_ORDER.indexOf(target) * pager.clientWidth;
@@ -587,12 +695,13 @@ function noteTitle(n) {
 }
 
 function renderNotes() {
-  const pane = paneOf("notatnik");
-  if (!pane) return;
-  pane.classList.add("pane-notes");
+  const host = document.getElementById("notes-overlay");
+  if (!host) return;
   const note = notes.find(n => n.id === openNoteId);
-  pane.innerHTML = note ? editorHTML(note) : listHTML();
-  wireNotes(pane);
+  host.innerHTML = note ? editorHTML(note) : listHTML();
+  wireNotes(host);
+  const x = host.querySelector("[data-exit]");
+  if (x) x.onclick = closeNotes;
 }
 
 function listHTML() {
@@ -608,6 +717,7 @@ function listHTML() {
   return `
     <div class="notes-wrap">
       <div class="notes-head">
+        <button class="notes-btn" data-exit="1" aria-label="Wyjdź z notatnika">←</button>
         <h2>Notatnik</h2>
         <button class="notes-btn" data-new="1">+ Nowa</button>
       </div>
@@ -758,8 +868,6 @@ async function transcribe(blob, status) {
    i reszta ustawien musza byc w srodku.                                     */
 
 function sheetHTML() {
-  const keySet = groqKey() ? "ustawiony ✓" : "nie ustawiony";
-  const notesLabel = notesOn ? "włączony" : "wyłączony";
   const readCount = Object.keys(seenCounts).length;
   return `
     <div class="sheet-card" role="dialog" aria-label="Ustawienia">
@@ -781,16 +889,6 @@ function sheetHTML() {
       <button class="sheet-row" data-unfav="1">
         <span class="sheet-row-main">Wyczyść ulubione</span>
         <span class="sheet-row-sub">zapisanych kart: ${Object.keys(favs).length}</span>
-      </button>
-
-      <button class="sheet-row" data-notes="1">
-        <span class="sheet-row-main">Notatnik</span>
-        <span class="sheet-row-sub">${notesLabel} · otwiera go potrójne dotknięcie karty</span>
-      </button>
-
-      <button class="sheet-row" data-apikey="1">
-        <span class="sheet-row-main">Klucz API do dyktowania</span>
-        <span class="sheet-row-sub">${keySet}</span>
       </button>
 
       <button class="sheet-row" data-reset="1">
@@ -845,21 +943,6 @@ function openSheet() {
     openSheet();
   };
 
-  el.querySelector("[data-notes]").onclick = () => {
-    try {
-      if (notesOn) localStorage.removeItem(NOTES_FLAG);
-      else localStorage.setItem(NOTES_FLAG, "1");
-    } catch (e) {}
-    location.replace(location.pathname);
-  };
-
-  el.querySelector("[data-apikey]").onclick = () => {
-    const val = prompt("Klucz API Groq (zostaje tylko na tym urządzeniu):", groqKey());
-    if (val === null) return;
-    try { localStorage.setItem(GROQ_KEY_STORE, val.trim()); } catch (e) {}
-    openSheet();
-  };
-
   el.querySelector("[data-reset]").onclick = () => {
     if (!confirm("Wyczyścić historię przeczytanych kart? Znaki ∞ znikną.")) return;
     seenCounts = {};
@@ -892,6 +975,8 @@ function currentCardText(cat) {
   if (!pane || !pane.clientHeight) return null;
   const el = pane.children[Math.round(pane.scrollTop / pane.clientHeight)];
   if (!el) return null;
+  // karta migajaca nie ma stalego napisu - czytamy pare slow z jej danych
+  if (el.dataset.flash) return (el.dataset.pl || "") + ". " + (el.dataset.it || "");
   const term = el.querySelector(".term");
   const body = el.querySelector(".body");
   // zaslonietego tlumaczenia nie czytamy - zdradziloby odpowiedz

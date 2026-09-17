@@ -1,4 +1,4 @@
-const CACHE_NAME = "brainapp-20260917-232301";
+const CACHE_NAME = "brainapp-20260917-234313";
 
 // Rdzen aplikacji: zawsze najpierw siec, zeby nowa wersja wchodzila od razu.
 // Cache jest tylko zapasem na tryb offline.

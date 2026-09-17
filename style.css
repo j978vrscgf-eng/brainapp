@@ -183,6 +183,17 @@ html, body {
   white-space: nowrap;
 }
 
+/* Strzalka kierunku jest przelacznikiem - jedno dotkniecie odwraca PL/IT. */
+.card .pill .dir {
+  display: inline-block;
+  padding: 2px 8px;
+  margin: -2px -4px -2px 2px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.18);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
 .card .term {
   font-family: "Fraunces", Georgia, serif;
   font-weight: 600;
@@ -260,6 +271,52 @@ html, body {
   opacity: 0.55;
 }
 
+/* ------------------------------------------------- tryb HARD: miganie RSVP
+   Litera ORP stoi nieruchomo dokladnie w osi ekranu, a reszta slowa wymienia
+   sie wokol niej - dzieki temu oko nie wykonuje zadnego skoku. */
+.card-hard .rsvp {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  width: 100%;
+  max-width: 560px;
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(32px, 10vw, 56px);
+  line-height: 1.15;
+  min-height: 1.3em;
+  white-space: pre;
+}
+
+.card-hard .rsvp-pre  { flex: 1 1 0; text-align: right; }
+.card-hard .rsvp-post { flex: 1 1 0; text-align: left; }
+.card-hard .rsvp-orp  { flex: 0 0 auto; color: #ffb347; }
+
+/* znaczniki osi - zaznaczaja punkt, w ktorym ma spoczywac wzrok */
+.card-hard .rsvp::before,
+.card-hard .rsvp::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 2px;
+  height: 11px;
+  transform: translateX(-50%);
+  background: rgba(255, 179, 71, 0.5);
+}
+.card-hard .rsvp::before { top: -16px; }
+.card-hard .rsvp::after  { bottom: -8px; }
+
+/* para slow odslania sie dopiero po zakonczeniu migania */
+.card-hard .pair {
+  margin-top: 40px;
+  font-size: 18px;
+  letter-spacing: 0.3px;
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+.card-hard.flash-done .pair { opacity: 0.88; }
+
 /* znak wodny: ta karta byla juz pokazana wczesniej */
 .card .rep {
   position: absolute;
@@ -275,20 +332,16 @@ html, body {
 }
 
 /* ------------------------------------------- motywy kolorystyczne kategorii */
-.theme-ulubione        { background: linear-gradient(160deg, #4a0d1c, #e0405e); }
-.theme-wloski          { background: linear-gradient(160deg, #7a2b1a, #d9603a); }
-.theme-gotowanie       { background: linear-gradient(160deg, #7a5a05, #e0a63a); }
-.theme-architektura    { background: linear-gradient(160deg, #1e2a3a, #3f6e8f); }
-.theme-angielski       { background: linear-gradient(160deg, #241a4a, #5b3fa0); }
-.theme-psychologia     { background: linear-gradient(160deg, #4a1942, #a83279); }
-.theme-dark_psychology { background: linear-gradient(160deg, #1a0a0a, #6b1414); }
-.theme-chemia          { background: linear-gradient(160deg, #0a4a3f, #1fae8e); }
-.theme-mowa_ciala      { background: linear-gradient(160deg, #3a2e1f, #8a6d3f); }
-.theme-rozwoj          { background: linear-gradient(160deg, #10324f, #2f9bd8); }
+/* Kolor kategorii maluje wylacznie warstwa #bg, ktora stoi nieruchomo pod
+   calym ekranem. Gdy karta malowala wlasny gradient, w trakcie przewijania
+   jechal on wzgledem tla i karta odcinala sie jak naklejony prostokat. */
+.card { background: transparent; }
 
 /* ------------------------------------------------------------------ tryby */
+/* Tlo przyciemnia juz warstwa #bg, wiec tutaj zostaje samo stonowanie
+   tresci karty - inaczej noc bylaby przyciemniona dwa razy. */
 [data-theme="night"] .card {
-  filter: brightness(0.55) saturate(0.8);
+  filter: brightness(0.78) saturate(0.85);
 }
 
 [data-theme="anthracite"] .card {
@@ -312,6 +365,26 @@ html, body {
 }
 
 /* ------------------------------------------------------------- notatnik */
+/* Notatnik jako nakladka na cala aplikacje - nie ma go w pasku zakladek
+   i po zamknieciu nie zostaje po nim slad na ekranie. */
+#notes-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  background: #14161a;
+  background: linear-gradient(160deg, #14161a, #20242b);
+  color: white;
+}
+
+#notes-overlay.open { display: block; }
+
+#notes-overlay .notes-wrap {
+  padding-top: calc(26px + env(safe-area-inset-top));
+}
+
 .pane-notes {
   scroll-snap-type: none;
 }
