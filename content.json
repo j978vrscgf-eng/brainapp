@@ -1,331 +1,3104 @@
 {
   "wloski": [
-    {"type":"vocab","dir":"pl-it","front":"dom","back":"casa"},
-    {"type":"vocab","dir":"it-pl","front":"acqua","back":"woda"},
-    {"type":"vocab","dir":"pl-it","front":"dziękuję","back":"grazie"},
-    {"type":"vocab","dir":"it-pl","front":"buongiorno","back":"dzień dobry"},
-    {"type":"vocab","dir":"pl-it","front":"proszę","back":"per favore"},
-    {"type":"vocab","dir":"it-pl","front":"amore","back":"miłość"},
-    {"type":"vocab","dir":"pl-it","front":"przyjaciel","back":"amico"},
-    {"type":"vocab","dir":"it-pl","front":"famiglia","back":"rodzina"},
-    {"type":"vocab","dir":"pl-it","front":"jeść","back":"mangiare"},
-    {"type":"vocab","dir":"it-pl","front":"bere","back":"pić"},
-    {"type":"vocab","dir":"pl-it","front":"dobranoc","back":"buonanotte"},
-    {"type":"vocab","dir":"it-pl","front":"lavoro","back":"praca"},
-    {"type":"vocab","dir":"pl-it","front":"czas","back":"tempo"},
-    {"type":"vocab","dir":"it-pl","front":"strada","back":"ulica"},
-    {"type":"vocab","dir":"pl-it","front":"pieniądze","back":"soldi"},
-    {"type":"vocab","dir":"it-pl","front":"finestra","back":"okno"},
-    {"type":"vocab","dir":"pl-it","front":"drzwi","back":"porta"},
-    {"type":"vocab","dir":"it-pl","front":"cielo","back":"niebo"},
-    {"type":"vocab","dir":"pl-it","front":"morze","back":"mare"},
-    {"type":"vocab","dir":"it-pl","front":"montagna","back":"góra"},
-    {"type":"vocab","dir":"pl-it","front":"jutro","back":"domani"},
-    {"type":"vocab","dir":"it-pl","front":"ieri","back":"wczoraj"},
-    {"type":"vocab","dir":"pl-it","front":"szybko","back":"veloce"},
-    {"type":"vocab","dir":"it-pl","front":"lento","back":"wolno"},
-    {"type":"vocab","dir":"pl-it","front":"piękny","back":"bello"},
-    {"type":"vocab","dir":"it-pl","front":"brutto","back":"brzydki"},
-    {"type":"vocab","dir":"pl-it","front":"chcieć","back":"volere"},
-    {"type":"vocab","dir":"it-pl","front":"potere","back":"móc"},
-    {"type":"vocab","dir":"pl-it","front":"wiedzieć","back":"sapere"},
-    {"type":"vocab","dir":"it-pl","front":"capire","back":"rozumieć"},
-    {"type":"vocab","dir":"pl-it","front":"praca","back":"lavoro"},
-    {"type":"vocab","dir":"it-pl","front":"scuola","back":"szkoła"},
-    {"type":"vocab","dir":"pl-it","front":"książka","back":"libro"},
-    {"type":"vocab","dir":"it-pl","front":"penna","back":"długopis"},
-    {"type":"vocab","dir":"pl-it","front":"dzisiaj","back":"oggi"},
-    {"type":"vocab","dir":"it-pl","front":"settimana","back":"tydzień"},
-    {"type":"vocab","dir":"pl-it","front":"miesiąc","back":"mese"},
-    {"type":"vocab","dir":"it-pl","front":"anno","back":"rok"},
-    {"type":"vocab","dir":"pl-it","front":"gorący","back":"caldo"},
-    {"type":"vocab","dir":"it-pl","front":"freddo","back":"zimny"},
-    {"type":"vocab","dir":"pl-it","front":"jeden","back":"uno"},
-    {"type":"vocab","dir":"it-pl","front":"due","back":"dwa"},
-    {"type":"vocab","dir":"pl-it","front":"trzy","back":"tre"},
-    {"type":"vocab","dir":"it-pl","front":"quattro","back":"cztery"},
-    {"type":"vocab","dir":"pl-it","front":"pięć","back":"cinque"},
-    {"type":"vocab","dir":"it-pl","front":"sei","back":"sześć"},
-    {"type":"vocab","dir":"pl-it","front":"siedem","back":"sette"},
-    {"type":"vocab","dir":"it-pl","front":"otto","back":"osiem"},
-    {"type":"vocab","dir":"pl-it","front":"dziewięć","back":"nove"},
-    {"type":"vocab","dir":"it-pl","front":"dieci","back":"dziesięć"},
-    {"type":"vocab","dir":"pl-it","front":"poniedziałek","back":"lunedì"},
-    {"type":"vocab","dir":"it-pl","front":"martedì","back":"wtorek"},
-    {"type":"vocab","dir":"pl-it","front":"środa","back":"mercoledì"},
-    {"type":"vocab","dir":"it-pl","front":"giovedì","back":"czwartek"},
-    {"type":"vocab","dir":"pl-it","front":"piątek","back":"venerdì"},
-    {"type":"vocab","dir":"it-pl","front":"sabato","back":"sobota"},
-    {"type":"vocab","dir":"pl-it","front":"niedziela","back":"domenica"},
-    {"type":"vocab","dir":"it-pl","front":"aeroporto","back":"lotnisko"},
-    {"type":"vocab","dir":"pl-it","front":"pociąg","back":"treno"},
-    {"type":"vocab","dir":"it-pl","front":"macchina","back":"samochód"},
-    {"type":"vocab","dir":"pl-it","front":"restauracja","back":"ristorante"},
-    {"type":"vocab","dir":"it-pl","front":"conto","back":"rachunek"},
-    {"type":"vocab","dir":"pl-it","front":"smaczny","back":"gustoso"},
-    {"type":"vocab","dir":"it-pl","front":"delizioso","back":"pyszny"},
-    {"type":"vocab","dir":"pl-it","front":"szczęście","back":"felicità"},
-    {"type":"vocab","dir":"it-pl","front":"vita","back":"życie"},
-    {"type":"vocab","dir":"pl-it","front":"marzenie","back":"sogno"},
-    {"type":"vocab","dir":"it-pl","front":"speranza","back":"nadzieja"},
-    {"type":"vocab","dir":"pl-it","front":"nauczyciel","back":"insegnante"},
-    {"type":"vocab","dir":"it-pl","front":"studente","back":"student"},
-    {"type":"vocab","dir":"pl-it","front":"pytanie","back":"domanda"},
-    {"type":"vocab","dir":"it-pl","front":"risposta","back":"odpowiedź"},
-    {"type":"vocab","dir":"pl-it","front":"zdrowie","back":"salute"},
-    {"type":"vocab","dir":"it-pl","front":"cuore","back":"serce"},
-    {"type":"vocab","dir":"pl-it","front":"muzyka","back":"musica"},
-    {"type":"vocab","dir":"it-pl","front":"caffè","back":"kawa"},
-    {"type":"vocab","dir":"pl-it","front":"chleb","back":"pane"},
-    {"type":"vocab","dir":"it-pl","front":"vino","back":"wino"},
-    {"type":"vocab","dir":"pl-it","front":"ser","back":"formaggio"},
-    {"type":"vocab","dir":"it-pl","front":"estate","back":"lato"},
-    {"type":"vocab","dir":"pl-it","front":"zima","back":"inverno"},
-    {"type":"vocab","dir":"it-pl","front":"primavera","back":"wiosna"},
-    {"type":"vocab","dir":"pl-it","front":"jesień","back":"autunno"},
-    {"type":"vocab","dir":"it-pl","front":"madre","back":"matka"},
-    {"type":"vocab","dir":"pl-it","front":"ojciec","back":"padre"},
-    {"type":"vocab","dir":"it-pl","front":"fratello","back":"brat"},
-    {"type":"vocab","dir":"pl-it","front":"siostra","back":"sorella"},
-    {"type":"vocab","dir":"it-pl","front":"bambino","back":"dziecko"},
-    {"type":"vocab","dir":"pl-it","front":"mężczyzna","back":"uomo"},
-    {"type":"vocab","dir":"it-pl","front":"donna","back":"kobieta"}
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "dom",
+      "back": "casa"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "acqua",
+      "back": "woda"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "dziękuję",
+      "back": "grazie"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "buongiorno",
+      "back": "dzień dobry"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "proszę",
+      "back": "per favore"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "amore",
+      "back": "miłość"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "przyjaciel",
+      "back": "amico"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "famiglia",
+      "back": "rodzina"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "jeść",
+      "back": "mangiare"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "bere",
+      "back": "pić"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "dobranoc",
+      "back": "buonanotte"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "lavoro",
+      "back": "praca"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "czas",
+      "back": "tempo"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "strada",
+      "back": "ulica"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "pieniądze",
+      "back": "soldi"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "finestra",
+      "back": "okno"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "drzwi",
+      "back": "porta"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "cielo",
+      "back": "niebo"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "morze",
+      "back": "mare"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "montagna",
+      "back": "góra"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "jutro",
+      "back": "domani"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "ieri",
+      "back": "wczoraj"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "szybko",
+      "back": "veloce"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "lento",
+      "back": "wolno"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "piękny",
+      "back": "bello"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "brutto",
+      "back": "brzydki"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "chcieć",
+      "back": "volere"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "potere",
+      "back": "móc"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "wiedzieć",
+      "back": "sapere"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "capire",
+      "back": "rozumieć"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "praca",
+      "back": "lavoro"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "scuola",
+      "back": "szkoła"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "książka",
+      "back": "libro"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "penna",
+      "back": "długopis"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "dzisiaj",
+      "back": "oggi"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "settimana",
+      "back": "tydzień"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "miesiąc",
+      "back": "mese"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "anno",
+      "back": "rok"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "gorący",
+      "back": "caldo"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "freddo",
+      "back": "zimny"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "jeden",
+      "back": "uno"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "due",
+      "back": "dwa"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "trzy",
+      "back": "tre"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "quattro",
+      "back": "cztery"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "pięć",
+      "back": "cinque"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "sei",
+      "back": "sześć"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "siedem",
+      "back": "sette"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "otto",
+      "back": "osiem"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "dziewięć",
+      "back": "nove"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "dieci",
+      "back": "dziesięć"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "poniedziałek",
+      "back": "lunedì"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "martedì",
+      "back": "wtorek"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "środa",
+      "back": "mercoledì"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "giovedì",
+      "back": "czwartek"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "piątek",
+      "back": "venerdì"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "sabato",
+      "back": "sobota"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "niedziela",
+      "back": "domenica"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "aeroporto",
+      "back": "lotnisko"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "pociąg",
+      "back": "treno"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "macchina",
+      "back": "samochód"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "restauracja",
+      "back": "ristorante"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "conto",
+      "back": "rachunek"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "smaczny",
+      "back": "gustoso"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "delizioso",
+      "back": "pyszny"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "szczęście",
+      "back": "felicità"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "vita",
+      "back": "życie"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "marzenie",
+      "back": "sogno"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "speranza",
+      "back": "nadzieja"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "nauczyciel",
+      "back": "insegnante"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "studente",
+      "back": "student"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "pytanie",
+      "back": "domanda"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "risposta",
+      "back": "odpowiedź"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "zdrowie",
+      "back": "salute"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "cuore",
+      "back": "serce"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "muzyka",
+      "back": "musica"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "caffè",
+      "back": "kawa"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "chleb",
+      "back": "pane"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "vino",
+      "back": "wino"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "ser",
+      "back": "formaggio"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "estate",
+      "back": "lato"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "zima",
+      "back": "inverno"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "primavera",
+      "back": "wiosna"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "jesień",
+      "back": "autunno"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "madre",
+      "back": "matka"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "ojciec",
+      "back": "padre"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "fratello",
+      "back": "brat"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "siostra",
+      "back": "sorella"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "bambino",
+      "back": "dziecko"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "mężczyzna",
+      "back": "uomo"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "donna",
+      "back": "kobieta"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "woda",
+      "back": "l'acqua"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "il pane",
+      "back": "chleb"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "il vino",
+      "back": "wino"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "il tempo",
+      "back": "czas (a takze pogoda)"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "miasto",
+      "back": "la citta"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "la strada",
+      "back": "ulica, droga"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "samochod",
+      "back": "la macchina"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "il treno",
+      "back": "pociag"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "klucz",
+      "back": "la chiave"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "la porta",
+      "back": "drzwi"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "okno",
+      "back": "la finestra"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "il tavolo",
+      "back": "stol"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "krzeslo",
+      "back": "la sedia"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "il letto",
+      "back": "lozko"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "kuchnia",
+      "back": "la cucina"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "il bagno",
+      "back": "lazienka"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "pieniadze",
+      "back": "i soldi"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "il negozio",
+      "back": "sklep"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "targ, rynek",
+      "back": "il mercato"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "il prezzo",
+      "back": "cena"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "drogi (kosztowny)",
+      "back": "caro"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "economico",
+      "back": "tani"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "otwarty",
+      "back": "aperto"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "chiuso",
+      "back": "zamkniety"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "teraz",
+      "back": "adesso"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "sempre",
+      "back": "zawsze"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "nigdy",
+      "back": "mai"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "forse",
+      "back": "moze"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "razem",
+      "back": "insieme"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "da solo",
+      "back": "sam, samotnie"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "szczesliwy",
+      "back": "felice"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "stanco",
+      "back": "zmeczony"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "jestem glodny",
+      "back": "ho fame"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "ho sete",
+      "back": "chce mi sie pic"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "pomagac",
+      "back": "aiutare"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "mowic",
+      "back": "parlare"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "sapere",
+      "back": "wiedziec, umiec"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "chciec",
+      "back": "volere"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "musiec",
+      "back": "dovere"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "portare",
+      "back": "niesc, zabrac"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "czekac",
+      "back": "aspettare"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "cercare",
+      "back": "szukac"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "znalezc",
+      "back": "trovare"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "partire",
+      "back": "wyjechac, odjechac"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "wracac",
+      "back": "tornare"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "riposare",
+      "back": "odpoczywac"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "zaplacic",
+      "back": "pagare"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "assaggiare",
+      "back": "sprobowac (smaku)"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "zamowic",
+      "back": "ordinare"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "il conto",
+      "back": "rachunek"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "rachunek prosze",
+      "back": "il conto, per favore"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "scusi",
+      "back": "przepraszam (do obcej osoby)"
+    },
+    {
+      "type": "vocab",
+      "dir": "pl-it",
+      "front": "nie ma za co",
+      "back": "di niente"
+    },
+    {
+      "type": "vocab",
+      "dir": "it-pl",
+      "front": "magari",
+      "back": "oby, gdyby tak, byc moze"
+    },
+    {
+      "type": "def",
+      "term": "Falszywy przyjaciel: cena",
+      "text": "Wloskie 'cena' to kolacja, nie cena. Cena w sklepie to 'il prezzo'."
+    },
+    {
+      "type": "def",
+      "term": "Falszywy przyjaciel: firma",
+      "text": "'La firma' to podpis. Firma jako przedsiebiorstwo to 'la ditta' albo 'l'azienda'."
+    },
+    {
+      "type": "def",
+      "term": "Falszywy przyjaciel: colazione",
+      "text": "'La colazione' to sniadanie, nie kolacja. Latwo pomylic przy zamawianiu w hotelu."
+    },
+    {
+      "type": "def",
+      "term": "Falszywy przyjaciel: divano",
+      "text": "'Il divano' to kanapa. Dywan to 'il tappeto'."
+    },
+    {
+      "type": "def",
+      "term": "Falszywy przyjaciel: panna",
+      "text": "'La panna' to smietana - stad 'panna cotta', czyli smietana gotowana. Panna jako kobieta to 'la signorina'."
+    },
+    {
+      "type": "def",
+      "term": "Prego - slowo wytrych",
+      "text": "Znaczy naraz: prosze bardzo, nie ma za co, sluchamy, zapraszam, po panu. Wloch uzyje go kilkanascie razy dziennie w roznych sensach."
+    },
+    {
+      "type": "def",
+      "term": "Boh!",
+      "text": "Potoczne westchniecie oznaczajace 'nie mam pojecia'. Nie znajdzie go Pan w podreczniku, a uslyszy codziennie."
+    }
   ],
   "gotowanie": [
-    {"type":"def","term":"Al dente","text":"Włoskie określenie makaronu ugotowanego tak, by wciąż miał lekki opór pod zębem — nie jest rozgotowany."},
-    {"type":"def","term":"Reakcja Maillarda","text":"Reakcja chemiczna między aminokwasami a cukrami przy wysokiej temperaturze — odpowiada za złoty, chrupiący kolor smażonego mięsa i skórki chleba."},
-    {"type":"def","term":"Deglasowanie","text":"Zalanie patelni po smażeniu winem, bulionem lub wodą, żeby zebrać przywarte, skarmelizowane resztki jako bazę sosu."},
-    {"type":"def","term":"Sous-vide","text":"Metoda gotowania jedzenia zapakowanego próżniowo w wodzie o precyzyjnie kontrolowanej, niskiej temperaturze przez długi czas."},
-    {"type":"def","term":"Emulsja","text":"Trwałe połączenie dwóch niemieszających się cieczy, np. oleju i octu — tak powstaje majonez czy vinaigrette."},
-    {"type":"fact","text":"Sól dodana do wody z makaronem podnosi jej temperaturę wrzenia tylko nieznacznie — jej głównym zadaniem jest smak, nie szybsze gotowanie."},
-    {"type":"def","term":"Blanszowanie","text":"Krótkie zanurzenie warzyw we wrzątku, a potem w lodowatej wodzie — zatrzymuje gotowanie i utrwala kolor."},
-    {"type":"def","term":"Roux","text":"Podstawa wielu sosów francuskich: mąka smażona z tłuszczem (masłem) w równych proporcjach, używana do zagęszczania."},
-    {"type":"fact","text":"Umami to piąty smak podstawowy (obok słodkiego, słonego, kwaśnego i gorzkiego) — odpowiada za niego m.in. glutaminian, naturalnie występujący w pomidorach, parmezanie i grzybach."},
-    {"type":"def","term":"Karmelizacja","text":"Rozkład cukru pod wpływem wysokiej temperatury, dający brązowy kolor i głęboki, orzechowy smak — inny proces niż reakcja Maillarda, choć często zachodzą razem."},
-    {"type":"def","term":"Confit","text":"Powolne gotowanie jedzenia (najczęściej mięsa) zanurzonego całkowicie we własnym tłuszczu, w niskiej temperaturze."},
-    {"type":"fact","text":"Świeże zioła dodaje się zwykle pod koniec gotowania, a suszone na początku — suszone potrzebują więcej czasu, żeby uwolnić aromat."},
-    {"type":"def","term":"Mise en place","text":"Francuskie określenie przygotowania i rozłożenia wszystkich składników przed rozpoczęciem właściwego gotowania."},
-    {"type":"fact","text":"Dodanie odrobiny kwasu (cytryna, ocet) na koniec gotowania potrafi 'ożywić' smak dania dużo skuteczniej niż dodatkowa sól."},
-    {"type":"def","term":"Fermentacja","text":"Proces, w którym mikroorganizmy (bakterie, drożdże) przetwarzają cukry — tak powstaje m.in. kiszona kapusta, chleb na zakwasie czy wino."},
-    {"type":"fact","text":"Mięso odpoczywające kilka minut po upieczeniu jest soczystsze — sok ma czas równomiernie się rozłożyć zamiast wypłynąć od razu po nacięciu."},
-    {"type":"def","term":"Bain-marie","text":"Gotowanie w kąpieli wodnej — naczynie z jedzeniem umieszczone w większym naczyniu z gorącą wodą, dla łagodnego, równomiernego ciepła."},
-    {"type":"def","term":"Julienne","text":"Sposób krojenia warzyw w cienkie, równe słupki, zwykle o długości kilku centymetrów."},
-    {"type":"fact","text":"Ciemne mięso z kurczaka (udka) ma więcej mioglobiny i tłuszczu niż pierś, dlatego jest trudniejsze do wysuszenia podczas gotowania."},
-    {"type":"def","term":"Reduktion (redukcja)","text":"Odparowanie części płynu przez gotowanie, żeby zagęścić sos i wzmocnić smak poprzez skoncentrowanie składników."},
-    {"type":"def","term":"Sear (obsmażanie)","text":"Krótkie smażenie mięsa na bardzo wysokim ogniu, żeby zamknąć soki i uzyskać chrupiącą skórkę."},
-    {"type":"fact","text":"Świeżość jajka można sprawdzić w wodzie — świeże tonie płasko, stare unosi się, bo z czasem przybywa w nim powietrza."},
-    {"type":"def","term":"Marynowanie","text":"Namaczanie jedzenia w mieszance kwasu, oleju i przypraw, żeby zmiękczyć i wzbogacić smak przed gotowaniem."},
-    {"type":"def","term":"Dry brine (zaparzanie na sucho)","text":"Nacieranie mięsa solą na kilka godzin lub dni przed pieczeniem, zamiast moczenia go w solance."},
-    {"type":"fact","text":"Cebula szczypie w oczy, bo po przecięciu uwalnia gaz, który dopiero w kontakcie z okiem zamienia się w drażniący kwas."},
-    {"type":"def","term":"Umami bomb","text":"Potoczne określenie składników bardzo bogatych w umami, jak sos sojowy, parmezan, anchois czy pasta miso."},
-    {"type":"def","term":"Tempering (hartowanie czekolady)","text":"Precyzyjne podgrzewanie i chłodzenie czekolady, żeby po stężeniu miała połysk i chrupała, zamiast matowieć."},
-    {"type":"fact","text":"Ryż po ugotowaniu i schłodzeniu ma mniej przyswajalnych kalorii niż na gorąco — chłodzenie zmienia część skrobi w formę odporną na trawienie."},
-    {"type":"def","term":"Danie zdekonstruowane","text":"Klasyczne danie podane w formie osobnych, rozdzielonych elementów zamiast tradycyjnego złożenia na talerzu."},
-    {"type":"def","term":"Kombu","text":"Suszone wodorosty, jeden z najstarszych naturalnych wzmacniaczy smaku, podstawa japońskiego bulionu dashi."}
+    {
+      "type": "def",
+      "term": "Al dente",
+      "text": "Włoskie określenie makaronu ugotowanego tak, by wciąż miał lekki opór pod zębem — nie jest rozgotowany."
+    },
+    {
+      "type": "def",
+      "term": "Reakcja Maillarda",
+      "text": "Reakcja chemiczna między aminokwasami a cukrami przy wysokiej temperaturze — odpowiada za złoty, chrupiący kolor smażonego mięsa i skórki chleba."
+    },
+    {
+      "type": "def",
+      "term": "Deglasowanie",
+      "text": "Zalanie patelni po smażeniu winem, bulionem lub wodą, żeby zebrać przywarte, skarmelizowane resztki jako bazę sosu."
+    },
+    {
+      "type": "def",
+      "term": "Sous-vide",
+      "text": "Metoda gotowania jedzenia zapakowanego próżniowo w wodzie o precyzyjnie kontrolowanej, niskiej temperaturze przez długi czas."
+    },
+    {
+      "type": "def",
+      "term": "Emulsja",
+      "text": "Trwałe połączenie dwóch niemieszających się cieczy, np. oleju i octu — tak powstaje majonez czy vinaigrette."
+    },
+    {
+      "type": "fact",
+      "text": "Sól dodana do wody z makaronem podnosi jej temperaturę wrzenia tylko nieznacznie — jej głównym zadaniem jest smak, nie szybsze gotowanie."
+    },
+    {
+      "type": "def",
+      "term": "Blanszowanie",
+      "text": "Krótkie zanurzenie warzyw we wrzątku, a potem w lodowatej wodzie — zatrzymuje gotowanie i utrwala kolor."
+    },
+    {
+      "type": "def",
+      "term": "Roux",
+      "text": "Podstawa wielu sosów francuskich: mąka smażona z tłuszczem (masłem) w równych proporcjach, używana do zagęszczania."
+    },
+    {
+      "type": "fact",
+      "text": "Umami to piąty smak podstawowy (obok słodkiego, słonego, kwaśnego i gorzkiego) — odpowiada za niego m.in. glutaminian, naturalnie występujący w pomidorach, parmezanie i grzybach."
+    },
+    {
+      "type": "def",
+      "term": "Karmelizacja",
+      "text": "Rozkład cukru pod wpływem wysokiej temperatury, dający brązowy kolor i głęboki, orzechowy smak — inny proces niż reakcja Maillarda, choć często zachodzą razem."
+    },
+    {
+      "type": "def",
+      "term": "Confit",
+      "text": "Powolne gotowanie jedzenia (najczęściej mięsa) zanurzonego całkowicie we własnym tłuszczu, w niskiej temperaturze."
+    },
+    {
+      "type": "fact",
+      "text": "Świeże zioła dodaje się zwykle pod koniec gotowania, a suszone na początku — suszone potrzebują więcej czasu, żeby uwolnić aromat."
+    },
+    {
+      "type": "def",
+      "term": "Mise en place",
+      "text": "Francuskie określenie przygotowania i rozłożenia wszystkich składników przed rozpoczęciem właściwego gotowania."
+    },
+    {
+      "type": "fact",
+      "text": "Dodanie odrobiny kwasu (cytryna, ocet) na koniec gotowania potrafi 'ożywić' smak dania dużo skuteczniej niż dodatkowa sól."
+    },
+    {
+      "type": "def",
+      "term": "Fermentacja",
+      "text": "Proces, w którym mikroorganizmy (bakterie, drożdże) przetwarzają cukry — tak powstaje m.in. kiszona kapusta, chleb na zakwasie czy wino."
+    },
+    {
+      "type": "fact",
+      "text": "Mięso odpoczywające kilka minut po upieczeniu jest soczystsze — sok ma czas równomiernie się rozłożyć zamiast wypłynąć od razu po nacięciu."
+    },
+    {
+      "type": "def",
+      "term": "Bain-marie",
+      "text": "Gotowanie w kąpieli wodnej — naczynie z jedzeniem umieszczone w większym naczyniu z gorącą wodą, dla łagodnego, równomiernego ciepła."
+    },
+    {
+      "type": "def",
+      "term": "Julienne",
+      "text": "Sposób krojenia warzyw w cienkie, równe słupki, zwykle o długości kilku centymetrów."
+    },
+    {
+      "type": "fact",
+      "text": "Ciemne mięso z kurczaka (udka) ma więcej mioglobiny i tłuszczu niż pierś, dlatego jest trudniejsze do wysuszenia podczas gotowania."
+    },
+    {
+      "type": "def",
+      "term": "Reduktion (redukcja)",
+      "text": "Odparowanie części płynu przez gotowanie, żeby zagęścić sos i wzmocnić smak poprzez skoncentrowanie składników."
+    },
+    {
+      "type": "def",
+      "term": "Sear (obsmażanie)",
+      "text": "Krótkie smażenie mięsa na bardzo wysokim ogniu, żeby zamknąć soki i uzyskać chrupiącą skórkę."
+    },
+    {
+      "type": "fact",
+      "text": "Świeżość jajka można sprawdzić w wodzie — świeże tonie płasko, stare unosi się, bo z czasem przybywa w nim powietrza."
+    },
+    {
+      "type": "def",
+      "term": "Marynowanie",
+      "text": "Namaczanie jedzenia w mieszance kwasu, oleju i przypraw, żeby zmiękczyć i wzbogacić smak przed gotowaniem."
+    },
+    {
+      "type": "def",
+      "term": "Dry brine (zaparzanie na sucho)",
+      "text": "Nacieranie mięsa solą na kilka godzin lub dni przed pieczeniem, zamiast moczenia go w solance."
+    },
+    {
+      "type": "fact",
+      "text": "Cebula szczypie w oczy, bo po przecięciu uwalnia gaz, który dopiero w kontakcie z okiem zamienia się w drażniący kwas."
+    },
+    {
+      "type": "def",
+      "term": "Umami bomb",
+      "text": "Potoczne określenie składników bardzo bogatych w umami, jak sos sojowy, parmezan, anchois czy pasta miso."
+    },
+    {
+      "type": "def",
+      "term": "Tempering (hartowanie czekolady)",
+      "text": "Precyzyjne podgrzewanie i chłodzenie czekolady, żeby po stężeniu miała połysk i chrupała, zamiast matowieć."
+    },
+    {
+      "type": "fact",
+      "text": "Ryż po ugotowaniu i schłodzeniu ma mniej przyswajalnych kalorii niż na gorąco — chłodzenie zmienia część skrobi w formę odporną na trawienie."
+    },
+    {
+      "type": "def",
+      "term": "Danie zdekonstruowane",
+      "text": "Klasyczne danie podane w formie osobnych, rozdzielonych elementów zamiast tradycyjnego złożenia na talerzu."
+    },
+    {
+      "type": "def",
+      "term": "Kombu",
+      "text": "Suszone wodorosty, jeden z najstarszych naturalnych wzmacniaczy smaku, podstawa japońskiego bulionu dashi."
+    },
+    {
+      "type": "fact",
+      "text": "Woda do makaronu ma smakowac jak morze: okolo 10 g soli na litr. Makaron dosala sie tylko w czasie gotowania - pozniej juz tego nie nadrobi."
+    },
+    {
+      "type": "def",
+      "term": "Woda z makaronu",
+      "text": "Metna woda po gotowaniu to zawiesina skrobi. Dodana do sosu wiaze tluszcz z woda i tworzy emulsje, ktora oblepia makaron zamiast splywac na dno talerza."
+    },
+    {
+      "type": "fact",
+      "text": "Prawdziwa carbonara nie zawiera smietany. Kremowosc daje emulsja z zoltek, tluszczu z guanciale i skrobiowej wody z makaronu."
+    },
+    {
+      "type": "def",
+      "term": "Blanszowanie z szokiem lodowym",
+      "text": "Krotkie zanurzenie we wrzatku dezaktywuje enzymy psujace kolor i smak, a lodowata kapiel zatrzymuje gotowanie. Dlatego zielone warzywa zostaja intensywnie zielone."
+    },
+    {
+      "type": "fact",
+      "text": "Mieso po pieczeniu musi odpoczac. W goracym miesie soki sa wypchniete ku srodkowi - kilkanascie minut pozwala im wrocic w cale wlokno, zamiast wyplynac na deske."
+    },
+    {
+      "type": "def",
+      "term": "Skrobia oporna",
+      "text": "Ostudzony ugotowany ryz lub ziemniaki zmieniaja strukture skrobi (retrogradacja). Czesc przestaje byc trawiona w jelicie cienkim i dziala jak blonnik - nawet po ponownym podgrzaniu."
+    },
+    {
+      "type": "def",
+      "term": "Umami",
+      "text": "Piaty smak, chemicznie glutaminian. Najwiecej maja go parmezan, suszone grzyby, koncentrat pomidorowy, sos rybny i wodorosty kombu. Laczenie dwoch zrodel daje efekt silniejszy niz suma."
+    },
+    {
+      "type": "fact",
+      "text": "Chrupiace krysztalki w dojrzalym parmezanie to nie sol, tylko tyrozyna - aminokwas wytracajacy sie podczas wielomiesiecznego dojrzewania."
+    },
+    {
+      "type": "def",
+      "term": "Kwas na koncu",
+      "text": "Lyzeczka octu lub soku z cytryny wrzucona tuz przed podaniem podnosi caly smak potrawy. Danie, ktoremu 'czegos brakuje', czesto potrzebuje kwasu, a nie soli."
+    },
+    {
+      "type": "def",
+      "term": "Maslo klarowane",
+      "text": "Po usunieciu wody i bialek zostaje sam tluszcz - punkt dymienia rosnie ze 150 do ponad 200 C. Dlatego na klarowanym mozna smazyc, a na zwyklym masle nie."
+    },
+    {
+      "type": "fact",
+      "text": "Fasole warto solic juz w czasie moczenia. Wbrew obiegowej opinii sol nie utwardza skorki - wymienia jony w pektynach i skorka staje sie bardziej miekka."
+    },
+    {
+      "type": "def",
+      "term": "Szczypta sody do cebuli",
+      "text": "Podnosi pH i mocno przyspiesza reakcje Maillarda. Karmelizowana cebula robi sie w kilkanascie minut zamiast w godzine - kosztem lekko papkowatej struktury."
+    },
+    {
+      "type": "def",
+      "term": "Autoliza",
+      "text": "Wymieszanie samej maki z woda i odstawienie na 30-60 minut przed dodaniem soli i drozdzy. Gluten rozwija sie sam, bez wyrabiania, a ciasto staje sie rozciagliwe."
+    },
+    {
+      "type": "fact",
+      "text": "Zakwas to nie same dzikie drozdze, ale symbioza drozdzy z bakteriami kwasu mlekowego. To bakterie daja kwasowosc, arome i trwalosc chleba."
+    },
+    {
+      "type": "def",
+      "term": "Temperowanie czekolady",
+      "text": "Kontrolowane wychladzanie tak, by masa kakaowa skrystalizowala w formie V. Tylko ona daje polysk i charakterystyczne pekniecie przy lamaniu."
+    },
+    {
+      "type": "fact",
+      "text": "Starsze jajka obiera sie latwiej niz swieze. Z czasem pH bialka rosnie i slabiej przywiera ono do blony podskorupkowej."
+    },
+    {
+      "type": "def",
+      "term": "Risotto bez smietany",
+      "text": "Kremowosc bierze sie z amylopektyny uwalnianej z ziaren Carnaroli lub Arborio przez mieszanie. Plukanie tego ryzu niszczy caly efekt."
+    },
+    {
+      "type": "def",
+      "term": "Wok hei",
+      "text": "Doslownie 'oddech wok-a' - przypalony, dymny aromat powstajacy tylko przy bardzo wysokiej temperaturze i ruchu skladnikow w powietrzu. W domowej kuchence praktycznie nieosiagalny."
+    },
+    {
+      "type": "fact",
+      "text": "Twarde, tanie kawalki miesa sa najlepsze na dlugie duszenie: kolagen zamienia sie w zelatyne dopiero po godzinach w temperaturze 60-90 C i to ona daje aksamitny sos."
+    },
+    {
+      "type": "def",
+      "term": "Solanka (brine)",
+      "text": "Kilka godzin w 5-procentowym roztworze soli sprawia, ze bialka miesa zatrzymuja wode. Piers kurczaka wychodzi soczysta nawet lekko przesuszona."
+    },
+    {
+      "type": "fact",
+      "text": "Czosnek przypala sie blyskawicznie, bo ma malo wody i duzo cukrow. Wrzucony na patelnie jako pierwszy niemal zawsze zgorzknieje - powinien isc na koniec."
+    },
+    {
+      "type": "def",
+      "term": "Ziemniaki maczyste i woskowe",
+      "text": "Maczyste (typ C) rozpadaja sie i sa na puree oraz frytki. Woskowe (typ A) trzymaja ksztalt i sa na salatke oraz do gotowania. Zamiana ich miejscami psuje danie."
+    },
+    {
+      "type": "def",
+      "term": "Rola soli w ciescie",
+      "text": "Sol wzmacnia siec glutenu i spowalnia drozdze, cukier i tluszcz ja oslabiaja. Chleb bez soli jest nie tylko mdly, ale tez rozlazly."
+    },
+    {
+      "type": "fact",
+      "text": "W ciescie kruchym maslo musi byc zimne. Kawalki tluszczu zamieniaja sie w piekarniku w pare wodna, ktora rozpycha ciasto na warstwy - stad kruchosc."
+    },
+    {
+      "type": "def",
+      "term": "Solenie baklazana",
+      "text": "Dzisiejsze odmiany nie sa gorzkie, wiec nie chodzi juz o odgoryczenie. Sol niszczy strukture komorek, dzieki czemu baklazan chlonie duzo mniej oleju."
+    },
+    {
+      "type": "fact",
+      "text": "Swiezo mielony pieprz rozni sie od gotowego dlatego, ze piperyna i olejki eteryczne ulatniaja sie w ciagu kilkunastu minut od zmielenia."
+    },
+    {
+      "type": "def",
+      "term": "Marynata kwasowa ma limit",
+      "text": "Kwas denaturuje bialka na powierzchni. Po kilku godzinach mieso nie jest bardziej kruche, tylko papkowate z wierzchu i suche w srodku."
+    },
+    {
+      "type": "def",
+      "term": "Punkt dymienia",
+      "text": "Oliwa extra virgin dymi okolo 190 C, rafinowany rzepak powyzej 200 C, maslo juz przy 150 C. Przekroczenie go daje gorycz i akroleine, a nie lepsze smazenie."
+    },
+    {
+      "type": "fact",
+      "text": "Sol koszerna i drobna to przy tej samej objetosci zupelnie inna ilosc soli - platki zajmuja wiecej miejsca. Przepisy amerykanskie liczone na koszerna potrafia przesolic danie dwukrotnie."
+    }
   ],
   "architektura": [
-    {"type":"def","term":"Łuk przyporowy (flying buttress)","text":"Zewnętrzna, ukośna podpora odprowadzająca ciężar sklepienia na fundament — pozwoliła gotyckim katedrom mieć wysokie ściany pełne okien."},
-    {"type":"def","term":"Złoty podział","text":"Proporcja ok. 1:1.618, uznawana od starożytności za szczególnie harmonijną — stosowana świadomie w architekturze od Partenonu po współczesność."},
-    {"type":"def","term":"Kolumnada","text":"Rząd kolumn niosących wspólne belkowanie lub dach, tworzący krytą przestrzeń wzdłuż budynku."},
-    {"type":"def","term":"Bauhaus","text":"Niemiecka szkoła projektowania (1919-1933) łącząca sztukę, rzemiosło i przemysł — jej hasło 'forma podąża za funkcją' ukształtowało architekturę modernistyczną XX wieku."},
-    {"type":"fact","text":"Wieża Eiffla latem jest o kilkanaście centymetrów wyższa niż zimą — żelazo rozszerza się pod wpływem ciepła."},
-    {"type":"def","term":"Kantylewer (wspornik)","text":"Element konstrukcyjny wystający poza podporę bez dodatkowego podparcia z drugiej strony — jak balkon 'wiszący w powietrzu'."},
-    {"type":"def","term":"Rozeta","text":"Okrągłe, ozdobne okno witrażowe charakterystyczne dla gotyckich katedr, zwykle umieszczone nad głównym wejściem."},
-    {"type":"fact","text":"Panteon w Rzymie ma kopułę z niezbrojonego betonu i wciąż jest po ~1900 latach największą taką konstrukcją na świecie."},
-    {"type":"def","term":"Fasada kurtynowa","text":"Zewnętrzna ściana budynku, która nie przenosi obciążenia konstrukcji — cały ciężar niesie szkielet wewnętrzny, ściana jest tylko 'zasłoną', często ze szkła."},
-    {"type":"def","term":"Brutalizm","text":"Styl architektoniczny XX wieku, surowy beton pokazywany bez wykończenia (od franc. 'béton brut' — surowy beton), masywne, geometryczne bryły."},
-    {"type":"fact","text":"Krzywa Wieża w Pisie przechyla się, bo została zbudowana na miękkim, niestabilnym gruncie — przechył zaczął się już w trakcie budowy w XII wieku."},
-    {"type":"def","term":"Atrium","text":"Wewnętrzny, otwarty (lub przeszklony od góry) dziedziniec budynku, doprowadzający naturalne światło do jego środka."},
-    {"type":"def","term":"Termika budynku (masa termiczna)","text":"Zdolność materiałów budowlanych (np. grubego kamienia, betonu) do magazynowania ciepła w ciągu dnia i oddawania go nocą, stabilizując temperaturę wnętrza."},
-    {"type":"fact","text":"Sagrada Família w Barcelonie jest budowana od 1882 roku i wciąż nie jest ukończona — planowo ma być gotowa w 2026 roku, w setną rocznicę śmierci Gaudiego."},
-    {"type":"def","term":"Modulor","text":"System proporcji stworzony przez Le Corbusiera, oparty na wymiarach ludzkiego ciała i złotym podziale, używany do projektowania budynków 'na miarę człowieka'."},
-    {"type":"def","term":"Pilaster","text":"Płaski, prostokątny występ ściany imitujący kolumnę, głównie dekoracyjny, bez funkcji nośnej filaru."},
-    {"type":"fact","text":"Burj Khalifa w Dubaju zwęża się schodkowo ku górze nie tylko estetycznie — ten kształt zmniejsza siłę wiatru działającą na budynek."},
-    {"type":"def","term":"Sklepienie żebrowe","text":"Sklepienie gotyckie wzmocnione siecią kamiennych żeber, które przejmują ciężar i pozwalają na cieńsze, lżejsze wypełnienie między nimi."},
-    {"type":"def","term":"Regionalizm krytyczny","text":"Nurt architektoniczny łączący nowoczesne technologie z lokalnym klimatem, materiałami i tradycją miejsca — reakcja na bezosobowy modernizm międzynarodowy."},
-    {"type":"fact","text":"Falling Water Franka Lloyda Wrighta zbudowano dosłownie nad wodospadem — dom częściowo wspiera się na skale, częściowo na żelbetowych płytach wysuniętych nad strumień."},
-    {"type":"def","term":"Skyline","text":"Sylwetka miasta tworzona przez zarysy jego budynków na tle nieba, widoczna zwykle z dystansu."},
-    {"type":"def","term":"Konsola","text":"Ozdobny wspornik podtrzymujący gzyms, balkon lub inny wystający element budynku."},
-    {"type":"fact","text":"Empire State Building zbudowano w zaledwie 410 dni (1930-31) — szybciej niż wiele dzisiejszych budynków tej skali."},
-    {"type":"def","term":"Patio","text":"Wewnętrzny dziedziniec otoczony ścianami budynku, zwykle otwarty na niebo, typowy dla architektury śródziemnomorskiej."},
-    {"type":"def","term":"Fasadyzm","text":"Zachowanie wyłącznie zabytkowej fasady budynku przy całkowitej przebudowie tego, co znajduje się za nią."},
-    {"type":"fact","text":"Sydney Opera House ma dach zbudowany z ponad miliona ceramicznych płytek, choć z daleka wygląda na gładki i biały."},
-    {"type":"def","term":"Parametryzm","text":"Współczesny nurt wykorzystujący algorytmy komputerowe do generowania złożonych, płynnych form architektonicznych."},
-    {"type":"def","term":"Piano nobile","text":"Reprezentacyjne, główne piętro pałacu lub kamienicy, tradycyjnie wyżej niż parter, z najważniejszymi salami."},
-    {"type":"fact","text":"Wieżowiec Taipei 101 ma gigantyczną kulę-wahadło o wadze ok. 660 ton, która tłumi drgania budynku od wiatru i trzęsień ziemi."},
-    {"type":"def","term":"Genius loci","text":"\"Duch miejsca\" — koncepcja, że każda lokalizacja ma unikalny charakter, który dobra architektura powinna uszanować, nie ignorować."}
+    {
+      "type": "def",
+      "term": "Łuk przyporowy (flying buttress)",
+      "text": "Zewnętrzna, ukośna podpora odprowadzająca ciężar sklepienia na fundament — pozwoliła gotyckim katedrom mieć wysokie ściany pełne okien."
+    },
+    {
+      "type": "def",
+      "term": "Złoty podział",
+      "text": "Proporcja ok. 1:1.618, uznawana od starożytności za szczególnie harmonijną — stosowana świadomie w architekturze od Partenonu po współczesność."
+    },
+    {
+      "type": "def",
+      "term": "Kolumnada",
+      "text": "Rząd kolumn niosących wspólne belkowanie lub dach, tworzący krytą przestrzeń wzdłuż budynku."
+    },
+    {
+      "type": "def",
+      "term": "Bauhaus",
+      "text": "Niemiecka szkoła projektowania (1919-1933) łącząca sztukę, rzemiosło i przemysł — jej hasło 'forma podąża za funkcją' ukształtowało architekturę modernistyczną XX wieku."
+    },
+    {
+      "type": "fact",
+      "text": "Wieża Eiffla latem jest o kilkanaście centymetrów wyższa niż zimą — żelazo rozszerza się pod wpływem ciepła."
+    },
+    {
+      "type": "def",
+      "term": "Kantylewer (wspornik)",
+      "text": "Element konstrukcyjny wystający poza podporę bez dodatkowego podparcia z drugiej strony — jak balkon 'wiszący w powietrzu'."
+    },
+    {
+      "type": "def",
+      "term": "Rozeta",
+      "text": "Okrągłe, ozdobne okno witrażowe charakterystyczne dla gotyckich katedr, zwykle umieszczone nad głównym wejściem."
+    },
+    {
+      "type": "fact",
+      "text": "Panteon w Rzymie ma kopułę z niezbrojonego betonu i wciąż jest po ~1900 latach największą taką konstrukcją na świecie."
+    },
+    {
+      "type": "def",
+      "term": "Fasada kurtynowa",
+      "text": "Zewnętrzna ściana budynku, która nie przenosi obciążenia konstrukcji — cały ciężar niesie szkielet wewnętrzny, ściana jest tylko 'zasłoną', często ze szkła."
+    },
+    {
+      "type": "def",
+      "term": "Brutalizm",
+      "text": "Styl architektoniczny XX wieku, surowy beton pokazywany bez wykończenia (od franc. 'béton brut' — surowy beton), masywne, geometryczne bryły."
+    },
+    {
+      "type": "fact",
+      "text": "Krzywa Wieża w Pisie przechyla się, bo została zbudowana na miękkim, niestabilnym gruncie — przechył zaczął się już w trakcie budowy w XII wieku."
+    },
+    {
+      "type": "def",
+      "term": "Atrium",
+      "text": "Wewnętrzny, otwarty (lub przeszklony od góry) dziedziniec budynku, doprowadzający naturalne światło do jego środka."
+    },
+    {
+      "type": "def",
+      "term": "Termika budynku (masa termiczna)",
+      "text": "Zdolność materiałów budowlanych (np. grubego kamienia, betonu) do magazynowania ciepła w ciągu dnia i oddawania go nocą, stabilizując temperaturę wnętrza."
+    },
+    {
+      "type": "fact",
+      "text": "Sagrada Família w Barcelonie jest budowana od 1882 roku i wciąż nie jest ukończona — planowo ma być gotowa w 2026 roku, w setną rocznicę śmierci Gaudiego."
+    },
+    {
+      "type": "def",
+      "term": "Modulor",
+      "text": "System proporcji stworzony przez Le Corbusiera, oparty na wymiarach ludzkiego ciała i złotym podziale, używany do projektowania budynków 'na miarę człowieka'."
+    },
+    {
+      "type": "def",
+      "term": "Pilaster",
+      "text": "Płaski, prostokątny występ ściany imitujący kolumnę, głównie dekoracyjny, bez funkcji nośnej filaru."
+    },
+    {
+      "type": "fact",
+      "text": "Burj Khalifa w Dubaju zwęża się schodkowo ku górze nie tylko estetycznie — ten kształt zmniejsza siłę wiatru działającą na budynek."
+    },
+    {
+      "type": "def",
+      "term": "Sklepienie żebrowe",
+      "text": "Sklepienie gotyckie wzmocnione siecią kamiennych żeber, które przejmują ciężar i pozwalają na cieńsze, lżejsze wypełnienie między nimi."
+    },
+    {
+      "type": "def",
+      "term": "Regionalizm krytyczny",
+      "text": "Nurt architektoniczny łączący nowoczesne technologie z lokalnym klimatem, materiałami i tradycją miejsca — reakcja na bezosobowy modernizm międzynarodowy."
+    },
+    {
+      "type": "fact",
+      "text": "Falling Water Franka Lloyda Wrighta zbudowano dosłownie nad wodospadem — dom częściowo wspiera się na skale, częściowo na żelbetowych płytach wysuniętych nad strumień."
+    },
+    {
+      "type": "def",
+      "term": "Skyline",
+      "text": "Sylwetka miasta tworzona przez zarysy jego budynków na tle nieba, widoczna zwykle z dystansu."
+    },
+    {
+      "type": "def",
+      "term": "Konsola",
+      "text": "Ozdobny wspornik podtrzymujący gzyms, balkon lub inny wystający element budynku."
+    },
+    {
+      "type": "fact",
+      "text": "Empire State Building zbudowano w zaledwie 410 dni (1930-31) — szybciej niż wiele dzisiejszych budynków tej skali."
+    },
+    {
+      "type": "def",
+      "term": "Patio",
+      "text": "Wewnętrzny dziedziniec otoczony ścianami budynku, zwykle otwarty na niebo, typowy dla architektury śródziemnomorskiej."
+    },
+    {
+      "type": "def",
+      "term": "Fasadyzm",
+      "text": "Zachowanie wyłącznie zabytkowej fasady budynku przy całkowitej przebudowie tego, co znajduje się za nią."
+    },
+    {
+      "type": "fact",
+      "text": "Sydney Opera House ma dach zbudowany z ponad miliona ceramicznych płytek, choć z daleka wygląda na gładki i biały."
+    },
+    {
+      "type": "def",
+      "term": "Parametryzm",
+      "text": "Współczesny nurt wykorzystujący algorytmy komputerowe do generowania złożonych, płynnych form architektonicznych."
+    },
+    {
+      "type": "def",
+      "term": "Piano nobile",
+      "text": "Reprezentacyjne, główne piętro pałacu lub kamienicy, tradycyjnie wyżej niż parter, z najważniejszymi salami."
+    },
+    {
+      "type": "fact",
+      "text": "Wieżowiec Taipei 101 ma gigantyczną kulę-wahadło o wadze ok. 660 ton, która tłumi drgania budynku od wiatru i trzęsień ziemi."
+    },
+    {
+      "type": "def",
+      "term": "Genius loci",
+      "text": "\"Duch miejsca\" — koncepcja, że każda lokalizacja ma unikalny charakter, który dobra architektura powinna uszanować, nie ignorować."
+    },
+    {
+      "type": "def",
+      "term": "Entasis",
+      "text": "Celowe, lekkie wybrzuszenie trzonu kolumny. Idealnie prosta kolumna wydaje sie oku wklesla, wiec Grecy korygowali ja optycznie."
+    },
+    {
+      "type": "fact",
+      "text": "Partenon nie ma praktycznie zadnej prostej linii. Stylobat jest wypukly, kolumny pochylone do srodka, narozne grubsze - wszystko po to, by z dystansu wygladal idealnie prosto."
+    },
+    {
+      "type": "def",
+      "term": "Oculus Panteonu",
+      "text": "Otwor o srednicy 8,9 m w szczycie kopuly jest niczym nieoslonięty - deszcz wpada do srodka i splywa ukrytymi odplywami w posadzce."
+    },
+    {
+      "type": "fact",
+      "text": "Kopula Panteonu jest coraz lzejsza ku gorze: przy podstawie beton z ciezkiego bazaltu, przy oculusie z pumeksu. Po 1900 latach nadal to najwieksza niezbrojona kopula betonowa swiata."
+    },
+    {
+      "type": "def",
+      "term": "Beton rzymski",
+      "text": "Mieszanka wapna z pucolana, popiolem wulkanicznym, wiazala takze pod woda. Badania z 2023 pokazaly, ze grudki wapna w srodku uruchamiaja samonaprawe pekniec przy kontakcie z woda."
+    },
+    {
+      "type": "def",
+      "term": "Piec punktow architektury nowoczesnej",
+      "text": "Le Corbusier: pilotis, wolny plan, wolna fasada, okno wstegowe, dach-ogrod. Kazdy z nich byl mozliwy dopiero dzieki szkieletowi zelbetowemu."
+    },
+    {
+      "type": "def",
+      "term": "Brise-soleil",
+      "text": "Zewnetrzne lamele lamiace swiatlo sloneczne, zanim dotrze do szyby. Chlodzenie budynku bez zuzycia pradu, wymyslone na dlugo przed klimatyzacja."
+    },
+    {
+      "type": "fact",
+      "text": "Slynne 'form follows function' napisal nie Le Corbusier, tylko Louis Sullivan w 1896 - w tekscie o wiezowcach biurowych."
+    },
+    {
+      "type": "fact",
+      "text": "Mies van der Rohe mowil 'less is more'. Robert Venturi odpowiedzial mu w 1966 zdaniem 'less is a bore' i tym jednym zdaniem otworzyl postmodernizm."
+    },
+    {
+      "type": "def",
+      "term": "Sklepienie krzyzowo-zebrowe",
+      "text": "Ciezar splywa zebrami do czterech punktow zamiast na cala sciane. Dopiero to pozwolilo zastapic mury oknami i stworzyc gotyk."
+    },
+    {
+      "type": "def",
+      "term": "Lancuch odwrocony Gaudiego",
+      "text": "Modele Sagrada Familia budowal ze sznurkow obciazonych woreczkami, zawieszonych do gory nogami. Ksztalt, ktory przyjmuje swobodny lancuch, po odwroceniu jest idealna linia sciskania."
+    },
+    {
+      "type": "def",
+      "term": "Sklepienie katalonskie",
+      "text": "Cienkie warstwy plaskich cegiel klejonych gipsem, bez deskowania. Rafael Guastavino przeniosl te technike do Nowego Jorku - tak zbudowano sklepienia Grand Central."
+    },
+    {
+      "type": "def",
+      "term": "Hiperboloida Szuchowa",
+      "text": "Zakrzywiona powierzchnia zlozona wylacznie z prostych belek. Daje wieze o ogromnej sztywnosci przy minimum stali - stad ksztalt chlodni kominowych."
+    },
+    {
+      "type": "def",
+      "term": "Tensegrity",
+      "text": "Konstrukcja, w ktorej sztywne elementy nigdzie sie nie stykaja - trzyma je siec napietych cieglen. Sprawia wrazenie, ze elementy wisza w powietrzu."
+    },
+    {
+      "type": "fact",
+      "text": "Wiezowiec powstal z dwoch wynalazkow naraz: szkieletu stalowego i hamulca bezpieczenstwa windy Elishy Otisa z 1853. Bez tego drugiego nikt nie chcialby mieszkac wyzej niz na szostym pietrze."
+    },
+    {
+      "type": "fact",
+      "text": "Za pierwszy drapacz chmur uznaje sie Home Insurance Building w Chicago z 1885 - mial zaledwie 42 metry, ale po raz pierwszy sciany nie niosly ciezaru budynku."
+    },
+    {
+      "type": "def",
+      "term": "Enfilada",
+      "text": "Amfilada pokoi z drzwiami w jednej osi, tworzacych perspektywe przez caly palac. Uklad czysto wladzy - pokazywal gosciowi, jak daleko jeszcze do gospodarza."
+    },
+    {
+      "type": "def",
+      "term": "Ha-ha",
+      "text": "Rów z murem oporowym zamiast plotu w ogrodzie angielskim. Z tarasu widac nieprzerwana lake, a bydlo i tak nie wejdzie do ogrodu."
+    },
+    {
+      "type": "def",
+      "term": "Desire path",
+      "text": "Wydeptana sciezka w poprzek trawnika - zapis tego, jak ludzie naprawde chca chodzic. Czesc projektantow celowo czeka rok, zanim wyleje chodniki."
+    },
+    {
+      "type": "def",
+      "term": "Efekt downdraught",
+      "text": "Wiatr uderzajacy w wysoka fasade splywa w dol i przyspiesza u podnozy. Dlatego wokol niektorych wiezowcow praktycznie nie da sie stac."
+    },
+    {
+      "type": "fact",
+      "text": "Pracownie malarskie i muzea maja okna od polnocy. Swiatlo polnocne jest rozproszone i niemal niezmienne przez caly dzien - brak wedrujacej plamy slonca."
+    },
+    {
+      "type": "def",
+      "term": "Zwornik",
+      "text": "Klin w szczycie luku, wkladany na koncu. Dopiero on blokuje wszystkie pozostale kamienie - do tego momentu luk stoi wylacznie na rusztowaniu."
+    },
+    {
+      "type": "def",
+      "term": "Wapno kontra cement",
+      "text": "Stare mury sa paroprzepuszczalne i pracuja. Otynkowanie ich szczelnym cementem zamyka wilgoc w srodku i niszczy mur szybciej, niz zrobilby to sam czas."
+    },
+    {
+      "type": "def",
+      "term": "Mansarda",
+      "text": "Lamany dach spopularyzowany przez Francois Mansarta. Zyskal na przepisach, ktore liczyly wysokosc budynku do gzymsu - poddasze bylo darmowa kondygnacja."
+    },
+    {
+      "type": "def",
+      "term": "Fasada wentylowana",
+      "text": "Okladzina odsunieta od sciany o kilka centymetrow. Szczelina odprowadza wilgoc i cieplo kominowo, przedluzajac zycie muru o dziesieciolecia."
+    },
+    {
+      "type": "fact",
+      "text": "Zloty podzial przypisuje sie Partenonowi i katedrom, ale nie ma na to zadnego zrodla z epoki. Wiekszosc tych proporcji dopasowano do budynkow dopiero w XIX wieku."
+    },
+    {
+      "type": "def",
+      "term": "Trompe-l'oeil",
+      "text": "Malarstwo iluzjonistyczne udajace architekture - kolumny, nisze, niebo na sklepieniu. W barokowych kosciolach polowa 'architektury' bywa plaska sciana."
+    },
+    {
+      "type": "def",
+      "term": "Watek cegiel",
+      "text": "Uklad cegiel nie jest dekoracja - wiaze mur w glab. Po watku krzyzowym czy gotyckim da sie datowac budynek z dokladnoscia do stulecia."
+    },
+    {
+      "type": "fact",
+      "text": "Bauhaus dzialal tylko 14 lat, od 1919 do zamkniecia przez nazistow w 1933. Rozproszeni wykladowcy przeniesli jego jezyk do USA i stad wzial sie caly styl miedzynarodowy."
+    }
   ],
   "angielski": [
-    {"type":"def","term":"Break the ice","text":"Przełamać pierwsze lody, rozluźnić napiętą atmosferę na początku spotkania."},
-    {"type":"def","term":"Bite the bullet","text":"Zebrać się w sobie i zrobić coś trudnego, czego nie da się dłużej unikać."},
-    {"type":"def","term":"Spill the beans","text":"Zdradzić sekret, wygadać się — dosłownie 'rozsypać fasolę'."},
-    {"type":"def","term":"Piece of cake","text":"Coś bardzo łatwego — angielski odpowiednik 'bułki z masłem'."},
-    {"type":"def","term":"Once in a blue moon","text":"Bardzo rzadko, prawie nigdy — nawiązanie do rzadkiej drugiej pełni w tym samym miesiącu."},
-    {"type":"def","term":"Cost an arm and a leg","text":"Być bardzo drogim — 'kosztować majątek'."},
-    {"type":"def","term":"Under the weather","text":"Czuć się niedobrze, być lekko chorym."},
-    {"type":"def","term":"Hit the sack","text":"Iść spać, położyć się do łóżka."},
-    {"type":"def","term":"Let the cat out of the bag","text":"Przypadkiem zdradzić sekret."},
-    {"type":"def","term":"On the ball","text":"Być czujnym, dobrze zorganizowanym i szybko reagującym."},
-    {"type":"fact","text":"Brytyjskie 'Bob's your uncle' znaczy mniej więcej 'i gotowe!' — mówi się tak po opisaniu prostej instrukcji, bez związku z żadnym prawdziwym wujkiem."},
-    {"type":"fact","text":"Amerykańskie 'It's raining cats and dogs' opisuje ulewny deszcz — nikt nie jest do końca pewien, skąd wzięło się to powiedzenie."},
-    {"type":"fact","text":"Szkockie 'wee' znaczy 'mały' i pojawia się wszędzie — 'a wee bit' to po prostu 'troszeczkę'."},
-    {"type":"fact","text":"Australijczycy uwielbiają skracać słowa: 'arvo' to 'afternoon' (popołudnie), a 'servo' to stacja benzynowa."},
-    {"type":"fact","text":"Brytyjskie 'taking the mickey' znaczy żartować sobie z kogoś w niezłośliwy sposób, przedrzeźniać."},
-    {"type":"def","term":"Serendipity","text":"Szczęśliwy, nieoczekiwany zbieg okoliczności prowadzący do czegoś dobrego."},
-    {"type":"def","term":"Ephemeral","text":"Ulotny, trwający bardzo krótko — jak kwiat wiśni."},
-    {"type":"def","term":"Petrichor","text":"Charakterystyczny zapach ziemi po pierwszym deszczu po długiej suszy."},
-    {"type":"def","term":"Ubiquitous","text":"Wszechobecny, spotykany dosłownie wszędzie."},
-    {"type":"def","term":"Mellifluous","text":"O głosie: słodko brzmiący, płynący jak miód."},
-    {"type":"def","term":"Sonder","text":"Uświadomienie sobie, że każdy mijany nieznajomy żyje swoim własnym, równie skomplikowanym życiem."},
-    {"type":"def","term":"Nefarious","text":"Niegodziwy, haniebny — o czyichś złych zamiarach lub czynach."},
-    {"type":"def","term":"Wanderlust","text":"Silna, nieodparta chęć podróżowania i poznawania świata."},
-    {"type":"def","term":"Eloquent","text":"Elokwentny — mówiący płynnie, przekonująco i z klasą."},
-    {"type":"def","term":"Resilience","text":"Odporność psychiczna — zdolność szybkiego podnoszenia się po trudnościach."},
-    {"type":"def","term":"Under the radar","text":"Niezauważony, działający dyskretnie, bez zwracania na siebie uwagi."},
-    {"type":"def","term":"Throw in the towel","text":"Poddać się, zrezygnować — z boksu, gdzie trener rzucał ręcznik, żeby przerwać walkę."},
-    {"type":"def","term":"A dime a dozen","text":"Coś bardzo pospolitego, łatwo dostępnego, niewiele wartego przez powszechność."},
-    {"type":"fact","text":"Kanadyjskie 'eh?' na końcu zdania działa jak polskie 'nie?' — prosi o potwierdzenie, to nie przypadkowy tik."},
-    {"type":"def","term":"Sonorous","text":"O głosie lub dźwięku: głęboki, dźwięczny, rezonujący."},
-    {"type":"def","term":"Quintessential","text":"Będący najbardziej typowym, doskonałym przykładem czegoś."},
-    {"type":"def","term":"Get cold feet","text":"Nagle się wystraszyć i wycofać z planu tuż przed jego realizacją."},
-    {"type":"fact","text":"Irlandzkie 'craic' (wymawiane 'crack') oznacza dobrą zabawę, klimat spotkania — 'the craic was mighty' znaczy, że było świetnie."},
-    {"type":"def","term":"Idiosyncrasy","text":"Cecha charakterystyczna tylko dla danej osoby — jej małe dziwactwo lub nawyk."},
-    {"type":"def","term":"Cut corners","text":"Robić coś pobieżnie, oszczędzając czas lub pieniądze kosztem jakości."}
+    {
+      "type": "def",
+      "term": "Break the ice",
+      "text": "Przełamać pierwsze lody, rozluźnić napiętą atmosferę na początku spotkania."
+    },
+    {
+      "type": "def",
+      "term": "Bite the bullet",
+      "text": "Zebrać się w sobie i zrobić coś trudnego, czego nie da się dłużej unikać."
+    },
+    {
+      "type": "def",
+      "term": "Spill the beans",
+      "text": "Zdradzić sekret, wygadać się — dosłownie 'rozsypać fasolę'."
+    },
+    {
+      "type": "def",
+      "term": "Piece of cake",
+      "text": "Coś bardzo łatwego — angielski odpowiednik 'bułki z masłem'."
+    },
+    {
+      "type": "def",
+      "term": "Once in a blue moon",
+      "text": "Bardzo rzadko, prawie nigdy — nawiązanie do rzadkiej drugiej pełni w tym samym miesiącu."
+    },
+    {
+      "type": "def",
+      "term": "Cost an arm and a leg",
+      "text": "Być bardzo drogim — 'kosztować majątek'."
+    },
+    {
+      "type": "def",
+      "term": "Under the weather",
+      "text": "Czuć się niedobrze, być lekko chorym."
+    },
+    {
+      "type": "def",
+      "term": "Hit the sack",
+      "text": "Iść spać, położyć się do łóżka."
+    },
+    {
+      "type": "def",
+      "term": "Let the cat out of the bag",
+      "text": "Przypadkiem zdradzić sekret."
+    },
+    {
+      "type": "def",
+      "term": "On the ball",
+      "text": "Być czujnym, dobrze zorganizowanym i szybko reagującym."
+    },
+    {
+      "type": "fact",
+      "text": "Brytyjskie 'Bob's your uncle' znaczy mniej więcej 'i gotowe!' — mówi się tak po opisaniu prostej instrukcji, bez związku z żadnym prawdziwym wujkiem."
+    },
+    {
+      "type": "fact",
+      "text": "Amerykańskie 'It's raining cats and dogs' opisuje ulewny deszcz — nikt nie jest do końca pewien, skąd wzięło się to powiedzenie."
+    },
+    {
+      "type": "fact",
+      "text": "Szkockie 'wee' znaczy 'mały' i pojawia się wszędzie — 'a wee bit' to po prostu 'troszeczkę'."
+    },
+    {
+      "type": "fact",
+      "text": "Australijczycy uwielbiają skracać słowa: 'arvo' to 'afternoon' (popołudnie), a 'servo' to stacja benzynowa."
+    },
+    {
+      "type": "fact",
+      "text": "Brytyjskie 'taking the mickey' znaczy żartować sobie z kogoś w niezłośliwy sposób, przedrzeźniać."
+    },
+    {
+      "type": "def",
+      "term": "Serendipity",
+      "text": "Szczęśliwy, nieoczekiwany zbieg okoliczności prowadzący do czegoś dobrego."
+    },
+    {
+      "type": "def",
+      "term": "Ephemeral",
+      "text": "Ulotny, trwający bardzo krótko — jak kwiat wiśni."
+    },
+    {
+      "type": "def",
+      "term": "Petrichor",
+      "text": "Charakterystyczny zapach ziemi po pierwszym deszczu po długiej suszy."
+    },
+    {
+      "type": "def",
+      "term": "Ubiquitous",
+      "text": "Wszechobecny, spotykany dosłownie wszędzie."
+    },
+    {
+      "type": "def",
+      "term": "Mellifluous",
+      "text": "O głosie: słodko brzmiący, płynący jak miód."
+    },
+    {
+      "type": "def",
+      "term": "Sonder",
+      "text": "Uświadomienie sobie, że każdy mijany nieznajomy żyje swoim własnym, równie skomplikowanym życiem."
+    },
+    {
+      "type": "def",
+      "term": "Nefarious",
+      "text": "Niegodziwy, haniebny — o czyichś złych zamiarach lub czynach."
+    },
+    {
+      "type": "def",
+      "term": "Wanderlust",
+      "text": "Silna, nieodparta chęć podróżowania i poznawania świata."
+    },
+    {
+      "type": "def",
+      "term": "Eloquent",
+      "text": "Elokwentny — mówiący płynnie, przekonująco i z klasą."
+    },
+    {
+      "type": "def",
+      "term": "Resilience",
+      "text": "Odporność psychiczna — zdolność szybkiego podnoszenia się po trudnościach."
+    },
+    {
+      "type": "def",
+      "term": "Under the radar",
+      "text": "Niezauważony, działający dyskretnie, bez zwracania na siebie uwagi."
+    },
+    {
+      "type": "def",
+      "term": "Throw in the towel",
+      "text": "Poddać się, zrezygnować — z boksu, gdzie trener rzucał ręcznik, żeby przerwać walkę."
+    },
+    {
+      "type": "def",
+      "term": "A dime a dozen",
+      "text": "Coś bardzo pospolitego, łatwo dostępnego, niewiele wartego przez powszechność."
+    },
+    {
+      "type": "fact",
+      "text": "Kanadyjskie 'eh?' na końcu zdania działa jak polskie 'nie?' — prosi o potwierdzenie, to nie przypadkowy tik."
+    },
+    {
+      "type": "def",
+      "term": "Sonorous",
+      "text": "O głosie lub dźwięku: głęboki, dźwięczny, rezonujący."
+    },
+    {
+      "type": "def",
+      "term": "Quintessential",
+      "text": "Będący najbardziej typowym, doskonałym przykładem czegoś."
+    },
+    {
+      "type": "def",
+      "term": "Get cold feet",
+      "text": "Nagle się wystraszyć i wycofać z planu tuż przed jego realizacją."
+    },
+    {
+      "type": "fact",
+      "text": "Irlandzkie 'craic' (wymawiane 'crack') oznacza dobrą zabawę, klimat spotkania — 'the craic was mighty' znaczy, że było świetnie."
+    },
+    {
+      "type": "def",
+      "term": "Idiosyncrasy",
+      "text": "Cecha charakterystyczna tylko dla danej osoby — jej małe dziwactwo lub nawyk."
+    },
+    {
+      "type": "def",
+      "term": "Cut corners",
+      "text": "Robić coś pobieżnie, oszczędzając czas lub pieniądze kosztem jakości."
+    },
+    {
+      "type": "def",
+      "term": "Steal someone's thunder",
+      "text": "Ukrasc czyjs pomysl i zebrac za niego brawa. Dramaturg John Dennis wymyslil w 1709 maszyne do teatralnych grzmotow; sztuke zdjeto, a maszyne uzyto w innej - 'ukradli moj grzmot'."
+    },
+    {
+      "type": "def",
+      "term": "Mad as a hatter",
+      "text": "Kompletnie szalony. Kapelusznicy obrabiali filc rteciowymi zwiazkami, co realnie uszkadzalo uklad nerwowy - szalony kapelusznik nie byl przenosnia."
+    },
+    {
+      "type": "def",
+      "term": "Saved by the bell",
+      "text": "Uratowany w ostatniej chwili - z boksu, gdzie gong konczy runde. Popularna wersja o dzwonkach przy trumnach jest pozniejsza wymyslona etymologia."
+    },
+    {
+      "type": "def",
+      "term": "Rule of thumb",
+      "text": "Zasada przyblizona, na oko. Tlumaczenie o prawie zezwalajacym bic zone kijem grubosci kciuka jest miejska legenda bez potwierdzenia w zrodlach."
+    },
+    {
+      "type": "def",
+      "term": "Bark up the wrong tree",
+      "text": "Szukac w zupelnie zlym miejscu. Z polowania z psami, ktore szczekaly pod drzewem, na ktore zwierzyna wcale nie weszla."
+    },
+    {
+      "type": "def",
+      "term": "Burn the midnight oil",
+      "text": "Pracowac do poznej nocy. Z czasow lamp oliwnych - palenie oleju po polnocy bylo realnym, mierzalnym kosztem."
+    },
+    {
+      "type": "def",
+      "term": "The whole nine yards",
+      "text": "Wszystko, co sie da. Pochodzenie jest do dzis nierozstrzygniete: tasma amunicji, material na garnitur, pojemnosc betoniarki - zadna wersja nie ma dowodu."
+    },
+    {
+      "type": "def",
+      "term": "Break a leg",
+      "text": "Powodzenia w teatrze. Zyczenie szczescia wprost uchodzi za pechowe, wiec zyczy sie odwrotnosci."
+    },
+    {
+      "type": "def",
+      "term": "Long time no see",
+      "text": "Kawal czasu sie nie widzielismy. Kalka z chinskiego lub z angielszczyzny rdzennych Amerykanow, ktora weszla do standardu mimo lamanej gramatyki."
+    },
+    {
+      "type": "def",
+      "term": "Gerrymandering",
+      "text": "Krojenie okregow wyborczych pod wynik. Od gubernatora Elbridge'a Gerry'ego z 1812 - jego okreg mial ksztalt salamandry, stad Gerry + salamander."
+    },
+    {
+      "type": "def",
+      "term": "Boycott",
+      "text": "Od nazwiska Charlesa Boycotta, zarzadcy ziemskiego w Irlandii, ktoremu w 1880 caly okoliczny swiat odmowil wspolpracy. Nazwisko stalo sie slowem w kilka miesiecy."
+    },
+    {
+      "type": "def",
+      "term": "Sandwich",
+      "text": "Od Johna Montagu, czwartego hrabiego Sandwich, ktory kazal podawac sobie mieso miedzy kromkami, by nie przerywac gry w karty."
+    },
+    {
+      "type": "def",
+      "term": "Nickname",
+      "text": "Kiedys 'an eke name', czyli 'dodatkowe imie'. Granica miedzy slowami przesunela sie w mowie i zostalo 'a nickname'. To samo stalo sie z 'a napron', ktory zmienil sie w 'an apron'."
+    },
+    {
+      "type": "def",
+      "term": "OK",
+      "text": "Najlepiej udokumentowana wersja: bostonski zart prasowy z 1839, skrot od zle zapisanego 'oll korrect'. Utrwalil go sztab wyborczy Martina Van Burena, zwanego Old Kinderhook."
+    },
+    {
+      "type": "def",
+      "term": "Spam",
+      "text": "Slowo na niechciane wiadomosci wzielo sie ze skeczu Monty Pythona, w ktorym chor Wikingow zagluszal rozmowe spiewem o mielonce."
+    },
+    {
+      "type": "def",
+      "term": "Defenestration",
+      "text": "Wyrzucenie kogos przez okno - ma wlasne slowo, bo dwa razy zmienilo bieg historii Czech. Druga defenestracja praska w 1618 zaczela wojne trzydziestoletnia."
+    },
+    {
+      "type": "def",
+      "term": "Quixotic",
+      "text": "Szlachetnie nierealistyczny, walczacy z wiatrakami. Od Don Kichota, choc po angielsku wymawia sie to zupelnie inaczej niz nazwisko bohatera."
+    },
+    {
+      "type": "def",
+      "term": "Tsundoku",
+      "text": "Japonskie slowo przyjete przez angielski: kupowanie ksiazek i odkladanie ich nieprzeczytanych na stos."
+    },
+    {
+      "type": "def",
+      "term": "Contronym",
+      "text": "Slowo znaczace samo swoje przeciwienstwo. 'Cleave' to rozlupac i przylgnac, 'sanction' to zezwolic i ukarac, 'dust' to odkurzyc i posypac."
+    },
+    {
+      "type": "def",
+      "term": "The exception that proves the rule",
+      "text": "Zdanie brzmi bez sensu, dopoki nie wie sie, ze 'prove' znaczylo tu 'testowac', jak w 'proving ground'. Wyjatek nie potwierdza reguly, tylko ja sprawdza."
+    },
+    {
+      "type": "def",
+      "term": "Literally",
+      "text": "Od XVIII wieku uzywane tez jako wzmocnienie, wbrew wlasnemu znaczeniu. Robili to Dickens, Joyce i Twain - to nie jest wynalazek internetu."
+    },
+    {
+      "type": "def",
+      "term": "Ghosting",
+      "text": "Zerwanie kontaktu bez slowa wyjasnienia, przez samo zniknięcie. Slowo weszlo do slownikow dopiero po 2015, choc zjawisko jest stare jak ludzie."
+    },
+    {
+      "type": "def",
+      "term": "Bucket list",
+      "text": "Lista rzeczy do zrobienia przed smiercia, od 'kick the bucket' - kopnac w kalendarz. Wyrazenie spopularyzowal film z 2007."
+    },
+    {
+      "type": "def",
+      "term": "Butterflies in one's stomach",
+      "text": "Motyle w brzuchu - realne odczucie, bo stres przekierowuje krew z ukladu pokarmowego do miesni. To fizjologia, nie poezja."
+    },
+    {
+      "type": "def",
+      "term": "Raining cats and dogs",
+      "text": "Leje jak z cebra. Zadna z etymologii nie jest potwierdzona - najstarsze uzycie pochodzi od Jonathana Swifta, ktory pisal o zawartosci rynsztokow po ulewie."
+    },
+    {
+      "type": "def",
+      "term": "Skeleton crew",
+      "text": "Minimalna obsada, tylko tyle osob, ile trzeba, zeby cos w ogole dzialalo. Uzywane o zmianach swiatecznych i o statkach."
+    }
   ],
   "psychologia": [
-    {"type":"def","term":"Efekt Barnuma","text":"Tendencja do uznawania ogólnikowych, mglistych opisów osobowości (jak w horoskopach) za trafne i osobiste — fundament technik 'czytania w myślach' u mentalistów."},
-    {"type":"def","term":"Cold reading","text":"Technika mentalistów polegająca na wyciąganiu trafnych wniosków o osobie z jej mowy ciała, ubioru i reakcji, a nie z 'magii' — działa dzięki obserwacji, nie telepatii."},
-    {"type":"fact","text":"Trudno nam trafnie przewidzieć jak zachowamy się pod wpływem silnych emocji (głodu, złości, pożądania), gdy sami jesteśmy w spokojnym stanie — to tzw. hot-cold empathy gap."},
-    {"type":"def","term":"Reguła wzajemności","text":"Głęboko zakorzeniona potrzeba odwdzięczenia się za otrzymaną przysługę — jedna z najskuteczniejszych, najczęściej wykorzystywanych dźwigni wpływu społecznego."},
-    {"type":"fact","text":"Mentaliści często proszą widza, żeby pomyślał o pytaniu, a odczytują nie odpowiedź, tylko mimowolne mikroreakcje przy czytaniu pytania na głos."},
-    {"type":"def","term":"Efekt aureoli","text":"Skłonność do przypisywania atrakcyjnym lub sympatycznym osobom także innych pozytywnych cech (inteligencji, uczciwości) bez żadnych dowodów."},
-    {"type":"fact","text":"Niedokończone zadania pamiętamy znacznie lepiej niż zakończone — to efekt Zeigarnik, mózg 'trzyma otwartą pętlę', dopóki sprawa nie zostanie zamknięta."},
-    {"type":"def","term":"Implikatura w cold readingu","text":"Mentaliści formułują zdania tak niejednoznacznie, że to słuchacz nieświadomie dopowiada konkretne znaczenie, a potem pamięta je jako 'trafione'."},
-    {"type":"fact","text":"Ludzie systematycznie przeceniają jak dobrze potrafią wykryć kłamstwo u innych — badania pokazują trafność ledwo powyżej rzutu monetą, nawet u profesjonalistów."},
-    {"type":"def","term":"Kotwiczenie","text":"Pierwsza usłyszana liczba, nawet losowa, nieświadomie wpływa na wszystkie kolejne szacunki, które robimy — szeroko wykorzystywane w negocjacjach cenowych."},
-    {"type":"fact","text":"Krótkie milczenie po ofercie drugiej strony w negocjacjach zwiększa szansę, że sami zaproponują coś lepszego, żeby wypełnić niezręczną ciszę."},
-    {"type":"def","term":"Samoafirmacja jako obrona","text":"Przypomnienie sobie własnych wartości przed trudną rozmową realnie zmniejsza podatność na techniki wpływu społecznego — potwierdzone eksperymentalnie."},
-    {"type":"def","term":"Efekt Dunninga-Krugera","text":"Osoby o niskich kompetencjach w danej dziedzinie systematycznie przeceniają swoje umiejętności, bo brakuje im wiedzy, by rozpoznać własne braki."},
-    {"type":"fact","text":"Pisanie dziennika wdzięczności przez zaledwie kilka minut dziennie daje mierzalną poprawę nastroju w badaniach — jeden z nielicznych efektów self-improvement z solidnym poparciem naukowym."}
+    {
+      "type": "def",
+      "term": "Efekt Barnuma",
+      "text": "Tendencja do uznawania ogólnikowych, mglistych opisów osobowości (jak w horoskopach) za trafne i osobiste — fundament technik 'czytania w myślach' u mentalistów."
+    },
+    {
+      "type": "def",
+      "term": "Cold reading",
+      "text": "Technika mentalistów polegająca na wyciąganiu trafnych wniosków o osobie z jej mowy ciała, ubioru i reakcji, a nie z 'magii' — działa dzięki obserwacji, nie telepatii."
+    },
+    {
+      "type": "fact",
+      "text": "Trudno nam trafnie przewidzieć jak zachowamy się pod wpływem silnych emocji (głodu, złości, pożądania), gdy sami jesteśmy w spokojnym stanie — to tzw. hot-cold empathy gap."
+    },
+    {
+      "type": "def",
+      "term": "Reguła wzajemności",
+      "text": "Głęboko zakorzeniona potrzeba odwdzięczenia się za otrzymaną przysługę — jedna z najskuteczniejszych, najczęściej wykorzystywanych dźwigni wpływu społecznego."
+    },
+    {
+      "type": "fact",
+      "text": "Mentaliści często proszą widza, żeby pomyślał o pytaniu, a odczytują nie odpowiedź, tylko mimowolne mikroreakcje przy czytaniu pytania na głos."
+    },
+    {
+      "type": "def",
+      "term": "Efekt aureoli",
+      "text": "Skłonność do przypisywania atrakcyjnym lub sympatycznym osobom także innych pozytywnych cech (inteligencji, uczciwości) bez żadnych dowodów."
+    },
+    {
+      "type": "fact",
+      "text": "Niedokończone zadania pamiętamy znacznie lepiej niż zakończone — to efekt Zeigarnik, mózg 'trzyma otwartą pętlę', dopóki sprawa nie zostanie zamknięta."
+    },
+    {
+      "type": "def",
+      "term": "Implikatura w cold readingu",
+      "text": "Mentaliści formułują zdania tak niejednoznacznie, że to słuchacz nieświadomie dopowiada konkretne znaczenie, a potem pamięta je jako 'trafione'."
+    },
+    {
+      "type": "fact",
+      "text": "Ludzie systematycznie przeceniają jak dobrze potrafią wykryć kłamstwo u innych — badania pokazują trafność ledwo powyżej rzutu monetą, nawet u profesjonalistów."
+    },
+    {
+      "type": "def",
+      "term": "Kotwiczenie",
+      "text": "Pierwsza usłyszana liczba, nawet losowa, nieświadomie wpływa na wszystkie kolejne szacunki, które robimy — szeroko wykorzystywane w negocjacjach cenowych."
+    },
+    {
+      "type": "fact",
+      "text": "Krótkie milczenie po ofercie drugiej strony w negocjacjach zwiększa szansę, że sami zaproponują coś lepszego, żeby wypełnić niezręczną ciszę."
+    },
+    {
+      "type": "def",
+      "term": "Samoafirmacja jako obrona",
+      "text": "Przypomnienie sobie własnych wartości przed trudną rozmową realnie zmniejsza podatność na techniki wpływu społecznego — potwierdzone eksperymentalnie."
+    },
+    {
+      "type": "def",
+      "term": "Efekt Dunninga-Krugera",
+      "text": "Osoby o niskich kompetencjach w danej dziedzinie systematycznie przeceniają swoje umiejętności, bo brakuje im wiedzy, by rozpoznać własne braki."
+    },
+    {
+      "type": "fact",
+      "text": "Pisanie dziennika wdzięczności przez zaledwie kilka minut dziennie daje mierzalną poprawę nastroju w badaniach — jeden z nielicznych efektów self-improvement z solidnym poparciem naukowym."
+    },
+    {
+      "type": "def",
+      "term": "Efekt Zeigarnik",
+      "text": "Zadania przerwane pamietamy lepiej niz zakonczone. Kelnerzy pamietaja zamowienie do momentu zaplaty, po czym natychmiast je zapominaja."
+    },
+    {
+      "type": "def",
+      "term": "Efekt reflektora",
+      "text": "Przeceniamy, jak bardzo inni zauwazaja nasz wyglad i bledy. Badani w kompromitujacej koszulce sadzili, ze zapamieta ja dwa razy wiecej osob, niz zapamietalo naprawde."
+    },
+    {
+      "type": "def",
+      "term": "Iluzja przejrzystosci",
+      "text": "Wydaje nam sie, ze nasze zdenerwowanie jest widoczne na zewnatrz. W rzeczywistosci obserwatorzy prawie go nie wychwytuja - stad panika przed wystapieniem jest gorsza niz jej skutki."
+    },
+    {
+      "type": "def",
+      "term": "Efekt Pigmaliona",
+      "text": "Oczekiwania nauczyciela realnie zmieniaja wyniki ucznia. Rosenthal wskazal losowe dzieci jako 'rokujace' - i po roku faktycznie wyprzedzily reszte."
+    },
+    {
+      "type": "def",
+      "term": "Efekt czystej ekspozycji",
+      "text": "Samo powtarzane zetkniecie z bodzcem zwieksza sympatie do niego, nawet gdy nie pamietamy, ze go widzielismy. Na tym stoi cala reklama wizerunkowa."
+    },
+    {
+      "type": "def",
+      "term": "Efekt IKEA",
+      "text": "Wyzej cenimy to, co zlozylismy wlasnymi rekami. Wlasny wklad pracy zostaje wliczony w postrzegana wartosc przedmiotu."
+    },
+    {
+      "type": "def",
+      "term": "Efekt Benjamina Franklina",
+      "text": "Kto wyswiadczyl nam przysluge, polubi nas bardziej niz ten, komu my ja wyswiadczylismy. Umysl dorabia wyjasnienie: skoro mu pomoglem, widocznie go lubie."
+    },
+    {
+      "type": "def",
+      "term": "Regula szczytu i konca",
+      "text": "Cale doswiadczenie oceniamy po najintensywniejszym momencie i po koncowce, prawie ignorujac czas trwania. Dlatego dluzszy zabieg z lagodnym zakonczeniem pamieta sie lepiej niz krotszy urwany w bolu."
+    },
+    {
+      "type": "def",
+      "term": "Slepota pozauwagowa",
+      "text": "Przy skupieniu na zadaniu nie widzimy rzeczy zupelnie oczywistych. W slynnym badaniu polowa liczacych podania nie zauwazyla czlowieka w stroju goryla przechodzacego przez srodek kadru."
+    },
+    {
+      "type": "def",
+      "term": "Prawo Yerkesa-Dodsona",
+      "text": "Wydajnosc rosnie z pobudzeniem tylko do pewnego punktu, potem spada. Przy trudnych zadaniach ten punkt jest duzo nizej - dlatego stres pomaga w prostych, a rujnuje zlozone."
+    },
+    {
+      "type": "def",
+      "term": "Dysonans poznawczy",
+      "text": "Sprzecznosc miedzy postepowaniem a przekonaniem jest tak nieprzyjemna, ze zwykle zmieniamy przekonanie, nie postepowanie."
+    },
+    {
+      "type": "def",
+      "term": "Efekt nadmiernego uzasadnienia",
+      "text": "Placenie za czynnosc wykonywana z przyjemnosci potrafi te przyjemnosc zabic. Dzieci nagradzane za rysowanie rysowaly potem mniej niz te, ktore nie dostawaly nic."
+    },
+    {
+      "type": "def",
+      "term": "Wyuczona bezradnosc - wersja poprawiona",
+      "text": "Seligman po 50 latach odwrocil wlasna teze: bezradnosc jest reakcja domyslna, a to poczucie kontroli jest uczone. Nie uczymy sie poddawac - uczymy sie, ze mozemy cos zrobic."
+    },
+    {
+      "type": "def",
+      "term": "Adaptacja hedoniczna",
+      "text": "Do poprawy warunkow przyzwyczajamy sie szybciej, niz sie spodziewamy, i wracamy do wyjsciowego poziomu zadowolenia. Stad awans cieszy krocej, niz zakladalismy."
+    },
+    {
+      "type": "def",
+      "term": "Zakotwiczenie",
+      "text": "Pierwsza uslyszana liczba przesuwa wszystkie pozniejsze oceny, nawet gdy jest losowa. Dziala takze na ekspertow swiadomych tego efektu."
+    },
+    {
+      "type": "def",
+      "term": "Heurystyka dostepnosci",
+      "text": "Za bardziej prawdopodobne uznajemy to, co latwiej przychodzi na mysl. Dlatego boimy sie katastrof lotniczych bardziej niz chorob serca."
+    },
+    {
+      "type": "def",
+      "term": "Efekt potkniecia (pratfall)",
+      "text": "Drobna wpadka zwieksza sympatie - ale tylko wobec osoby postrzeganej jako kompetentna. Wobec przecietnej dziala odwrotnie i obniza ocene."
+    },
+    {
+      "type": "def",
+      "term": "Bledna atrybucja pobudzenia",
+      "text": "Mezczyzni zaczepieni na chwiejacym sie moscie czesciej dzwonili potem do ankieterki niz ci na stabilnym. Serce bilo od wysokosci, a umysl przypisal to atrakcyjnosci."
+    },
+    {
+      "type": "def",
+      "term": "Pamiec rekonstrukcyjna",
+      "text": "Wspomnienie nie jest odtwarzane, tylko skladane na nowo przy kazdym przypomnieniu. Elizabeth Loftus pokazala, ze sama forma pytania potrafi trwale zmienic to, co swiadek 'widzial'."
+    },
+    {
+      "type": "def",
+      "term": "Efekt Mandeli",
+      "text": "Zbiorowe falszywe wspomnienie tego samego szczegolu. Powstaje z tych samych mechanizmow co bledy indywidualne, wzmocnionych powtarzaniem w grupie."
+    },
+    {
+      "type": "def",
+      "term": "Efekt Mozarta",
+      "text": "Teza, ze sluchanie Mozarta podnosi inteligencje dzieci, nie potwierdzila sie w replikacjach. Oryginalne badanie dotyczylo doroslych, jednego zadania przestrzennego i efektu trwajacego kilkanascie minut."
+    },
+    {
+      "type": "def",
+      "term": "Paradoks wyboru",
+      "text": "Za duzo opcji obniza zadowolenie z decyzji i czesto blokuje ja calkiem. Przy 24 rodzajach dzemu kupowalo dziesieciokrotnie mniej osob niz przy szesciu."
+    },
+    {
+      "type": "def",
+      "term": "Efekt kontrastu",
+      "text": "Ta sama rzecz wydaje sie inna zaleznie od tego, co bylo przed nia. Posrednicy pokazuja najpierw gorsza oferte nie po to, by ja sprzedac, ale by nastepna wygladala lepiej."
+    },
+    {
+      "type": "def",
+      "term": "Efekt Westermarcka",
+      "text": "Osoby wychowywane razem we wczesnym dziecinstwie nie czuja wobec siebie pociagu seksualnego, niezaleznie od pokrewienstwa. Biologiczny mechanizm przeciw kazirodztwu."
+    },
+    {
+      "type": "def",
+      "term": "Efekt Streisand",
+      "text": "Proba ukrycia informacji zwieksza jej zasieg. Nazwa od pozwu Barbry Streisand o zdjecie lotnicze jej domu, ktore przed pozwem pobrano szesc razy."
+    },
+    {
+      "type": "def",
+      "term": "Efekt koktajlowy",
+      "text": "W gwarze slyszymy wlasne imie wypowiedziane w innej rozmowie. Uwaga nieswiadomie filtruje caly strumien dzwieku, nie tylko ten, ktorego sluchamy."
+    },
+    {
+      "type": "def",
+      "term": "Slepota na zmiany",
+      "text": "Duze zmiany w scenie umykaja, jesli nastapia w momencie przerwy w patrzeniu. Badani nie zauwazali, ze rozmowca zostal podmieniony na inna osobe."
+    },
+    {
+      "type": "def",
+      "term": "Efekt pierwszenstwa i swiezosci",
+      "text": "Z listy najlepiej pamietamy poczatek i koniec, srodek wypada. Dotyczy tak samo kandydatow na rozmowach, jak pozycji w prezentacji."
+    },
+    {
+      "type": "def",
+      "term": "Blad potwierdzenia",
+      "text": "Szukamy informacji zgodnych z tym, w co juz wierzymy, a sprzeczne oceniamy surowiej. To nie jest wada charakteru - dziala tym mocniej, im inteligentniejsza osoba, bo lepiej uzasadnia."
+    }
   ],
   "dark_psychology": [
-    {"type":"def","term":"Ciemna triada","text":"Trzy powiązane cechy osobowości: narcyzm, makiawelizm i psychopatia — łączy je brak empatii i skłonność do instrumentalnego traktowania innych."},
-    {"type":"fact","text":"Manipulatorzy często zaczynają od drobnej, niegroźnej prośby, żeby potem łatwiej wymóc dużo większą — to technika 'foot in the door', opisana w badaniach już w latach 60."},
-    {"type":"def","term":"Gaslighting","text":"Forma manipulacji polegająca na systematycznym podważaniu czyjejś percepcji rzeczywistości, aż zacznie wątpić we własną pamięć i osąd."},
-    {"type":"fact","text":"Osoby o wysokim makiawelizmie lepiej niż przeciętnie rozpoznają emocje innych — ale wykorzystują tę wiedzę instrumentalnie, nie empatycznie."},
-    {"type":"def","term":"DARVO","text":"Taktyka manipulacyjna: Zaprzecz, Atakuj, Odwróć role Sprawcy i Ofiary — częsta reakcja osób konfrontowanych z zarzutem złego zachowania."},
-    {"type":"fact","text":"W klasycznych badaniach nad posłuszeństwem (Milgram) silniejszym czynnikiem niż sam 'rozkaz' była bliska fizyczna obecność osoby wydającej polecenie."},
-    {"type":"def","term":"Love bombing","text":"Zalewanie nowej osoby nadmierną uwagą, komplementami i prezentami na starcie relacji — częsta wczesna taktyka osób o cechach narcystycznych, budująca szybkie przywiązanie."},
-    {"type":"def","term":"Triangulacja","text":"Manipulacyjne wciąganie trzeciej osoby (byłego partnera, wspólnego znajomego) do konfliktu, żeby wywołać zazdrość lub niepewność u ofiary."},
-    {"type":"fact","text":"Osoby psychopatyczne w badaniach neuroobrazowania wykazują słabszą aktywność ciała migdałowatego przy widoku cudzego cierpienia — co koreluje ze słabszą reakcją empatyczną."},
-    {"type":"def","term":"Dewaluacja","text":"Faza po 'love bombing' w cyklu manipulacji narcystycznej, gdy manipulator nagle zaczyna krytykować i deprecjonować ofiarę, żeby zachwiać jej poczuciem wartości."},
-    {"type":"def","term":"Word salad","text":"Technika manipulacyjna polegająca na chaotycznym, pozornie logicznym gadaniu, które ma zdezorientować rozmówcę i uniemożliwić mu utrzymanie linii argumentacji."},
-    {"type":"fact","text":"Prawdziwi psychopaci w populacji ogólnej to szacunkowo ok. 1%, ale wśród kadry zarządzającej wyższego szczebla odsetek bywa w badaniach kilkukrotnie wyższy."},
-    {"type":"def","term":"Negging","text":"Subtelne, dwuznaczne komplementy z ukrytą krytyką, mające obniżyć pewność siebie odbiorcy i zwiększyć jego potrzebę aprobaty ze strony manipulatora."},
-    {"type":"def","term":"Trauma bonding","text":"Silna, paradoksalna więź emocjonalna, która potrafi powstać między ofiarą a sprawcą przemocy, wzmacniana naprzemiennością okrucieństwa i czułości."},
-    {"type":"fact","text":"Narcyzi w badaniach dobrze wypadają w pierwszym wrażeniu (charyzma, pewność siebie) — ich prawdziwe cechy stają się widoczne dla otoczenia dopiero po tygodniach."},
-    {"type":"def","term":"Projekcja jako broń","text":"Manipulator oskarża ofiarę dokładnie o to, co sam robi (np. o kłamstwo czy zdradę), żeby wyprzedzić i zdyskredytować przyszłe zarzuty wobec siebie."},
-    {"type":"def","term":"Szara skała (grey rocking)","text":"Technika obronna polegająca na celowym byciu maksymalnie nudnym i mało reaktywnym wobec manipulatora, żeby przestał czerpać satysfakcję z wywoływania reakcji."},
-    {"type":"fact","text":"Manipulatorzy często testują granice drobnymi, 'niewinnymi' naruszeniami na samym początku znajomości — reakcja na te pierwsze sygnały bywa dla nich informacją, jak daleko można się posunąć."},
-    {"type":"def","term":"Flying monkeys","text":"Osoby trzecie, czasem nieświadomie, wykorzystywane przez manipulatora do przekazywania nacisku lub dezinformacji ofierze w jego imieniu."},
-    {"type":"fact","text":"Poczucie winy bez konkretnej przyczyny po rozmowie to jeden z częściej opisywanych, subtelnych sygnałów ostrzegawczych wskazywanych w literaturze o relacjach z osobami manipulacyjnymi."}
+    {
+      "type": "def",
+      "term": "Ciemna triada",
+      "text": "Trzy powiązane cechy osobowości: narcyzm, makiawelizm i psychopatia — łączy je brak empatii i skłonność do instrumentalnego traktowania innych."
+    },
+    {
+      "type": "fact",
+      "text": "Manipulatorzy często zaczynają od drobnej, niegroźnej prośby, żeby potem łatwiej wymóc dużo większą — to technika 'foot in the door', opisana w badaniach już w latach 60."
+    },
+    {
+      "type": "def",
+      "term": "Gaslighting",
+      "text": "Forma manipulacji polegająca na systematycznym podważaniu czyjejś percepcji rzeczywistości, aż zacznie wątpić we własną pamięć i osąd."
+    },
+    {
+      "type": "fact",
+      "text": "Osoby o wysokim makiawelizmie lepiej niż przeciętnie rozpoznają emocje innych — ale wykorzystują tę wiedzę instrumentalnie, nie empatycznie."
+    },
+    {
+      "type": "def",
+      "term": "DARVO",
+      "text": "Taktyka manipulacyjna: Zaprzecz, Atakuj, Odwróć role Sprawcy i Ofiary — częsta reakcja osób konfrontowanych z zarzutem złego zachowania."
+    },
+    {
+      "type": "fact",
+      "text": "W klasycznych badaniach nad posłuszeństwem (Milgram) silniejszym czynnikiem niż sam 'rozkaz' była bliska fizyczna obecność osoby wydającej polecenie."
+    },
+    {
+      "type": "def",
+      "term": "Love bombing",
+      "text": "Zalewanie nowej osoby nadmierną uwagą, komplementami i prezentami na starcie relacji — częsta wczesna taktyka osób o cechach narcystycznych, budująca szybkie przywiązanie."
+    },
+    {
+      "type": "def",
+      "term": "Triangulacja",
+      "text": "Manipulacyjne wciąganie trzeciej osoby (byłego partnera, wspólnego znajomego) do konfliktu, żeby wywołać zazdrość lub niepewność u ofiary."
+    },
+    {
+      "type": "fact",
+      "text": "Osoby psychopatyczne w badaniach neuroobrazowania wykazują słabszą aktywność ciała migdałowatego przy widoku cudzego cierpienia — co koreluje ze słabszą reakcją empatyczną."
+    },
+    {
+      "type": "def",
+      "term": "Dewaluacja",
+      "text": "Faza po 'love bombing' w cyklu manipulacji narcystycznej, gdy manipulator nagle zaczyna krytykować i deprecjonować ofiarę, żeby zachwiać jej poczuciem wartości."
+    },
+    {
+      "type": "def",
+      "term": "Word salad",
+      "text": "Technika manipulacyjna polegająca na chaotycznym, pozornie logicznym gadaniu, które ma zdezorientować rozmówcę i uniemożliwić mu utrzymanie linii argumentacji."
+    },
+    {
+      "type": "fact",
+      "text": "Prawdziwi psychopaci w populacji ogólnej to szacunkowo ok. 1%, ale wśród kadry zarządzającej wyższego szczebla odsetek bywa w badaniach kilkukrotnie wyższy."
+    },
+    {
+      "type": "def",
+      "term": "Negging",
+      "text": "Subtelne, dwuznaczne komplementy z ukrytą krytyką, mające obniżyć pewność siebie odbiorcy i zwiększyć jego potrzebę aprobaty ze strony manipulatora."
+    },
+    {
+      "type": "def",
+      "term": "Trauma bonding",
+      "text": "Silna, paradoksalna więź emocjonalna, która potrafi powstać między ofiarą a sprawcą przemocy, wzmacniana naprzemiennością okrucieństwa i czułości."
+    },
+    {
+      "type": "fact",
+      "text": "Narcyzi w badaniach dobrze wypadają w pierwszym wrażeniu (charyzma, pewność siebie) — ich prawdziwe cechy stają się widoczne dla otoczenia dopiero po tygodniach."
+    },
+    {
+      "type": "def",
+      "term": "Projekcja jako broń",
+      "text": "Manipulator oskarża ofiarę dokładnie o to, co sam robi (np. o kłamstwo czy zdradę), żeby wyprzedzić i zdyskredytować przyszłe zarzuty wobec siebie."
+    },
+    {
+      "type": "def",
+      "term": "Szara skała (grey rocking)",
+      "text": "Technika obronna polegająca na celowym byciu maksymalnie nudnym i mało reaktywnym wobec manipulatora, żeby przestał czerpać satysfakcję z wywoływania reakcji."
+    },
+    {
+      "type": "fact",
+      "text": "Manipulatorzy często testują granice drobnymi, 'niewinnymi' naruszeniami na samym początku znajomości — reakcja na te pierwsze sygnały bywa dla nich informacją, jak daleko można się posunąć."
+    },
+    {
+      "type": "def",
+      "term": "Flying monkeys",
+      "text": "Osoby trzecie, czasem nieświadomie, wykorzystywane przez manipulatora do przekazywania nacisku lub dezinformacji ofierze w jego imieniu."
+    },
+    {
+      "type": "fact",
+      "text": "Poczucie winy bez konkretnej przyczyny po rozmowie to jeden z częściej opisywanych, subtelnych sygnałów ostrzegawczych wskazywanych w literaturze o relacjach z osobami manipulacyjnymi."
+    },
+    {
+      "type": "def",
+      "term": "Wzmocnienie przerywane",
+      "text": "Nieregularne nagradzanie uzaleznia silniej niz nagradzanie stale - tak dzialaja automaty do gry. W relacji oznacza to, ze nieprzewidywalna czulosc wiaze mocniej niz staly dobry stosunek."
+    },
+    {
+      "type": "def",
+      "term": "Hoovering",
+      "text": "Proba wciagniecia z powrotem osoby, ktora sie oddalila - nagly telefon, kryzys, wspomnienie dobrych czasow. Nazwa od odkurzacza."
+    },
+    {
+      "type": "def",
+      "term": "Breadcrumbing",
+      "text": "Dawkowanie minimalnych sygnalow zainteresowania, tylko tyle, by ktos nie odszedl. Nigdy nie prowadzi do niczego konkretnego, bo nie taki jest cel."
+    },
+    {
+      "type": "def",
+      "term": "Future faking",
+      "text": "Obietnice wspolnej przyszlosci skladane po to, by uzyskac cos teraz. Wspolne mieszkanie, slub, wyjazd - plany znikaja, gdy tylko przestana byc potrzebne."
+    },
+    {
+      "type": "def",
+      "term": "Stonewalling",
+      "text": "Calkowite wycofanie sie z rozmowy jako kara: brak odpowiedzi, brak reakcji, sciana. Gottman zaliczyl to do czterech zachowan najsilniej zapowiadajacych rozpad zwiazku."
+    },
+    {
+      "type": "def",
+      "term": "Slowna salatka",
+      "text": "Zalew slow bez logicznego zwiazku, sprzeczne watki, zmiana tematu. Cel jest prosty: zmeczyc rozmowce tak, by zrezygnowal z pierwotnego pytania."
+    },
+    {
+      "type": "def",
+      "term": "Przesuwanie bramki",
+      "text": "Za kazdym razem, gdy warunek zostanie spelniony, pojawia sie nowy. Osoba starajaca sie sprostac nie moze wygrac, bo wygrana nie byla przewidziana."
+    },
+    {
+      "type": "def",
+      "term": "FOG",
+      "text": "Fear, Obligation, Guilt - strach, poczucie obowiazku i wina. Trzy dzwignie, na ktorych opiera sie wiekszosc dlugotrwalej manipulacji w rodzinie i zwiazku."
+    },
+    {
+      "type": "def",
+      "term": "Latajace malpy",
+      "text": "Osoby trzecie wciagniete w konflikt i przekonane, ze przekazuja tylko wiadomosci lub 'chca dobrze'. Przenosza presje, nie wiedzac, ze sa narzedziem."
+    },
+    {
+      "type": "def",
+      "term": "Stopa w drzwiach",
+      "text": "Najpierw prosba drobna, latwa do przyjecia, potem duza. Kto sie zgodzil raz, zgadza sie czesciej, bo broni spojnosci wlasnego obrazu."
+    },
+    {
+      "type": "def",
+      "term": "Drzwiami w twarz",
+      "text": "Odwrotnosc poprzedniej: najpierw zadanie absurdalne, po odmowie prawdziwe. Wydaje sie ustepstwem, wiec uruchamia regule wzajemnosci."
+    },
+    {
+      "type": "def",
+      "term": "Low-balling",
+      "text": "Zgoda uzyskana na korzystnych warunkach, ktore po fakcie sie 'niestety zmieniaja'. Wiekszosc ludzi zostaje przy decyzji, bo juz sie z nia utozsamila."
+    },
+    {
+      "type": "def",
+      "term": "Wzajemnosc jako bron",
+      "text": "Drobny prezent lub przysluga uruchamia silny przymus odwdzieczenia sie, nieproporcjonalny do wartosci daru. Cialdini pokazal, ze dziala nawet gdy dar byl niechciany."
+    },
+    {
+      "type": "def",
+      "term": "Sztuczny niedobor",
+      "text": "Ograniczona liczba, konczacy sie czas, ostatnia sztuka. Presja czasu wylacza analize i przenosi decyzje na emocje - dlatego jest wpisana w kazdy agresywny model sprzedazy."
+    },
+    {
+      "type": "def",
+      "term": "Utopione koszty jako dzwignia",
+      "text": "Im wiecej ktos juz zainwestowal - czasu, pieniedzy, uczucia - tym trudniej mu odejsc. Manipulator swiadomie podbija te inwestycje, bo kazda kolejna zamyka drzwi."
+    },
+    {
+      "type": "def",
+      "term": "Izolacja",
+      "text": "Stopniowe odcinanie od przyjaciol i rodziny, zwykle pod pozorem troski albo zazdrosci. Bez zewnetrznego punktu odniesienia nie ma jak sprawdzic, czy sytuacja jest normalna."
+    },
+    {
+      "type": "def",
+      "term": "Erozja tozsamosci",
+      "text": "Powolne kwestionowanie gustow, opinii i wspomnien, az osoba przestaje wiedziec, co naprawde mysli. Rzadko jest jeden moment przelomowy - na tym polega skutecznosc."
+    },
+    {
+      "type": "def",
+      "term": "Normalizacja stopniowa",
+      "text": "Granica przesuwana o milimetr naraz. Kazdy krok z osobna wydaje sie do przyjecia, a po roku sytuacja jest taka, ktorej nikt nie zaakceptowalby od razu."
+    },
+    {
+      "type": "def",
+      "term": "Szara skala",
+      "text": "Technika obronna: byc maksymalnie nudnym - krotkie odpowiedzi, zero emocji, zero nowych informacji. Manipulacja karmi sie reakcja, a nudna ofiara przestaje sie oplacac."
+    },
+    {
+      "type": "def",
+      "term": "Autorytet",
+      "text": "Sam fartuch, mundur albo tytul wystarcza, by znaczaco podniesc posluszenstwo. Eksperymenty Milgrama pokazaly, ze wiekszosc ludzi posluchala polecen osoby bez zadnej realnej wladzy nad nimi."
+    },
+    {
+      "type": "def",
+      "term": "Rozproszenie odpowiedzialnosci",
+      "text": "Im wiecej swiadkow, tym mniejsza szansa, ze ktokolwiek zareaguje. Dlatego wzywajac pomoc trzeba wskazac konkretna osobe: 'pan w niebieskiej kurtce, prosze dzwonic'."
+    }
   ],
   "chemia": [
-    {"type":"def","term":"Witamina C","text":"Niezbędna do syntezy kolagenu; człowiek, w przeciwieństwie do większości ssaków, utracił ewolucyjnie zdolność do samodzielnej produkcji tego związku."},
-    {"type":"fact","text":"Kapsaicyna, związek odpowiedzialny za pikantność chili, nie podnosi realnie temperatury w ustach — pobudza te same receptory bólu (TRPV1), które reagują na wysoką temperaturę."},
-    {"type":"def","term":"Melatonina","text":"Hormon syntetyzowany z serotoniny, produkowany w szyszynce w ciemności; jej produkcję hamuje światło niebieskie silniej niż inne barwy."},
-    {"type":"fact","text":"Witamina D nie jest technicznie witaminą tylko prohormonem — organizm potrafi ją syntetyzować samodzielnie pod wpływem promieniowania UVB na skórę."},
-    {"type":"def","term":"Magnez","text":"Kofaktor ponad 300 reakcji enzymatycznych w organizmie, w tym produkcji ATP — podstawowej 'waluty energetycznej' komórki."},
-    {"type":"fact","text":"Kofeina nie dodaje energii, tylko blokuje receptory adenozyny — adenozyna narasta w ciągu dnia i wywołuje senność, a kofeina maskuje ten sygnał."},
-    {"type":"def","term":"Kwercetyna","text":"Flawonoid obecny m.in. w cebuli i jabłkach, badany za właściwości przeciwzapalne i antyoksydacyjne — jeden z najlepiej przebadanych flawonoidów roślinnych."},
-    {"type":"fact","text":"Żelazo hemowe (z mięsa) wchłania się w jelitach dużo efektywniej niż żelazo niehemowe (roślinne) — witamina C potrafi znacząco poprawić wchłanianie tej drugiej formy."},
-    {"type":"def","term":"GABA","text":"Główny neuroprzekaźnik hamujący w mózgu; leki przeciwlękowe jak benzodiazepiny działają poprzez wzmacnianie jego działania na receptory."},
-    {"type":"fact","text":"Cynk jest niezbędny do prawidłowego działania węchu i smaku — jego wyraźny niedobór jest jedną z rzadszych, ale udokumentowanych przyczyn utraty tych zmysłów."},
-    {"type":"def","term":"Tryptofan","text":"Aminokwas egzogenny, prekursor serotoniny i melatoniny; sam w sobie nie powoduje senności tak silnie jak sugeruje popularny mit o indyku na Święto Dziękczynienia."},
-    {"type":"fact","text":"Witamina K2, w przeciwieństwie do K1, kieruje wapń do kości i zębów, a nie do naczyń krwionośnych — te dwie formy pełnią w organizmie zauważalnie różne role."},
-    {"type":"def","term":"Dopamina","text":"Neuroprzekaźnik kojarzony głównie z motywacją i oczekiwaniem nagrody, a nie samą przyjemnością — jej poziom rośnie bardziej w trakcie dążenia do celu niż po jego osiągnięciu."},
-    {"type":"fact","text":"Kurkumina z kurkumy ma bardzo słabą biodostępność samodzielnie — połączenie z piperyną z czarnego pieprzu potrafi zwiększyć jej wchłanianie nawet dwudziestokrotnie."},
-    {"type":"def","term":"Omega-3 (EPA i DHA)","text":"Kwasy tłuszczowe niezbędne do budowy błon komórkowych neuronów, których organizm nie potrafi efektywnie syntetyzować sam i musi pozyskiwać z pożywienia."},
-    {"type":"fact","text":"Histamina uwalniana przy reakcji alergicznej to ten sam związek, który w mózgu pełni funkcję neuroprzekaźnika wpływającego na czuwanie — dlatego leki przeciwhistaminowe I generacji tak silnie usypiają."},
-    {"type":"def","term":"Cholina","text":"Prekursor acetylocholiny, neuroprzekaźnika kluczowego dla pamięci; często klasyfikowana jako niezbędny składnik odżywczy, choć formalnie nie jest ani witaminą, ani minerałem."},
-    {"type":"fact","text":"Witamina B12 jest jedyną witaminą produkowaną wyłącznie przez bakterie, nie przez rośliny ani zwierzęta — zwierzęta magazynują ją w tkankach dopiero po spożyciu bakterii lub innych zwierząt."},
-    {"type":"def","term":"L-teanina","text":"Aminokwas z liści herbaty, który w połączeniu z kofeiną łagodzi jej pobudzający efekt uboczny, dając bardziej 'spokojną' czujność."},
-    {"type":"fact","text":"Selen jest toksyczny w nadmiarze mimo że jest niezbędnym mikroelementem — różnica między dawką zalecaną a toksyczną jest jedną z najmniejszych spośród wszystkich znanych mikroelementów."}
+    {
+      "type": "def",
+      "term": "Witamina C",
+      "text": "Niezbędna do syntezy kolagenu; człowiek, w przeciwieństwie do większości ssaków, utracił ewolucyjnie zdolność do samodzielnej produkcji tego związku."
+    },
+    {
+      "type": "fact",
+      "text": "Kapsaicyna, związek odpowiedzialny za pikantność chili, nie podnosi realnie temperatury w ustach — pobudza te same receptory bólu (TRPV1), które reagują na wysoką temperaturę."
+    },
+    {
+      "type": "def",
+      "term": "Melatonina",
+      "text": "Hormon syntetyzowany z serotoniny, produkowany w szyszynce w ciemności; jej produkcję hamuje światło niebieskie silniej niż inne barwy."
+    },
+    {
+      "type": "fact",
+      "text": "Witamina D nie jest technicznie witaminą tylko prohormonem — organizm potrafi ją syntetyzować samodzielnie pod wpływem promieniowania UVB na skórę."
+    },
+    {
+      "type": "def",
+      "term": "Magnez",
+      "text": "Kofaktor ponad 300 reakcji enzymatycznych w organizmie, w tym produkcji ATP — podstawowej 'waluty energetycznej' komórki."
+    },
+    {
+      "type": "fact",
+      "text": "Kofeina nie dodaje energii, tylko blokuje receptory adenozyny — adenozyna narasta w ciągu dnia i wywołuje senność, a kofeina maskuje ten sygnał."
+    },
+    {
+      "type": "def",
+      "term": "Kwercetyna",
+      "text": "Flawonoid obecny m.in. w cebuli i jabłkach, badany za właściwości przeciwzapalne i antyoksydacyjne — jeden z najlepiej przebadanych flawonoidów roślinnych."
+    },
+    {
+      "type": "fact",
+      "text": "Żelazo hemowe (z mięsa) wchłania się w jelitach dużo efektywniej niż żelazo niehemowe (roślinne) — witamina C potrafi znacząco poprawić wchłanianie tej drugiej formy."
+    },
+    {
+      "type": "def",
+      "term": "GABA",
+      "text": "Główny neuroprzekaźnik hamujący w mózgu; leki przeciwlękowe jak benzodiazepiny działają poprzez wzmacnianie jego działania na receptory."
+    },
+    {
+      "type": "fact",
+      "text": "Cynk jest niezbędny do prawidłowego działania węchu i smaku — jego wyraźny niedobór jest jedną z rzadszych, ale udokumentowanych przyczyn utraty tych zmysłów."
+    },
+    {
+      "type": "def",
+      "term": "Tryptofan",
+      "text": "Aminokwas egzogenny, prekursor serotoniny i melatoniny; sam w sobie nie powoduje senności tak silnie jak sugeruje popularny mit o indyku na Święto Dziękczynienia."
+    },
+    {
+      "type": "fact",
+      "text": "Witamina K2, w przeciwieństwie do K1, kieruje wapń do kości i zębów, a nie do naczyń krwionośnych — te dwie formy pełnią w organizmie zauważalnie różne role."
+    },
+    {
+      "type": "def",
+      "term": "Dopamina",
+      "text": "Neuroprzekaźnik kojarzony głównie z motywacją i oczekiwaniem nagrody, a nie samą przyjemnością — jej poziom rośnie bardziej w trakcie dążenia do celu niż po jego osiągnięciu."
+    },
+    {
+      "type": "fact",
+      "text": "Kurkumina z kurkumy ma bardzo słabą biodostępność samodzielnie — połączenie z piperyną z czarnego pieprzu potrafi zwiększyć jej wchłanianie nawet dwudziestokrotnie."
+    },
+    {
+      "type": "def",
+      "term": "Omega-3 (EPA i DHA)",
+      "text": "Kwasy tłuszczowe niezbędne do budowy błon komórkowych neuronów, których organizm nie potrafi efektywnie syntetyzować sam i musi pozyskiwać z pożywienia."
+    },
+    {
+      "type": "fact",
+      "text": "Histamina uwalniana przy reakcji alergicznej to ten sam związek, który w mózgu pełni funkcję neuroprzekaźnika wpływającego na czuwanie — dlatego leki przeciwhistaminowe I generacji tak silnie usypiają."
+    },
+    {
+      "type": "def",
+      "term": "Cholina",
+      "text": "Prekursor acetylocholiny, neuroprzekaźnika kluczowego dla pamięci; często klasyfikowana jako niezbędny składnik odżywczy, choć formalnie nie jest ani witaminą, ani minerałem."
+    },
+    {
+      "type": "fact",
+      "text": "Witamina B12 jest jedyną witaminą produkowaną wyłącznie przez bakterie, nie przez rośliny ani zwierzęta — zwierzęta magazynują ją w tkankach dopiero po spożyciu bakterii lub innych zwierząt."
+    },
+    {
+      "type": "def",
+      "term": "L-teanina",
+      "text": "Aminokwas z liści herbaty, który w połączeniu z kofeiną łagodzi jej pobudzający efekt uboczny, dając bardziej 'spokojną' czujność."
+    },
+    {
+      "type": "fact",
+      "text": "Selen jest toksyczny w nadmiarze mimo że jest niezbędnym mikroelementem — różnica między dawką zalecaną a toksyczną jest jedną z najmniejszych spośród wszystkich znanych mikroelementów."
+    },
+    {
+      "type": "def",
+      "term": "Sulforafan",
+      "text": "Powstaje w brokulach dopiero po uszkodzeniu tkanki. Najwiecej jest go w kilkudniowych kielkach brokula - nawet kilkadziesiat razy wiecej niz w dojrzalej rozy."
+    },
+    {
+      "type": "def",
+      "term": "Mirozynaza",
+      "text": "Enzym potrzebny do powstania sulforafanu, niszczony przez gotowanie. Szczypta gorczycy w proszku dosypana do ugotowanych brokulow przywraca ten enzym i odbudowuje efekt."
+    },
+    {
+      "type": "def",
+      "term": "Allicyna",
+      "text": "Nie ma jej w calym zabku czosnku - powstaje dopiero po zgnieceniu, z alliiny. Odczekanie 10 minut przed obrobka termiczna pozwala jej sie wytworzyc."
+    },
+    {
+      "type": "def",
+      "term": "Kurkumina i piperyna",
+      "text": "Kurkumina sama w sobie wchlania sie fatalnie. Piperyna z czarnego pieprzu blokuje jej rozklad w watrobie i wielokrotnie podnosi stezenie we krwi - stad pieprz w zlotym mleku."
+    },
+    {
+      "type": "def",
+      "term": "Likopen",
+      "text": "Czerwony barwnik pomidorow, ktory - odwrotnie niz wiekszosc witamin - staje sie lepiej przyswajalny po gotowaniu z tluszczem. Koncentrat bije swiezego pomidora."
+    },
+    {
+      "type": "def",
+      "term": "Azotany z burakow",
+      "text": "W organizmie przechodza w azotyny, a potem w tlenek azotu rozszerzajacy naczynia. Stad sok z buraka jako srodek poprawiajacy wydolnosc, potwierdzony w badaniach sportowych."
+    },
+    {
+      "type": "def",
+      "term": "Urolityna A",
+      "text": "Nie ma jej w zadnym owocu. Powstaje dopiero z kwasu elagowego z granatu, przetworzonego przez bakterie jelitowe - i tylko czesc ludzi ma mikrobiom, ktory to potrafi."
+    },
+    {
+      "type": "def",
+      "term": "EGCG",
+      "text": "Glowny katechin zielonej herbaty. Najwiecej zostaje przy zaparzaniu wodą okolo 80 C - wrzatek czesc z niego rozklada i wyciaga gorycz."
+    },
+    {
+      "type": "def",
+      "term": "Beta-glukany",
+      "text": "Rozpuszczalny blonnik owsa i jeczmienia. Wiaze kwasy zolciowe w jelicie, zmuszajac organizm do zuzycia cholesterolu na produkcje nowych - jedno z nielicznych oswiadczen zdrowotnych uznanych przez EFSA."
+    },
+    {
+      "type": "def",
+      "term": "Skrobia oporna",
+      "text": "Ziemniaki lub ryz ostudzone po ugotowaniu zmieniaja strukture skrobi. Czesc przechodzi niestrawiona do jelita grubego i karmi bakterie jak blonnik."
+    },
+    {
+      "type": "def",
+      "term": "Maslan",
+      "text": "Krotkolancuchowy kwas tluszczowy wytwarzany przez bakterie jelitowe z blonnika. Jest podstawowym paliwem komorek nablonka jelita grubego - te komorki zywia sie nie z krwi, tylko z tego, co wyprodukuja bakterie."
+    },
+    {
+      "type": "def",
+      "term": "Inulina",
+      "text": "Prebiotyk z cykorii, topinamburu i cebuli. Karmi bakterie, ale u czesci osob wywoluje silne wzdecia - dawke trzeba podnosic stopniowo."
+    },
+    {
+      "type": "def",
+      "term": "Magnez - forma ma znaczenie",
+      "text": "Tlenek magnezu jest tani i wchlania sie slabo, dzialajac gownie przeczyszczajaco. Cytrynian, mleczan i glicynian przyswajaja sie wyraznie lepiej."
+    },
+    {
+      "type": "def",
+      "term": "Witamina K2 MK-7",
+      "text": "Aktywuje bialka kierujace wapn do kosci zamiast do scian tetnic. Najbogatszym zrodlem jest natto, fermentowana soja - w zwyklej diecie wystepuje sladowo."
+    },
+    {
+      "type": "def",
+      "term": "Zelazo hemowe i niehemowe",
+      "text": "Z miesa wchlania sie kilkakrotnie lepiej niz z roslin. Witamina C znaczaco podnosi przyswajanie roslinnego, a taniny z herbaty i kawy je blokuja - stad zasada, by nie popijac posilku herbata."
+    },
+    {
+      "type": "def",
+      "term": "Fityniany",
+      "text": "Zwiazki z nasion i zboz wiazace cynk, zelazo i wapn. Moczenie, kielkowanie i zakwas rozkladaja je - dlatego chleb na zakwasie zywi lepiej niz ten na drozdzach."
+    },
+    {
+      "type": "def",
+      "term": "Szczawiany",
+      "text": "Szpinak ma duzo wapnia, ale szczawiany wiaza go w nieprzyswajalna sol. Wapn ze szpinaku jest praktycznie niedostepny, z jarmuzu - juz tak, bo ten ma szczawianow malo."
+    },
+    {
+      "type": "def",
+      "term": "Kapsaicyna",
+      "text": "Nie parzy - pobudza receptor TRPV1, ten sam, ktory reaguje na realne cieplo. Mozg dostaje sygnal oparzenia, choc nic sie nie dzieje. Woda nie pomaga, bo kapsaicyna rozpuszcza sie w tluszczu."
+    },
+    {
+      "type": "def",
+      "term": "Mentol",
+      "text": "Dziala odwrotnie: aktywuje receptor zimna TRPM8. Dlatego po miecie wdech jest odczuwany jako lodowaty, mimo niezmienionej temperatury powietrza."
+    },
+    {
+      "type": "def",
+      "term": "Kreatyna",
+      "text": "Najlepiej przebadany suplement sportowy, a coraz wiecej danych dotyczy mozgu - odbudowuje zapasy energii w neuronach, najwyrazniej przy niedoborze snu i u wegetarian."
+    },
+    {
+      "type": "def",
+      "term": "Indeks omega-3",
+      "text": "Procent EPA i DHA w blonach czerwonych krwinek. Mierzalny parametr, na ktory naprawde wplywa dieta - inaczej niz na wiekszosc modnych wskaznikow."
+    },
+    {
+      "type": "def",
+      "term": "Kolagen i witamina C",
+      "text": "Organizm nie wbudowuje kolagenu z jedzenia wprost - rozklada go na glicyne, proline i hydroksyproline. Bez witaminy C nie da sie zbudowac nowego, bo jest kofaktorem enzymow hydroksylujacych."
+    },
+    {
+      "type": "def",
+      "term": "Glicyna",
+      "text": "Najprostszy aminokwas, obecny w skorze, kosciach i wywarze z nich. Badania pokazuja obnizenie temperatury glebokiej ciala i szybsze zasypianie po dawce przed snem."
+    },
+    {
+      "type": "def",
+      "term": "Apigenina",
+      "text": "Flawonoid rumianku wiazacy sie z receptorami benzodiazepinowymi - stad lagodne dzialanie uspokajajace naparu, znane na dlugo przed wyjasnieniem mechanizmu."
+    },
+    {
+      "type": "def",
+      "term": "Astaksantyna",
+      "text": "Czerwony karotenoid z mikroalg, ktory nadaje barwe lososiowi i krewetkom. Jeden z nielicznych przeciwutleniaczy skutecznych zarowno w fazie wodnej, jak i tluszczowej blony komorkowej."
+    },
+    {
+      "type": "def",
+      "term": "Sylimaryna",
+      "text": "Kompleks z nasion ostropestu, stabilizujacy blony komorek watroby. Wyciag jest stosowany klinicznie przy zatruciu muchomorem sromotnikowym."
+    },
+    {
+      "type": "def",
+      "term": "Berberyna",
+      "text": "Alkaloid z berberysu aktywujacy AMPK, ten sam szlak co wysilek fizyczny. Wplyw na poziom cukru jest realny i dlatego moze wchodzic w interakcje z lekami."
+    },
+    {
+      "type": "def",
+      "term": "Melanoidyny",
+      "text": "Ciemne polimery powstajace przy palenie kawy i pieczeniu chleba. Odpowiadaja za kolor i czesc wlasciwosci przeciwutleniajacych - kawa jest w polskiej diecie jednym z glownych zrodel polifenoli po prostu przez ilosc."
+    },
+    {
+      "type": "def",
+      "term": "Kwas chlorogenowy",
+      "text": "Glowny polifenol zielonych ziaren kawy, czesciowo rozkladany przy palenie. Im jasniejsze palenie, tym wiecej go zostaje i tym wyrazniejsza kwasowosc naparu."
+    },
+    {
+      "type": "def",
+      "term": "Witanolidy",
+      "text": "Aktywne zwiazki ashwagandhy. Badania pokazuja obnizenie kortyzolu przy dawkach standaryzowanych - przy surowcu niestandaryzowanym trudno mowic o jakimkolwiek efekcie."
+    },
+    {
+      "type": "def",
+      "term": "Cynk na przeziebienie",
+      "text": "Dziala tylko w formie pastylek do ssania uwalniajacych wolne jony w gardle i tylko przy podaniu w pierwszej dobie. Kapsulka polknieta nie ma tego dzialania."
+    },
+    {
+      "type": "def",
+      "term": "Resweratrol",
+      "text": "Sztandarowy zwiazek 'francuskiego paradoksu', ktorego dzialanie u ludzi nie potwierdzilo sie w badaniach. Dawki z eksperymentow odpowiadaly kilkudziesieciu litrom wina dziennie."
+    }
   ],
   "mowa_ciala": [
-    {"type":"fact","text":"Prawdziwy uśmiech (Duchenne) angażuje mięśnie wokół oczu, których nie da się świadomie kontrolować — fałszywy uśmiech porusza tylko usta."},
-    {"type":"def","term":"Mikroekspresje","text":"Bardzo krótkie, mimowolne wyrazy emocji, które przebijają się nawet gdy ktoś świadomie próbuje ukryć uczucia — badane m.in. przez Paula Ekmana."},
-    {"type":"fact","text":"Skrzyżowane ramiona nie muszą oznaczać defensywności — równie często to po prostu wygodna pozycja albo reakcja na zimno; kontekst liczy się bardziej niż pojedynczy gest."},
-    {"type":"def","term":"Gesty adaptacyjne","text":"Nieświadome gesty samouspokajające, jak dotykanie szyi czy karku, pojawiające się w chwilach stresu lub niepewności."},
-    {"type":"fact","text":"Kierunek stóp podczas rozmowy często zdradza prawdziwe zainteresowanie trafniej niż wyraz twarzy — stopy jako pierwsze 'odwracają się' w stronę wyjścia, gdy ktoś chce zakończyć rozmowę."},
-    {"type":"fact","text":"Popularny mit o unikaniu wzroku przy kłamaniu jest słabo potwierdzony badaniami — doświadczeni kłamcy często utrzymują kontakt wzrokowy nawet intensywniej niż zwykle."},
-    {"type":"fact","text":"Rozszerzenie źrenic jest praktycznie niemożliwe do świadomej kontroli i często koreluje z zainteresowaniem — dlatego sprzedawcy klejnotów bywają szczególnie uważni na ten sygnał."},
-    {"type":"def","term":"Zwierciadlenie","text":"Nieświadome lub celowe naśladowanie postawy i gestów rozmówcy, które buduje poczucie sympatii i porozumienia — szeroko wykorzystywane w negocjacjach i sprzedaży."},
-    {"type":"fact","text":"Prawdziwe emocje pojawiają się na twarzy symetrycznie, a wymuszone często lekko asymetrycznie — jedna strona twarzy bywa wtedy nieco bardziej wyrazista."},
-    {"type":"fact","text":"Dotykanie własnej twarzy, karku czy przedramienia w chwili stresu to gest samopocieszający — ciało nieświadomie próbuje odtworzyć poczucie bezpieczeństwa znane z dzieciństwa."},
-    {"type":"def","term":"Otwarta postawa","text":"Nieskrzyżowane kończyny, odsłonięty tułów — sygnalizuje względny komfort i brak poczucia zagrożenia; jej przeciwieństwo to postawa zamknięta."},
-    {"type":"fact","text":"Uniesienie tylko jednej brwi to ruch, którego większość ludzi nie potrafi świadomie wykonać bez treningu — dlatego naturalnie pojawia się głównie jako spontaniczny wyraz sceptycyzmu."},
-    {"type":"def","term":"Proksemika","text":"Nauka o tym, jak dystans fizyczny między ludźmi komunikuje relację — inne 'bezpieczne' odległości obowiązują dla nieznajomych, znajomych i bliskich."},
-    {"type":"fact","text":"Splecenie palców dłoni w geście 'wieżyczki' (opuszki stykają się, dłonie rozdzielone) jest częściej kojarzone z pewnością siebie niż zwykłe splecenie dłoni razem."},
-    {"type":"fact","text":"Nagłe zatrzymanie naturalnego rytmu mrugania podczas trudnego pytania bywa równie mocnym sygnałem napięcia jak nadmierne mruganie — obie skrajności odbiegają od normy danej osoby."}
+    {
+      "type": "fact",
+      "text": "Prawdziwy uśmiech (Duchenne) angażuje mięśnie wokół oczu, których nie da się świadomie kontrolować — fałszywy uśmiech porusza tylko usta."
+    },
+    {
+      "type": "def",
+      "term": "Mikroekspresje",
+      "text": "Bardzo krótkie, mimowolne wyrazy emocji, które przebijają się nawet gdy ktoś świadomie próbuje ukryć uczucia — badane m.in. przez Paula Ekmana."
+    },
+    {
+      "type": "fact",
+      "text": "Skrzyżowane ramiona nie muszą oznaczać defensywności — równie często to po prostu wygodna pozycja albo reakcja na zimno; kontekst liczy się bardziej niż pojedynczy gest."
+    },
+    {
+      "type": "def",
+      "term": "Gesty adaptacyjne",
+      "text": "Nieświadome gesty samouspokajające, jak dotykanie szyi czy karku, pojawiające się w chwilach stresu lub niepewności."
+    },
+    {
+      "type": "fact",
+      "text": "Kierunek stóp podczas rozmowy często zdradza prawdziwe zainteresowanie trafniej niż wyraz twarzy — stopy jako pierwsze 'odwracają się' w stronę wyjścia, gdy ktoś chce zakończyć rozmowę."
+    },
+    {
+      "type": "fact",
+      "text": "Popularny mit o unikaniu wzroku przy kłamaniu jest słabo potwierdzony badaniami — doświadczeni kłamcy często utrzymują kontakt wzrokowy nawet intensywniej niż zwykle."
+    },
+    {
+      "type": "fact",
+      "text": "Rozszerzenie źrenic jest praktycznie niemożliwe do świadomej kontroli i często koreluje z zainteresowaniem — dlatego sprzedawcy klejnotów bywają szczególnie uważni na ten sygnał."
+    },
+    {
+      "type": "def",
+      "term": "Zwierciadlenie",
+      "text": "Nieświadome lub celowe naśladowanie postawy i gestów rozmówcy, które buduje poczucie sympatii i porozumienia — szeroko wykorzystywane w negocjacjach i sprzedaży."
+    },
+    {
+      "type": "fact",
+      "text": "Prawdziwe emocje pojawiają się na twarzy symetrycznie, a wymuszone często lekko asymetrycznie — jedna strona twarzy bywa wtedy nieco bardziej wyrazista."
+    },
+    {
+      "type": "fact",
+      "text": "Dotykanie własnej twarzy, karku czy przedramienia w chwili stresu to gest samopocieszający — ciało nieświadomie próbuje odtworzyć poczucie bezpieczeństwa znane z dzieciństwa."
+    },
+    {
+      "type": "def",
+      "term": "Otwarta postawa",
+      "text": "Nieskrzyżowane kończyny, odsłonięty tułów — sygnalizuje względny komfort i brak poczucia zagrożenia; jej przeciwieństwo to postawa zamknięta."
+    },
+    {
+      "type": "fact",
+      "text": "Uniesienie tylko jednej brwi to ruch, którego większość ludzi nie potrafi świadomie wykonać bez treningu — dlatego naturalnie pojawia się głównie jako spontaniczny wyraz sceptycyzmu."
+    },
+    {
+      "type": "def",
+      "term": "Proksemika",
+      "text": "Nauka o tym, jak dystans fizyczny między ludźmi komunikuje relację — inne 'bezpieczne' odległości obowiązują dla nieznajomych, znajomych i bliskich."
+    },
+    {
+      "type": "fact",
+      "text": "Splecenie palców dłoni w geście 'wieżyczki' (opuszki stykają się, dłonie rozdzielone) jest częściej kojarzone z pewnością siebie niż zwykłe splecenie dłoni razem."
+    },
+    {
+      "type": "fact",
+      "text": "Nagłe zatrzymanie naturalnego rytmu mrugania podczas trudnego pytania bywa równie mocnym sygnałem napięcia jak nadmierne mruganie — obie skrajności odbiegają od normy danej osoby."
+    },
+    {
+      "type": "fact",
+      "text": "Nie istnieje zaden pojedynczy gest oznaczajacy klamstwo. Liczy sie odstepstwo od linii bazowej danej osoby - dlatego najpierw obserwuje sie ja w rozmowie neutralnej."
+    },
+    {
+      "type": "fact",
+      "text": "Skrzyzowane rece rzadko oznaczaja obrone. Najczesciej to wygoda albo zimno - interpretowanie ich jako oporu to najpowszechniejszy blad w czytaniu mowy ciala."
+    },
+    {
+      "type": "fact",
+      "text": "Teza, ze spojrzenie w okreslona strone zdradza klamstwo, pochodzi z NLP i zostala obalona w badaniach. Kierunek wzroku nie ma zwiazku z prawdomownoscia."
+    },
+    {
+      "type": "fact",
+      "text": "Stopy sa najmniej kontrolowana czescia ciala. Skierowane w strone drzwi albo innej osoby zwykle pokazuja, gdzie czlowiek naprawde chcialby byc."
+    },
+    {
+      "type": "fact",
+      "text": "Uniesienie brwi na ulamek sekundy przy powitaniu wystepuje we wszystkich zbadanych kulturach. To jeden z nielicznych naprawde uniwersalnych sygnalow spolecznych."
+    },
+    {
+      "type": "fact",
+      "text": "Grymas jednostronnego uniesienia kacika ust to pogarda - jedyna mimika asymetryczna z natury. Gottman uznal ja za najsilniejszy pojedynczy zwiastun rozpadu malzenstwa."
+    },
+    {
+      "type": "fact",
+      "text": "Dotykanie szyi, bawienie sie kolnierzykiem albo naszyjnikiem to zachowania samouspokajajace. Pojawiaja sie w momencie dyskomfortu, czesto dokladnie przy konkretnym pytaniu."
+    },
+    {
+      "type": "fact",
+      "text": "Doleczek u podstawy szyi to jedno z najczulszych miejsc. Zaslanianie go dlonia to odruch ochronny, wystepujacy przy zaskoczeniu i poczuciu zagrozenia."
+    },
+    {
+      "type": "fact",
+      "text": "Reakcja na zagrozenie ma trzy etapy w kolejnosci: zamrozenie, ucieczka, dopiero walka. W rozmowie widac glownie ten pierwszy - nagle znieruchomienie jest sygnalem mocniejszym niz jakikolwiek gest."
+    },
+    {
+      "type": "fact",
+      "text": "Kciuki wystawione z kieszeni lub splecionych dloni towarzysza pewnosci siebie. Schowane kciuki przy tej samej pozycji rak oznaczaja dokladnie odwrotny stan."
+    },
+    {
+      "type": "fact",
+      "text": "Tempo mrugania rosnie przy stresie i obciazeniu poznawczym, a spada przy skupionej uwadze. Gwaltowna zmiana czestotliwosci w trakcie rozmowy jest bardziej wymowna niz sama wartosc."
+    },
+    {
+      "type": "fact",
+      "text": "Zrenice rozszerzaja sie przy zainteresowaniu i wysilku umyslowym, a zwezaja przy niecheci. Jest to calkowicie poza kontrola wolna - dlatego pokerzysci nosza okulary."
+    },
+    {
+      "type": "fact",
+      "text": "Odslanianie szyi przez przechylenie glowy sygnalizuje brak zagrozenia i ugodowosc. Robimy to odruchowo wobec osob, ktore lubimy albo ktorych sie nie boimy."
+    },
+    {
+      "type": "fact",
+      "text": "Nieswiadome kopiowanie postawy rozmowcy pojawia sie przy sympatii i wzmacnia ja zwrotnie. Zjawisko nazwano efektem kameleona - dziala tylko wtedy, gdy jest naturalne."
+    },
+    {
+      "type": "fact",
+      "text": "Zaslanianie sie przedmiotem - kubkiem, torba, laptopem ustawionym miedzy soba a rozmowca - to blokowanie tulowia. Bardziej wiarygodny sygnal dystansu niz skrzyzowane rece."
+    },
+    {
+      "type": "fact",
+      "text": "Zaciskanie ust w waska kreske pojawia sie, gdy ktos powstrzymuje sie od powiedzenia czegos. Czesto widac je tuz przed zmiana tematu."
+    },
+    {
+      "type": "fact",
+      "text": "Zaraźliwe ziewanie wystepuje silniej wobec osob bliskich niz obcych. Wiaze sie je z mechanizmami empatii, a u dzieci pojawia sie dopiero okolo piatego roku zycia."
+    },
+    {
+      "type": "fact",
+      "text": "Przestrzen wokol czlowieka ma cztery strefy opisane przez Edwarda Halla: intymna do 45 cm, osobista do 1,2 m, spoleczna do 3,6 m i publiczna powyzej. Wejscie o jedna strefe za blisko jest odbierane jako nacisk, nawet gdy nikt tego nie nazywa."
+    },
+    {
+      "type": "fact",
+      "text": "Uscisk dloni z obroceniem reki tak, by wlasna byla na wierzchu, jest klasycznym sygnalem dominacji. Rownie czytelne jest przytrzymanie dloni o sekunde za dlugo."
+    },
+    {
+      "type": "fact",
+      "text": "Power posing poprawia subiektywne poczucie pewnosci siebie, ale zapowiadane zmiany hormonalne nie potwierdzily sie w replikacjach. Sama autorka badania przyznala to publicznie."
+    },
+    {
+      "type": "fact",
+      "text": "Cisza jest najsilniejszym narzedziem w rozmowie. Wiekszosc ludzi nie wytrzymuje kilku sekund pauzy i zaczyna mowic dalej - czesto mowiac wtedy to, czego mowic nie zamierzala."
+    },
+    {
+      "type": "fact",
+      "text": "Mikroekspresje trwaja okolo jednej dwudziestej piatej sekundy i pokazuja emocje, zanim zdazy ja przykryc swiadoma mimika. Ich rozpoznawania da sie wyuczyc, ale skutecznosc nawet po treningu jest umiarkowana."
+    },
+    {
+      "type": "fact",
+      "text": "Prawdziwe zdziwienie trwa krotko, ulamek sekundy. Zdziwienie utrzymywane na twarzy przez dwie sekundy jest niemal na pewno odgrywane."
+    },
+    {
+      "type": "fact",
+      "text": "Ludzie ustawiaja sie wobec osoby lubianej rownolegle, a wobec nielubianej pod katem. Ustawienie tulowi w grupie pokazuje strukture sympatii szybciej niz jakakolwiek rozmowa."
+    }
   ],
   "rozwoj": [
-    {"type":"def","term":"Nawyk oparty na tożsamości","text":"Zmiana utrzymuje się łatwiej, gdy celem jest 'być kimś' (osobą, która biega), a nie 'osiągnąć coś' — każde powtórzenie jest wtedy głosem na nową tożsamość."},
-    {"type":"fact","text":"Motywacja pojawia się częściej PO rozpoczęciu działania niż przed nim — czekanie na chęć to odwrócenie kolejności, która realnie działa."},
-    {"type":"def","term":"Reguła dwóch minut","text":"Nowy nawyk skaluj w dół tak, by zajmował mniej niż dwie minuty — w pierwszej fazie celem jest utrwalenie samego pojawiania się, nie efekt."},
-    {"type":"def","term":"Projektowanie środowiska","text":"Zmiana otoczenia (co jest w zasięgu ręki, co widoczne) daje trwalsze efekty niż poleganie na sile woli, bo usuwa konieczność decydowania za każdym razem."},
-    {"type":"fact","text":"Samo przekonanie, że siła woli szybko się wyczerpuje, pogarsza wytrwałość w badaniach — ludzie wierzący w jej odnawialność wypadają lepiej w tych samych zadaniach."},
-    {"type":"def","term":"Praktyka celowa","text":"Trening skupiony dokładnie na tym, co jeszcze nie wychodzi, z natychmiastowym feedbackiem — to on odróżnia ekspertów, nie sama liczba przepracowanych godzin."},
-    {"type":"fact","text":"Zapisanie konkretnego 'kiedy i gdzie' zamiast samego postanowienia potrafi w badaniach nawet podwoić szansę faktycznego wykonania działania."},
-    {"type":"def","term":"Intencja wdrożeniowa","text":"Formuła 'jeśli sytuacja X, to zrobię Y' — przenosi decyzję z momentu pokusy na moment spokojnego planowania, gdy jest znacznie taniej."},
-    {"type":"fact","text":"W eksperymentach z odroczoną gratyfikacją dzieci czekały dłużej, gdy wcześniej doświadczyły, że obietnice są dotrzymywane — cierpliwość zależy od zaufania do otoczenia, nie tylko od charakteru."},
-    {"type":"fact","text":"Niedobór snu obniża zdolność oceny własnego stanu — im mniej śpisz, tym gorzej oceniasz, jak bardzo jesteś osłabiony."},
-    {"type":"def","term":"Efekt świeżego startu","text":"Symboliczne daty (poniedziałek, pierwszy dzień miesiąca, urodziny) realnie zwiększają szansę podjęcia nowego działania, bo oddzielają 'starego mnie' od 'nowego'."},
-    {"type":"def","term":"Deep work","text":"Bloki pracy bez przerwań mają nieproporcjonalnie wyższą wartość niż ta sama liczba minut pocięta powiadomieniami."},
-    {"type":"fact","text":"Powrót do pełnego skupienia po przerwaniu zajmuje średnio kilkanaście minut — stąd realny koszt 'tylko zerknę na telefon' jest wielokrotnie wyższy niż samo zerknięcie."},
-    {"type":"def","term":"Habit stacking","text":"Nowy nawyk przyklejony do istniejącego ('po zaparzeniu kawy robię X') działa skuteczniej niż nawyk zaplanowany na samą godzinę."},
-    {"type":"fact","text":"Publiczne ogłoszenie celu potrafi obniżyć motywację do jego realizacji — mózg częściowo traktuje uznanie za zapowiedź jak częściowe osiągnięcie."},
-    {"type":"def","term":"Przeformułowanie stresu","text":"Interpretowanie pobudzenia (szybsze serce, napięcie) jako 'ciało się przygotowuje' zamiast 'panikuję' mierzalnie poprawia wyniki pod presją."},
-    {"type":"def","term":"Zasada niezerowego dnia","text":"Minimalne wykonanie zadania w słaby dzień chroni ciągłość i tożsamość lepiej niż idealne wykonanie co drugi dzień."},
-    {"type":"fact","text":"Osoby z wysoką samokontrolą w badaniach nie walczą częściej z pokusą — one po prostu rzadziej się na nią wystawiają."},
-    {"type":"def","term":"Licencjonowanie moralne","text":"Po 'dobrym uczynku' (trening, zdrowy posiłek) rośnie skłonność do przyzwolenia sobie na odstępstwo — warto to przewidzieć, zamiast się tym zaskakiwać."},
-    {"type":"fact","text":"Spisanie zmartwień lub listy zadań przed snem skraca czas zasypiania skuteczniej niż próba 'nie myślenia o nich'."},
-    {"type":"def","term":"Prawo Parkinsona","text":"Praca rozszerza się tak, by wypełnić czas przeznaczony na jej wykonanie — skrócenie terminu bywa skuteczniejsze niż dodanie godzin."},
-    {"type":"def","term":"Krzywa zapominania","text":"Bez powtórek zapominamy większość nowej informacji w ciągu kilku dni — powtórki w rosnących odstępach zmieniają tę krzywą radykalnie."},
-    {"type":"fact","text":"Przypominanie z pamięci buduje trwalszą wiedzę niż ponowne czytanie, mimo że subiektywnie wydaje się trudniejsze i mniej skuteczne."},
-    {"type":"def","term":"Iluzja płynności","text":"Materiał przeczytany kilka razy wydaje się znany — mylimy wtedy poczucie znajomości z realną umiejętnością odtworzenia go bez podpowiedzi."},
-    {"type":"def","term":"Minimalna skuteczna dawka","text":"Zamiast pytać 'ile maksymalnie dam radę', pytaj 'ile minimalnie wystarczy, żeby był efekt' — to pytanie chroni przed wypaleniem i porzuceniem."},
-    {"type":"fact","text":"Krótki spacer na zewnątrz poprawia nastrój i kreatywne rozwiązywanie zadań mierzalnie bardziej niż ten sam spacer na bieżni w pomieszczeniu."},
-    {"type":"def","term":"Samowspółczucie","text":"Traktowanie siebie po porażce jak dobrego przyjaciela, a nie jak sierżanta, wiąże się w badaniach z szybszym powrotem do działania niż surowa samokrytyka."},
-    {"type":"fact","text":"Konkretne, trudne cele dają lepsze wyniki niż 'daj z siebie wszystko' — ale tylko przy opanowanym zadaniu; przy nauce nowej umiejętności cele procesowe biją wynikowe."},
-    {"type":"def","term":"Efekt pomiaru","text":"Samo mierzenie zachowania (kroki, wydatki, godziny) zmienia to zachowanie, zanim jeszcze podejmiesz świadomą decyzję o zmianie."},
-    {"type":"def","term":"Bufor porażki","text":"Zaplanowanie z góry, co zrobisz gdy nawyk wypadnie ('jeśli opuszczę trening, wracam następnego dnia'), podnosi szansę utrzymania serii bardziej niż założenie, że wypadka nie będzie."},
-    {"type":"fact","text":"Perfekcjonizm koreluje z prokrastynacją, nie z wysoką wydajnością — lęk przed niedoskonałym startem odsuwa start w czasie."},
-    {"type":"def","term":"Kompleks tożsamości a otoczenie","text":"Najsilniejszy pojedynczy predyktor utrzymania nowego zachowania to przebywanie wśród ludzi, dla których to zachowanie jest normą, nie wyczynem."},
-    {"type":"def","term":"Sparowanie pokusy","text":"Połączenie czynności, której unikasz, z czymś przyjemnym dostępnym tylko przy niej (ulubiony podcast wyłącznie na siłowni) mierzalnie zwiększa frekwencję."},
-    {"type":"fact","text":"Osoby planujące konkretną godzinę i miejsce treningu ćwiczą znacznie regularniej niż te z równie silną motywacją, ale bez planu."},
-    {"type":"def","term":"Efekt IKEA","text":"Bardziej cenimy to, w co sami włożyliśmy pracę — dlatego własnoręcznie ułożony system nawyków utrzymuje się lepiej niż skopiowany z cudzej listy."},
-    {"type":"def","term":"Reguła jednego procenta","text":"Poprawa o 1% dziennie to nie 365% w rok, tylko około trzydziestosiedmiokrotność — procent składany dotyczy też umiejętności."},
-    {"type":"fact","text":"Przerwy w nauce — spacer, sen, nuda — poprawiają konsolidację pamięci; mózg porządkuje materiał wtedy, gdy przestajesz go wciskać."},
-    {"type":"def","term":"Prawo Hofstadtera","text":"Zadania trwają dłużej niż zakładasz, nawet gdy uwzględnisz, że trwają dłużej — planuj z zapasem, nie z nadzieją."},
-    {"type":"def","term":"Okno pierwszych sekund","text":"Po impulsie do działania masz kilka sekund, zanim mózg wyprodukuje wymówkę — ruch w tym oknie omija całą negocjację."},
-    {"type":"fact","text":"Wielozadaniowość przy zadaniach wymagających uwagi nie istnieje poznawczo — to szybkie przełączanie, które kosztuje dokładność i czas."},
-    {"type":"def","term":"Awersja do straty","text":"Strata boli około dwa razy mocniej niż zysk cieszy — dlatego stawka ('tracę X, jeśli nie zrobię') działa często lepiej niż obietnica nagrody."},
-    {"type":"fact","text":"Regularna aktywność fizyczna poprawia nastrój i funkcje poznawcze niezależnie od utraty wagi — efekt nie wymaga żadnej zmiany sylwetki."},
-    {"type":"def","term":"Pre-mortem","text":"Przed startem wyobraź sobie, że projekt spektakularnie się nie udał, i wypisz dlaczego — wyłapuje ryzyka, których optymistyczne planowanie nie widzi."},
-    {"type":"def","term":"Krzywa Yerkesa-Dodsona","text":"Zbyt niskie i zbyt wysokie pobudzenie pogarszają wyniki — istnieje pośredni poziom stresu, przy którym działasz najlepiej."},
-    {"type":"fact","text":"Notatki odręczne wypadają lepiej niż pisane na klawiaturze przy zapamiętywaniu pojęć, bo wymuszają streszczanie zamiast transkrypcji."},
-    {"type":"def","term":"Efekt generowania","text":"Informacja wyprodukowana samodzielnie — własnymi słowami, własnym przykładem — zapada w pamięć trwalej niż ta sama treść przeczytana."},
-    {"type":"def","term":"Prawo Goodharta","text":"Gdy miara staje się celem, przestaje być dobrą miarą — licznik kroków przestaje mierzyć zdrowie w momencie, gdy chodzisz dla licznika."},
-    {"type":"fact","text":"Drzemka 10-20 minut poprawia czujność bez ospałości po przebudzeniu, która pojawia się przy drzemkach dłuższych niż pół godziny."},
-    {"type":"def","term":"Tarcie","text":"Każdy dodatkowy klik, krok i decyzja między Tobą a działaniem obniża szansę jego wykonania — usuwanie tarcia działa lepiej niż dokładanie motywacji."},
-    {"type":"def","term":"Zasada świeżej kartki","text":"Po przerwanej serii skuteczniejsze jest potraktowanie jutra jako nowego startu niż próba odrabiania zaległości."},
-    {"type":"def","term":"Efekt szczytu i końca","text":"Doświadczenie zapamiętujemy po jego najintensywniejszym momencie i po zakończeniu, nie po średniej — warto świadomie projektować końcówki."},
-    {"type":"def","term":"Reguła dwóch list","text":"Wypisz 25 celów, zakreśl 5 najważniejszych — a pozostałe 20 traktuj jako listę rzeczy, których masz unikać, nie jako plan na później."},
-    {"type":"fact","text":"Nazwanie emocji słowami ('czuję niepokój') wiąże się z szybszym spadkiem pobudzenia niż próba jej stłumienia."},
-    {"type":"def","term":"Ekspozycja stopniowa","text":"Lęk słabnie przez kontrolowany kontakt z tym, co go wywołuje — unikanie daje chwilową ulgę, a długofalowo wzmacnia lęk."},
-    {"type":"def","term":"Koszt utopiony","text":"Trzymanie się projektu 'bo już tyle w to włożyłem' to jedna z najczęstszych pułapek decyzyjnych — liczy się tylko przyszły zwrot, nie przeszły nakład."},
-    {"type":"fact","text":"Ludzie oceniają własny postęp głównie po ostatnim odcinku, nie po całości — dlatego dobre zamknięcie sesji pracy zmienia pamięć o całym dniu."},
-    {"type":"def","term":"Efekt nadmiaru wyboru","text":"Więcej opcji obniża szansę podjęcia jakiejkolwiek decyzji i zadowolenie z wybranej — ograniczenie listy bywa skuteczniejsze niż jej poszerzanie."}
+    {
+      "type": "def",
+      "term": "Nawyk oparty na tożsamości",
+      "text": "Zmiana utrzymuje się łatwiej, gdy celem jest 'być kimś' (osobą, która biega), a nie 'osiągnąć coś' — każde powtórzenie jest wtedy głosem na nową tożsamość."
+    },
+    {
+      "type": "fact",
+      "text": "Motywacja pojawia się częściej PO rozpoczęciu działania niż przed nim — czekanie na chęć to odwrócenie kolejności, która realnie działa."
+    },
+    {
+      "type": "def",
+      "term": "Reguła dwóch minut",
+      "text": "Nowy nawyk skaluj w dół tak, by zajmował mniej niż dwie minuty — w pierwszej fazie celem jest utrwalenie samego pojawiania się, nie efekt."
+    },
+    {
+      "type": "def",
+      "term": "Projektowanie środowiska",
+      "text": "Zmiana otoczenia (co jest w zasięgu ręki, co widoczne) daje trwalsze efekty niż poleganie na sile woli, bo usuwa konieczność decydowania za każdym razem."
+    },
+    {
+      "type": "fact",
+      "text": "Samo przekonanie, że siła woli szybko się wyczerpuje, pogarsza wytrwałość w badaniach — ludzie wierzący w jej odnawialność wypadają lepiej w tych samych zadaniach."
+    },
+    {
+      "type": "def",
+      "term": "Praktyka celowa",
+      "text": "Trening skupiony dokładnie na tym, co jeszcze nie wychodzi, z natychmiastowym feedbackiem — to on odróżnia ekspertów, nie sama liczba przepracowanych godzin."
+    },
+    {
+      "type": "fact",
+      "text": "Zapisanie konkretnego 'kiedy i gdzie' zamiast samego postanowienia potrafi w badaniach nawet podwoić szansę faktycznego wykonania działania."
+    },
+    {
+      "type": "def",
+      "term": "Intencja wdrożeniowa",
+      "text": "Formuła 'jeśli sytuacja X, to zrobię Y' — przenosi decyzję z momentu pokusy na moment spokojnego planowania, gdy jest znacznie taniej."
+    },
+    {
+      "type": "fact",
+      "text": "W eksperymentach z odroczoną gratyfikacją dzieci czekały dłużej, gdy wcześniej doświadczyły, że obietnice są dotrzymywane — cierpliwość zależy od zaufania do otoczenia, nie tylko od charakteru."
+    },
+    {
+      "type": "fact",
+      "text": "Niedobór snu obniża zdolność oceny własnego stanu — im mniej śpisz, tym gorzej oceniasz, jak bardzo jesteś osłabiony."
+    },
+    {
+      "type": "def",
+      "term": "Efekt świeżego startu",
+      "text": "Symboliczne daty (poniedziałek, pierwszy dzień miesiąca, urodziny) realnie zwiększają szansę podjęcia nowego działania, bo oddzielają 'starego mnie' od 'nowego'."
+    },
+    {
+      "type": "def",
+      "term": "Deep work",
+      "text": "Bloki pracy bez przerwań mają nieproporcjonalnie wyższą wartość niż ta sama liczba minut pocięta powiadomieniami."
+    },
+    {
+      "type": "fact",
+      "text": "Powrót do pełnego skupienia po przerwaniu zajmuje średnio kilkanaście minut — stąd realny koszt 'tylko zerknę na telefon' jest wielokrotnie wyższy niż samo zerknięcie."
+    },
+    {
+      "type": "def",
+      "term": "Habit stacking",
+      "text": "Nowy nawyk przyklejony do istniejącego ('po zaparzeniu kawy robię X') działa skuteczniej niż nawyk zaplanowany na samą godzinę."
+    },
+    {
+      "type": "fact",
+      "text": "Publiczne ogłoszenie celu potrafi obniżyć motywację do jego realizacji — mózg częściowo traktuje uznanie za zapowiedź jak częściowe osiągnięcie."
+    },
+    {
+      "type": "def",
+      "term": "Przeformułowanie stresu",
+      "text": "Interpretowanie pobudzenia (szybsze serce, napięcie) jako 'ciało się przygotowuje' zamiast 'panikuję' mierzalnie poprawia wyniki pod presją."
+    },
+    {
+      "type": "def",
+      "term": "Zasada niezerowego dnia",
+      "text": "Minimalne wykonanie zadania w słaby dzień chroni ciągłość i tożsamość lepiej niż idealne wykonanie co drugi dzień."
+    },
+    {
+      "type": "fact",
+      "text": "Osoby z wysoką samokontrolą w badaniach nie walczą częściej z pokusą — one po prostu rzadziej się na nią wystawiają."
+    },
+    {
+      "type": "def",
+      "term": "Licencjonowanie moralne",
+      "text": "Po 'dobrym uczynku' (trening, zdrowy posiłek) rośnie skłonność do przyzwolenia sobie na odstępstwo — warto to przewidzieć, zamiast się tym zaskakiwać."
+    },
+    {
+      "type": "fact",
+      "text": "Spisanie zmartwień lub listy zadań przed snem skraca czas zasypiania skuteczniej niż próba 'nie myślenia o nich'."
+    },
+    {
+      "type": "def",
+      "term": "Prawo Parkinsona",
+      "text": "Praca rozszerza się tak, by wypełnić czas przeznaczony na jej wykonanie — skrócenie terminu bywa skuteczniejsze niż dodanie godzin."
+    },
+    {
+      "type": "def",
+      "term": "Krzywa zapominania",
+      "text": "Bez powtórek zapominamy większość nowej informacji w ciągu kilku dni — powtórki w rosnących odstępach zmieniają tę krzywą radykalnie."
+    },
+    {
+      "type": "fact",
+      "text": "Przypominanie z pamięci buduje trwalszą wiedzę niż ponowne czytanie, mimo że subiektywnie wydaje się trudniejsze i mniej skuteczne."
+    },
+    {
+      "type": "def",
+      "term": "Iluzja płynności",
+      "text": "Materiał przeczytany kilka razy wydaje się znany — mylimy wtedy poczucie znajomości z realną umiejętnością odtworzenia go bez podpowiedzi."
+    },
+    {
+      "type": "def",
+      "term": "Minimalna skuteczna dawka",
+      "text": "Zamiast pytać 'ile maksymalnie dam radę', pytaj 'ile minimalnie wystarczy, żeby był efekt' — to pytanie chroni przed wypaleniem i porzuceniem."
+    },
+    {
+      "type": "fact",
+      "text": "Krótki spacer na zewnątrz poprawia nastrój i kreatywne rozwiązywanie zadań mierzalnie bardziej niż ten sam spacer na bieżni w pomieszczeniu."
+    },
+    {
+      "type": "def",
+      "term": "Samowspółczucie",
+      "text": "Traktowanie siebie po porażce jak dobrego przyjaciela, a nie jak sierżanta, wiąże się w badaniach z szybszym powrotem do działania niż surowa samokrytyka."
+    },
+    {
+      "type": "fact",
+      "text": "Konkretne, trudne cele dają lepsze wyniki niż 'daj z siebie wszystko' — ale tylko przy opanowanym zadaniu; przy nauce nowej umiejętności cele procesowe biją wynikowe."
+    },
+    {
+      "type": "def",
+      "term": "Efekt pomiaru",
+      "text": "Samo mierzenie zachowania (kroki, wydatki, godziny) zmienia to zachowanie, zanim jeszcze podejmiesz świadomą decyzję o zmianie."
+    },
+    {
+      "type": "def",
+      "term": "Bufor porażki",
+      "text": "Zaplanowanie z góry, co zrobisz gdy nawyk wypadnie ('jeśli opuszczę trening, wracam następnego dnia'), podnosi szansę utrzymania serii bardziej niż założenie, że wypadka nie będzie."
+    },
+    {
+      "type": "fact",
+      "text": "Perfekcjonizm koreluje z prokrastynacją, nie z wysoką wydajnością — lęk przed niedoskonałym startem odsuwa start w czasie."
+    },
+    {
+      "type": "def",
+      "term": "Kompleks tożsamości a otoczenie",
+      "text": "Najsilniejszy pojedynczy predyktor utrzymania nowego zachowania to przebywanie wśród ludzi, dla których to zachowanie jest normą, nie wyczynem."
+    },
+    {
+      "type": "def",
+      "term": "Sparowanie pokusy",
+      "text": "Połączenie czynności, której unikasz, z czymś przyjemnym dostępnym tylko przy niej (ulubiony podcast wyłącznie na siłowni) mierzalnie zwiększa frekwencję."
+    },
+    {
+      "type": "fact",
+      "text": "Osoby planujące konkretną godzinę i miejsce treningu ćwiczą znacznie regularniej niż te z równie silną motywacją, ale bez planu."
+    },
+    {
+      "type": "def",
+      "term": "Efekt IKEA",
+      "text": "Bardziej cenimy to, w co sami włożyliśmy pracę — dlatego własnoręcznie ułożony system nawyków utrzymuje się lepiej niż skopiowany z cudzej listy."
+    },
+    {
+      "type": "def",
+      "term": "Reguła jednego procenta",
+      "text": "Poprawa o 1% dziennie to nie 365% w rok, tylko około trzydziestosiedmiokrotność — procent składany dotyczy też umiejętności."
+    },
+    {
+      "type": "fact",
+      "text": "Przerwy w nauce — spacer, sen, nuda — poprawiają konsolidację pamięci; mózg porządkuje materiał wtedy, gdy przestajesz go wciskać."
+    },
+    {
+      "type": "def",
+      "term": "Prawo Hofstadtera",
+      "text": "Zadania trwają dłużej niż zakładasz, nawet gdy uwzględnisz, że trwają dłużej — planuj z zapasem, nie z nadzieją."
+    },
+    {
+      "type": "def",
+      "term": "Okno pierwszych sekund",
+      "text": "Po impulsie do działania masz kilka sekund, zanim mózg wyprodukuje wymówkę — ruch w tym oknie omija całą negocjację."
+    },
+    {
+      "type": "fact",
+      "text": "Wielozadaniowość przy zadaniach wymagających uwagi nie istnieje poznawczo — to szybkie przełączanie, które kosztuje dokładność i czas."
+    },
+    {
+      "type": "def",
+      "term": "Awersja do straty",
+      "text": "Strata boli około dwa razy mocniej niż zysk cieszy — dlatego stawka ('tracę X, jeśli nie zrobię') działa często lepiej niż obietnica nagrody."
+    },
+    {
+      "type": "fact",
+      "text": "Regularna aktywność fizyczna poprawia nastrój i funkcje poznawcze niezależnie od utraty wagi — efekt nie wymaga żadnej zmiany sylwetki."
+    },
+    {
+      "type": "def",
+      "term": "Pre-mortem",
+      "text": "Przed startem wyobraź sobie, że projekt spektakularnie się nie udał, i wypisz dlaczego — wyłapuje ryzyka, których optymistyczne planowanie nie widzi."
+    },
+    {
+      "type": "def",
+      "term": "Krzywa Yerkesa-Dodsona",
+      "text": "Zbyt niskie i zbyt wysokie pobudzenie pogarszają wyniki — istnieje pośredni poziom stresu, przy którym działasz najlepiej."
+    },
+    {
+      "type": "fact",
+      "text": "Notatki odręczne wypadają lepiej niż pisane na klawiaturze przy zapamiętywaniu pojęć, bo wymuszają streszczanie zamiast transkrypcji."
+    },
+    {
+      "type": "def",
+      "term": "Efekt generowania",
+      "text": "Informacja wyprodukowana samodzielnie — własnymi słowami, własnym przykładem — zapada w pamięć trwalej niż ta sama treść przeczytana."
+    },
+    {
+      "type": "def",
+      "term": "Prawo Goodharta",
+      "text": "Gdy miara staje się celem, przestaje być dobrą miarą — licznik kroków przestaje mierzyć zdrowie w momencie, gdy chodzisz dla licznika."
+    },
+    {
+      "type": "fact",
+      "text": "Drzemka 10-20 minut poprawia czujność bez ospałości po przebudzeniu, która pojawia się przy drzemkach dłuższych niż pół godziny."
+    },
+    {
+      "type": "def",
+      "term": "Tarcie",
+      "text": "Każdy dodatkowy klik, krok i decyzja między Tobą a działaniem obniża szansę jego wykonania — usuwanie tarcia działa lepiej niż dokładanie motywacji."
+    },
+    {
+      "type": "def",
+      "term": "Zasada świeżej kartki",
+      "text": "Po przerwanej serii skuteczniejsze jest potraktowanie jutra jako nowego startu niż próba odrabiania zaległości."
+    },
+    {
+      "type": "def",
+      "term": "Efekt szczytu i końca",
+      "text": "Doświadczenie zapamiętujemy po jego najintensywniejszym momencie i po zakończeniu, nie po średniej — warto świadomie projektować końcówki."
+    },
+    {
+      "type": "def",
+      "term": "Reguła dwóch list",
+      "text": "Wypisz 25 celów, zakreśl 5 najważniejszych — a pozostałe 20 traktuj jako listę rzeczy, których masz unikać, nie jako plan na później."
+    },
+    {
+      "type": "fact",
+      "text": "Nazwanie emocji słowami ('czuję niepokój') wiąże się z szybszym spadkiem pobudzenia niż próba jej stłumienia."
+    },
+    {
+      "type": "def",
+      "term": "Ekspozycja stopniowa",
+      "text": "Lęk słabnie przez kontrolowany kontakt z tym, co go wywołuje — unikanie daje chwilową ulgę, a długofalowo wzmacnia lęk."
+    },
+    {
+      "type": "def",
+      "term": "Koszt utopiony",
+      "text": "Trzymanie się projektu 'bo już tyle w to włożyłem' to jedna z najczęstszych pułapek decyzyjnych — liczy się tylko przyszły zwrot, nie przeszły nakład."
+    },
+    {
+      "type": "fact",
+      "text": "Ludzie oceniają własny postęp głównie po ostatnim odcinku, nie po całości — dlatego dobre zamknięcie sesji pracy zmienia pamięć o całym dniu."
+    },
+    {
+      "type": "def",
+      "term": "Efekt nadmiaru wyboru",
+      "text": "Więcej opcji obniża szansę podjęcia jakiejkolwiek decyzji i zadowolenie z wybranej — ograniczenie listy bywa skuteczniejsze niż jej poszerzanie."
+    },
+    {
+      "type": "def",
+      "term": "Intencje implementacyjne",
+      "text": "Zamiast 'bede cwiczyc wiecej' - 'jesli bedzie wtorek 18:00, to ide na siłownie'. Gollwitzer pokazal, ze sam ten zapis potrafi podwoic skutecznosc postanowienia."
+    },
+    {
+      "type": "def",
+      "term": "WOOP",
+      "text": "Wish, Outcome, Obstacle, Plan. Oettingen udowodnila, ze samo pozytywne wyobrazanie sobie celu oslabia dzialanie - dopiero zderzenie go z konkretna przeszkoda uruchamia ruch."
+    },
+    {
+      "type": "def",
+      "term": "Regula 20 sekund",
+      "text": "Nawyk, ktory chcemy wprowadzic, skrocic o 20 sekund dostepu; ten, ktorego chcemy sie pozbyc - wydluzyc o 20 sekund. Tarcie decyduje czesciej niz sila woli."
+    },
+    {
+      "type": "def",
+      "term": "Efekt falszywej nadziei",
+      "text": "Sama decyzja o zmianie daje natychmiastowy zastrzyk dobrego samopoczucia, nieproporcjonalny do wysilku. Dlatego planowanie potrafi skutecznie zastapic dzialanie."
+    },
+    {
+      "type": "def",
+      "term": "Reszta uwagi",
+      "text": "Po przelaczeniu zadania czesc uwagi zostaje przy poprzednim jeszcze przez kilkanascie minut. Dlatego praca przerywana powiadomieniami nie jest praca krotsza, tylko plytsza."
+    },
+    {
+      "type": "def",
+      "term": "Regula 85 procent",
+      "text": "Najszybciej uczymy sie przy skutecznosci okolo 85 procent - gdy mniej wiecej co szosta proba sie nie udaje. Zadania zbyt latwe i zbyt trudne obie hamuja postep."
+    },
+    {
+      "type": "def",
+      "term": "Strefa najblizszego rozwoju",
+      "text": "Wygotski: uczymy sie najwiecej w pasmie miedzy tym, co umiemy sami, a tym, co potrafimy tylko z pomoca. Poza tym pasmem nauka jest albo nudna, albo bezowocna."
+    },
+    {
+      "type": "def",
+      "term": "Przeplatanie (interleaving)",
+      "text": "Mieszanie typow zadan daje gorsze wyniki w trakcie nauki i wyraznie lepsze w dlugim terminie niz cwiczenie blokami. Subiektywne wrazenie postepu jest tu mylace."
+    },
+    {
+      "type": "def",
+      "term": "Efekt testowania",
+      "text": "Samo probowanie przypomnienia sobie materialu utrwala go silniej niz ponowne przeczytanie. Nawet nieudana proba przypomnienia poprawia pozniejsze zapamietanie."
+    },
+    {
+      "type": "def",
+      "term": "Iluzja plynnosci",
+      "text": "Podkreslanie i wielokrotne czytanie daje poczucie, ze sie umie, bo tekst staje sie latwy w odbiorze. To najczestszy powod zdziwienia na egzaminie."
+    },
+    {
+      "type": "def",
+      "term": "Technika Feynmana",
+      "text": "Wytlumaczyc rzecz prostymi slowami, jakby komus zupelnie obcemu w temacie. Miejsce, w ktorym trzeba siegnac po zargon, wskazuje dokladnie to, czego sie nie rozumie."
+    },
+    {
+      "type": "def",
+      "term": "Powtorki rozlozone w czasie",
+      "text": "Ta sama liczba powtorek rozlozona na tygodnie daje wielokrotnie trwalszy efekt niz skumulowana w jeden dzien. Zapominanie miedzy sesjami jest czescia mechanizmu, nie strata."
+    },
+    {
+      "type": "def",
+      "term": "Regula 1 procenta",
+      "text": "Poprawa o procent dziennie daje po roku wynik ponad trzydziestokrotny. Brailsford zbudowal na tym dominacje brytyjskiego kolarstwa, poprawiajac dziesiatki drobiazgow naraz."
+    },
+    {
+      "type": "def",
+      "term": "Via negativa",
+      "text": "Latwiej i pewniej poprawic zycie przez usuwanie niz dodawanie. Wiemy duzo lepiej, co szkodzi, niz co pomaga - i to ta wiedza jest odporna na mody."
+    },
+    {
+      "type": "def",
+      "term": "Antykruchosc",
+      "text": "Taleb: przeciwienstwem kruchosci nie jest odpornosc, tylko zyskiwanie na wstrzasach. Miesnie, reputacja i umiejetnosci rosna wlasnie przez kontrolowany stres."
+    },
+    {
+      "type": "def",
+      "term": "Strategia sztangi",
+      "text": "Skrajna ostroznosc w wiekszosci spraw plus mala pula na ryzyko o nieograniczonym potencjale. Srodek - umiarkowane ryzyko wszedzie - jest najgorszym wyborem."
+    },
+    {
+      "type": "def",
+      "term": "Premortem",
+      "text": "Przed startem zalozyc, ze projekt splajtowal, i opisac dlaczego. Ludzie wskazuja wtedy zagrozenia, ktorych nie odwazyliby sie zglosic jako watpliwosci."
+    },
+    {
+      "type": "def",
+      "term": "Inwersja",
+      "text": "Zamiast pytac, jak osiagnac sukces, zapytac, co gwarantuje porazke - i tego unikac. Munger powtarzal za Jacobim: odwracaj, zawsze odwracaj."
+    },
+    {
+      "type": "def",
+      "term": "Krag kompetencji",
+      "text": "Nie chodzi o to, jak duzy jest, tylko czy dokladnie wiadomo, gdzie przebiega jego granica. Najkosztowniejsze bledy zdarzaja sie tuz za nia."
+    },
+    {
+      "type": "def",
+      "term": "Drzwi jednokierunkowe",
+      "text": "Decyzje odwracalne podejmowac szybko, nieodwracalne powoli. Wiekszosc ludzi robi odwrotnie: miesiacami wybiera laptopa i w tydzien zmienia prace."
+    },
+    {
+      "type": "def",
+      "term": "Regula 10/10/10",
+      "text": "Jak spojrze na te decyzje za 10 minut, za 10 miesiecy i za 10 lat? Trzy horyzonty naraz rozbrajaja emocje chwili, nie udajac, ze ich nie ma."
+    },
+    {
+      "type": "def",
+      "term": "Minimalizacja zalu",
+      "text": "Bezos wybieral, wyobrazajac sobie siebie w wieku 80 lat. Zalujemy niemal zawsze rzeczy niezrobionych, a nie nieudanych prob."
+    },
+    {
+      "type": "def",
+      "term": "Dychotomia kontroli",
+      "text": "Epiktet: czesc rzeczy zalezy od nas, czesc nie. Caly spokoj bierze sie z konsekwentnego rozdzielania tych dwoch zbiorow, a nie z ich ignorowania."
+    },
+    {
+      "type": "def",
+      "term": "Premeditatio malorum",
+      "text": "Stoickie wyobrazanie sobie z gory, co moze pojsc zle. Nie po to, by sie bac, ale by odebrac zdarzeniu element zaskoczenia, ktory boli najbardziej."
+    },
+    {
+      "type": "def",
+      "term": "Amor fati",
+      "text": "Nie tylko zgoda na to, co sie stalo, ale uznanie tego za material do pracy. Nietzsche uwazal to za formule wielkosci czlowieka."
+    },
+    {
+      "type": "def",
+      "term": "Widok z gory",
+      "text": "Marek Aureliusz radzil spojrzec na wlasna sprawe z perspektywy calego miasta, potem kontynentu, potem stuleci. Skala problemu zmienia sie natychmiast."
+    },
+    {
+      "type": "def",
+      "term": "Wieczorny rachunek",
+      "text": "Seneka codziennie przed snem przechodzil przez miniony dzien: co zrobilem zle, co lepiej, czego uniknalem. Bez samobiczowania - jak rewizja ksiag."
+    },
+    {
+      "type": "def",
+      "term": "Shoshin",
+      "text": "Umysl poczatkujacego. Ekspert widzi mniej mozliwosci niz nowicjusz, bo wie, czego 'nie warto' probowac. Utrata tej swiezosci jest cena doswiadczenia."
+    },
+    {
+      "type": "def",
+      "term": "Kaizen",
+      "text": "Ciagla poprawa malymi krokami, wprowadzana przez tych, ktorzy wykonuja prace, a nie przez zarzad. Sila jest w liczbie usprawnien, nie w ich wielkosci."
+    },
+    {
+      "type": "def",
+      "term": "Ikigai - sprostowanie",
+      "text": "Popularny diagram czterech kol nie pochodzi z Japonii i nie ma nic wspolnego z pierwotnym pojeciem. Japonskie ikigai to drobny powod, dla ktorego warto wstac rano - nie musi byc zawodem ani misja."
+    },
+    {
+      "type": "def",
+      "term": "Wabi-sabi",
+      "text": "Piekno rzeczy niedoskonalych, nietrwalych i niekompletnych. Perspektywa, w ktorej pekniecie jest czescia wartosci przedmiotu, a nie jego wada."
+    },
+    {
+      "type": "def",
+      "term": "Nazywanie emocji",
+      "text": "Ubranie emocji w slowa mierzalnie obniza aktywnosc ciala migdalowatego. Samo stwierdzenie 'jestem wsciekly' dziala uspokajajaco - dlatego rozmowa pomaga nawet bez rady."
+    },
+    {
+      "type": "def",
+      "term": "Westchniecie fizjologiczne",
+      "text": "Dwa wdechy nosem, drugi krotki, i dlugi wydech ustami. Najszybszy znany sposob obnizenia pobudzenia w czasie rzeczywistym - organizm robi to sam w czasie snu."
+    },
+    {
+      "type": "def",
+      "term": "Samowspolczucie zamiast samokrytyki",
+      "text": "Badania Kristin Neff pokazuja, ze osoby traktujace sie lagodniej po porazce wracaja do dzialania szybciej. Ostra samokrytyka chroni ego, ale opoznia powrot."
+    },
+    {
+      "type": "def",
+      "term": "Swiatlo rano",
+      "text": "Kilkanascie minut swiatla dziennego zaraz po przebudzeniu ustawia rytm dobowy i przesuwa wieczorna senosc we wlasciwe miejsce. Zadna lampa w pokoju nie ma tej mocy co pochmurny poranek na dworze."
+    },
+    {
+      "type": "def",
+      "term": "Sen i konsolidacja",
+      "text": "To w czasie snu swiezo nauczony material jest przenoszony do pamieci trwalej. Noc po nauce ma wiecej wplywu na wynik niz dodatkowa godzina powtorek przed snem."
+    },
+    {
+      "type": "def",
+      "term": "Drzemka do 20 minut",
+      "text": "Krotka drzemka regeneruje uwage bez wchodzenia w sen gleboki. Powyzej 30 minut budzenie wypada w nieodpowiedniej fazie i konczy sie ociezaloscia na godzine."
+    },
+    {
+      "type": "def",
+      "term": "Adenozyna",
+      "text": "Senosc to narastajace przez dzien stezenie adenozyny. Kofeina jej nie usuwa, tylko blokuje receptory - po przestaniu dzialania caly nagromadzony sygnal wraca naraz."
+    },
+    {
+      "type": "def",
+      "term": "Ruch i BDNF",
+      "text": "Wysilek aerobowy podnosi poziom czynnika BDNF, wspierajacego powstawanie polaczen nerwowych. Nauka po treningu jest mierzalnie skuteczniejsza niz przed nim."
+    },
+    {
+      "type": "def",
+      "term": "Regula dwoch minut",
+      "text": "Kazdy nowy nawyk zaczynac w wersji trwajacej do dwoch minut. Celem pierwszych tygodni nie jest efekt, tylko stanie sie osoba, ktora to robi."
+    },
+    {
+      "type": "def",
+      "term": "Nigdy dwa razy z rzedu",
+      "text": "Jeden opuszczony dzien nie psuje nic. Drugi z rzedu zaczyna nowy nawyk - ten, ktory zastapi poprzedni."
+    },
+    {
+      "type": "def",
+      "term": "Laczenie nawykow",
+      "text": "Nowa czynnosc doczepiac do juz istniejacej: po zaparzeniu kawy - piec minut czytania. Gotowy nawyk dziala jako wyzwalacz, ktorego nie trzeba pamietac."
+    },
+    {
+      "type": "def",
+      "term": "Projektowanie otoczenia",
+      "text": "Srodowisko decyduje czesciej niz motywacja. Prostsze jest usuniecie czegos z zasiegu reki niz codzienna walka z checia siegniecia po to."
+    },
+    {
+      "type": "def",
+      "term": "Nie przerywaj lancucha",
+      "text": "Zaznaczanie w kalendarzu kazdego dnia z wykonanym zadaniem. Po kilkunastu dniach motywacja przesuwa sie z celu na sam lancuch, ktorego szkoda zerwac."
+    },
+    {
+      "type": "def",
+      "term": "Deprywacja samotnosci",
+      "text": "Cal Newport: stan, w ktorym czlowiek nigdy nie zostaje sam z wlasnymi myslami, bo kazda luka jest wypelniona ekranem. Bez tych luk nie powstaja wnioski ani plany."
+    },
+    {
+      "type": "def",
+      "term": "Praca gleboka",
+      "text": "Bloki skupienia bez przerwan, zwykle 60-90 minut. Umiejetnosc, ktora staje sie rzadka dokladnie w tym momencie, w ktorym staje sie najcenniejsza."
+    },
+    {
+      "type": "def",
+      "term": "Efekt swiezego startu",
+      "text": "Poniedzialek, pierwszy dzien miesiaca czy urodziny realnie zwiekszaja szanse podjecia zmiany. Umysl traktuje je jako granice miedzy 'starym ja' a nowym."
+    },
+    {
+      "type": "def",
+      "term": "Odsetki skladane nawykow",
+      "text": "Efekty dzialaja jak procent skladany: przez dlugi czas niewidoczne, potem gwaltowne. Wiekszosc ludzi rezygnuje w plaskiej czesci wykresu, tuz przed zakretem."
+    },
+    {
+      "type": "def",
+      "term": "Zapisywanie odrecznie",
+      "text": "Pisanie recznie jest wolniejsze, wiec zmusza do streszczania i przetwarzania tresci. Notatki z klawiatury sa pelniejsze i zapamietane gorzej."
+    },
+    {
+      "type": "def",
+      "term": "Pierwsza godzina bez ekranu",
+      "text": "Siegniecie po telefon zaraz po przebudzeniu ustawia caly dzien w trybie reagowania na cudze sprawy. Ta sama godzina uzyta na wlasne zadanie zmienia poczucie sprawczosci na caly dzien."
+    },
+    {
+      "type": "def",
+      "term": "Regula trzech rzeczy",
+      "text": "Trzy rzeczy na dzien, nie dwadziescia. Lista, ktorej nie da sie skonczyc, uczy codziennie tego samego: ze i tak sie nie udalo."
+    }
   ]
 }

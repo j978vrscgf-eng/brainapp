@@ -44,7 +44,7 @@ const CAT_LABEL = Object.fromEntries(CATS.map(c => [c.key, c.label]));
 const INITIAL_CARDS = 10;
 const BATCH_CARDS = 20;
 const STORE_KEY = "brainapp-state";
-const APP_VERSION = "20260917-162017";   // podmieniane przy budowaniu
+const APP_VERSION = "20260917-231019";   // podmieniane przy budowaniu
 
 let allCards = [];
 let queues = {};
@@ -193,20 +193,41 @@ let lastBgCat = "all";
 
 // Pasek pod gestami iPhone'a maluje sie z tla dokumentu, nie z karty - dlatego
 // ten sam kolor trzeba nalozyc takze na html/body, inaczej zostaje czarna belka.
+// Gradient nalozony na html/body jest kafelkowany - konczy sie na wysokosci
+// okna i zaczyna od nowa, co daje widoczny pasek u dolu. Dlatego tam idzie
+// kolor jednolity, wziety z dolnego konca gradientu.
+function gradEnd(grad) {
+  const m = String(grad).match(/#[0-9a-fA-F]{6}/g);
+  return m ? m[m.length - 1] : "#101014";
+}
+
+function darken(hex, k) {
+  const n = parseInt(hex.slice(1), 16);
+  return "rgb(" + Math.round(((n >> 16) & 255) * k) + ","
+    + Math.round(((n >> 8) & 255) * k) + ","
+    + Math.round((n & 255) * k) + ")";
+}
+
 function setBg(cat) {
   if (!GRAD[cat]) return;
   lastBgCat = cat;
   const mode = document.getElementById("app").getAttribute("data-theme");
   let paint = GRAD[cat];
-  if (mode === "anthracite") paint = "#262624";
-  else if (mode === "nightlight") paint = "#1c1712";
-  else if (mode === "night") {
+  let solid = gradEnd(GRAD[cat]);
+  if (mode === "anthracite") {
+    paint = "#262624";
+    solid = "#262624";
+  } else if (mode === "nightlight") {
+    paint = "#1c1712";
+    solid = "#1c1712";
+  } else if (mode === "night") {
     // przyciemnienie odpowiadajace filtrowi nakladanemu na karty
     paint = "linear-gradient(rgba(0,0,0,0.46),rgba(0,0,0,0.46))," + paint;
+    solid = darken(solid, 0.54);
   }
   if (bgEl) bgEl.style.background = paint;
-  document.body.style.background = paint;
-  document.documentElement.style.background = paint;
+  document.body.style.background = solid;
+  document.documentElement.style.background = solid;
 }
 
 function markSettled(cat) {
