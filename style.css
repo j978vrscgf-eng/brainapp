@@ -86,7 +86,7 @@ html, body {
 #read-btn {
   position: absolute;
   top: calc(58px + env(safe-area-inset-top));
-  right: 52px;
+  right: 94px;
   z-index: 30;
   display: flex;
   align-items: center;
@@ -110,7 +110,7 @@ html, body {
 #theme-toggle {
   position: absolute;
   top: calc(58px + env(safe-area-inset-top));
-  right: 10px;
+  right: 52px;
   z-index: 30;
   display: flex;
   align-items: center;
@@ -162,7 +162,7 @@ html, body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 96px 28px 60px;
+  padding: 132px 28px 60px;
   text-align: center;
   color: white;
   position: relative;
@@ -170,7 +170,7 @@ html, body {
 
 .card .pill {
   position: absolute;
-  top: calc(64px + env(safe-area-inset-top));
+  top: calc(100px + env(safe-area-inset-top));
   left: 50%;
   transform: translateX(-50%);
   font-size: 11px;
@@ -280,7 +280,7 @@ html, body {
 
 .notes-wrap {
   min-height: 100dvh;
-  padding: calc(104px + env(safe-area-inset-top)) 18px calc(40px + env(safe-area-inset-bottom));
+  padding: calc(112px + env(safe-area-inset-top)) 18px calc(40px + env(safe-area-inset-bottom));
   display: flex;
   flex-direction: column;
   gap: 14px;
@@ -419,7 +419,7 @@ html, body {
 /* ----------------------------------------------------------- ustawienia */
 #settings-btn {
   position: absolute;
-  top: calc(100px + env(safe-area-inset-top));
+  top: calc(58px + env(safe-area-inset-top));
   right: 10px;
   z-index: 30;
   display: flex;

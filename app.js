@@ -44,7 +44,7 @@ const CAT_LABEL = Object.fromEntries(CATS.map(c => [c.key, c.label]));
 const INITIAL_CARDS = 10;
 const BATCH_CARDS = 20;
 const STORE_KEY = "brainapp-state";
-const APP_VERSION = "20260917-130129";   // podmieniane przy budowaniu
+const APP_VERSION = "20260917-162017";   // podmieniane przy budowaniu
 
 let allCards = [];
 let queues = {};
