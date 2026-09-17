@@ -1,20 +1,23 @@
-const CACHE_NAME = "brainapp-20260916-225758";
+const CACHE_NAME = "brainapp-20260917-025428";
+
+// Rdzen aplikacji: zawsze najpierw siec, zeby nowa wersja wchodzila od razu.
+// Cache jest tylko zapasem na tryb offline.
+const CORE = ["", "index.html", "app.js", "style.css", "content.json", "manifest.json"];
+
 const ASSETS = [
   "./",
   "index.html",
-  "style.css",
   "app.js",
-  "manifest.json",
+  "style.css",
   "content.json",
+  "manifest.json",
   "icons/icon-192.png",
   "icons/icon-512.png",
   "icons/icon-180.png"
 ];
 
 self.addEventListener("install", (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(ASSETS))
-  );
+  event.waitUntil(caches.open(CACHE_NAME).then((c) => c.addAll(ASSETS)));
   self.skipWaiting();
 });
 
@@ -27,15 +30,36 @@ self.addEventListener("activate", (event) => {
   self.clients.claim();
 });
 
+function isCore(url) {
+  if (url.origin !== self.location.origin) return false;
+  return CORE.includes(url.pathname.replace(/^.*\//, ""));
+}
+
 self.addEventListener("fetch", (event) => {
+  const req = event.request;
+  if (req.method !== "GET") return;
+
+  if (req.mode === "navigate" || isCore(new URL(req.url))) {
+    event.respondWith(
+      fetch(req)
+        .then((resp) => {
+          const copy = resp.clone();
+          caches.open(CACHE_NAME).then((c) => c.put(req, copy));
+          return resp;
+        })
+        .catch(() => caches.match(req).then((hit) => hit || caches.match("index.html")))
+    );
+    return;
+  }
+
   event.respondWith(
-    caches.match(event.request).then((cached) => {
-      if (cached) return cached;
-      return fetch(event.request).then((resp) => {
+    caches.match(req).then((hit) => {
+      if (hit) return hit;
+      return fetch(req).then((resp) => {
         const copy = resp.clone();
-        caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
+        caches.open(CACHE_NAME).then((c) => c.put(req, copy));
         return resp;
-      }).catch(() => cached);
+      });
     })
   );
 });

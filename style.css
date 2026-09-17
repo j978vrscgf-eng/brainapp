@@ -86,6 +86,30 @@ html, body {
   opacity: 0.8;
 }
 
+#read-btn {
+  position: absolute;
+  top: calc(58px + env(safe-area-inset-top));
+  right: 52px;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(16,16,20,0.28);
+  color: rgba(255,255,255,0.58);
+  backdrop-filter: blur(6px);
+  transition: color 0.2s ease, background 0.2s ease;
+}
+#read-btn.reading {
+  color: #ffffff;
+  background: rgba(63,158,255,0.30);
+  border-color: rgba(63,158,255,0.45);
+}
+
 #theme-toggle {
   position: absolute;
   top: calc(58px + env(safe-area-inset-top));
@@ -392,4 +416,92 @@ html, body {
   opacity: 0.5;
   line-height: 1.5;
   margin: 0;
+}
+
+/* ----------------------------------------------------------- ustawienia */
+#settings-btn {
+  position: absolute;
+  top: calc(100px + env(safe-area-inset-top));
+  right: 10px;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(16,16,20,0.28);
+  color: rgba(255,255,255,0.58);
+  backdrop-filter: blur(6px);
+}
+
+#sheet {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: none;
+  align-items: flex-end;
+  justify-content: center;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(3px);
+}
+#sheet.open { display: flex; }
+
+.sheet-card {
+  width: 100%;
+  max-width: 560px;
+  background: #1b1b20;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding: 18px 16px calc(24px + env(safe-area-inset-bottom));
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  box-shadow: 0 -20px 60px rgba(0,0,0,0.5);
+}
+
+.sheet-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+.sheet-head h2 {
+  margin: 0;
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  font-size: 22px;
+}
+.sheet-x {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.6);
+  font-size: 18px;
+  padding: 6px 10px;
+}
+
+.sheet-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  width: 100%;
+  text-align: left;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.05);
+  border-radius: 13px;
+  padding: 13px 15px;
+  color: white;
+}
+.sheet-row-main { font-size: 15px; font-weight: 600; }
+.sheet-row-sub { font-size: 12px; opacity: 0.6; }
+
+.sheet-ver {
+  margin: 6px 0 0;
+  text-align: center;
+  font-size: 11.5px;
+  opacity: 0.45;
+  font-variant-numeric: tabular-nums;
 }

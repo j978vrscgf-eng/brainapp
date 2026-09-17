@@ -44,6 +44,7 @@ const CAT_LABEL = Object.fromEntries(CATS.map(c => [c.key, c.label]));
 const INITIAL_CARDS = 10;
 const BATCH_CARDS = 20;
 const STORE_KEY = "brainapp-state";
+const APP_VERSION = "20260917-025428";   // podmieniane przy budowaniu
 
 let allCards = [];
 let queues = {};
@@ -594,3 +595,160 @@ async function transcribe(blob, status) {
     return null;
   }
 }
+
+
+/* =========================================================== USTAWIENIA ===
+   W trybie aplikacji nie ma paska przegladarki, wiec odswiezanie, wersja
+   i reszta ustawien musza byc w srodku.                                     */
+
+function sheetHTML() {
+  const keySet = groqKey() ? "ustawiony ✓" : "nie ustawiony";
+  const notesLabel = notesOn ? "włączony" : "wyłączony";
+  const readCount = Object.keys(seenCounts).length;
+  return `
+    <div class="sheet-card" role="dialog" aria-label="Ustawienia">
+      <div class="sheet-head">
+        <h2>Ustawienia</h2>
+        <button class="sheet-x" data-close="1" aria-label="Zamknij">✕</button>
+      </div>
+
+      <button class="sheet-row" data-update="1">
+        <span class="sheet-row-main">Sprawdź aktualizacje</span>
+        <span class="sheet-row-sub">pobierz najnowszą wersję i przeładuj</span>
+      </button>
+
+      <button class="sheet-row" data-notes="1">
+        <span class="sheet-row-main">Notatnik</span>
+        <span class="sheet-row-sub">${notesLabel}</span>
+      </button>
+
+      <button class="sheet-row" data-apikey="1">
+        <span class="sheet-row-main">Klucz API do dyktowania</span>
+        <span class="sheet-row-sub">${keySet}</span>
+      </button>
+
+      <button class="sheet-row" data-reset="1">
+        <span class="sheet-row-main">Wyczyść postęp czytania</span>
+        <span class="sheet-row-sub">przeczytanych kart: ${readCount}</span>
+      </button>
+
+      <p class="sheet-ver">Wersja ${APP_VERSION}</p>
+    </div>`;
+}
+
+function openSheet() {
+  let el = document.getElementById("sheet");
+  if (!el) {
+    el = document.createElement("div");
+    el.id = "sheet";
+    document.getElementById("app").appendChild(el);
+  }
+  el.innerHTML = sheetHTML();
+  el.classList.add("open");
+
+  el.onclick = (e) => { if (e.target === el) closeSheet(); };
+  el.querySelector("[data-close]").onclick = closeSheet;
+
+  el.querySelector("[data-update]").onclick = async () => {
+    const row = el.querySelector("[data-update] .sheet-row-sub");
+    row.textContent = "pobieram...";
+    try {
+      if ("serviceWorker" in navigator) {
+        for (const r of await navigator.serviceWorker.getRegistrations()) await r.unregister();
+      }
+      if (window.caches) {
+        for (const n of await caches.keys()) await caches.delete(n);
+      }
+    } catch (e) {}
+    location.replace(location.pathname + "?v=" + Date.now());
+  };
+
+  el.querySelector("[data-notes]").onclick = () => {
+    try {
+      if (notesOn) localStorage.removeItem(NOTES_FLAG);
+      else localStorage.setItem(NOTES_FLAG, "1");
+    } catch (e) {}
+    location.replace(location.pathname);
+  };
+
+  el.querySelector("[data-apikey]").onclick = () => {
+    const val = prompt("Klucz API Groq (zostaje tylko na tym urządzeniu):", groqKey());
+    if (val === null) return;
+    try { localStorage.setItem(GROQ_KEY_STORE, val.trim()); } catch (e) {}
+    openSheet();
+  };
+
+  el.querySelector("[data-reset]").onclick = () => {
+    if (!confirm("Wyczyścić historię przeczytanych kart? Znaki ∞ znikną.")) return;
+    seenCounts = {};
+    saveNow();
+    buildQueues();
+    buildPanes();
+    openSheet();
+  };
+}
+
+function closeSheet() {
+  const el = document.getElementById("sheet");
+  if (el) el.classList.remove("open");
+}
+
+
+
+/* =========================================================== CZYTANIE ===
+   Wbudowany w system silnik mowy: dziala offline, bez klucza API, i ma
+   naturalny glos polski na iPhonie. Groq TTS celowo pominiety - obsluguje
+   dzis tylko angielski i arabski, a niemal cala tresc jest po polsku.       */
+
+const READ_ICON = {
+  idle: '<svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7.5h2.6L10 4.5v11L6.6 12.5H4z"/><path d="M13 7.3a4 4 0 0 1 0 5.4"/></svg>',
+  active: '<svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7.5h2.6L10 4.5v11L6.6 12.5H4z"/><path d="M13 6.4a5.6 5.6 0 0 1 0 7.2M15.3 4.3a8.8 8.8 0 0 1 0 11.4"/></svg>'
+};
+
+function currentCardText(cat) {
+  const pane = paneOf(cat);
+  if (!pane || !pane.clientHeight) return null;
+  const el = pane.children[Math.round(pane.scrollTop / pane.clientHeight)];
+  if (!el) return null;
+  const term = el.querySelector(".term");
+  const body = el.querySelector(".body");
+  const translation = el.querySelector(".translation");
+  const parts = [term, body, translation].filter(Boolean).map(n => n.textContent.trim());
+  return parts.join(". ");
+}
+
+function setReadIcon(state) {
+  const btn = document.getElementById("read-btn");
+  if (!btn) return;
+  btn.innerHTML = READ_ICON[state];
+  btn.classList.toggle("reading", state === "active");
+}
+
+function stopReading() {
+  if ("speechSynthesis" in window) speechSynthesis.cancel();
+  setReadIcon("idle");
+}
+
+function toggleReadAloud() {
+  if (!("speechSynthesis" in window)) return;
+  if (speechSynthesis.speaking) { stopReading(); return; }
+
+  const text = currentCardText(currentCat === "notatnik" ? "all" : currentCat);
+  if (!text) return;
+
+  const utter = new SpeechSynthesisUtterance(text);
+  utter.lang = "pl-PL";
+  utter.rate = 0.98;
+  utter.onend = () => setReadIcon("idle");
+  utter.onerror = () => setReadIcon("idle");
+  speechSynthesis.speak(utter);
+  setReadIcon("active");
+}
+
+document.getElementById("read-btn").addEventListener("click", toggleReadAloud);
+
+// zmiana karty/dziedziny przerywa czytanie, zeby glos nie zostawal w tyle
+pager.addEventListener("scroll", stopReading, { passive: true });
+document.querySelectorAll(".tab").forEach(t => t.addEventListener("click", stopReading));
+
+document.getElementById("settings-btn").addEventListener("click", openSheet);
