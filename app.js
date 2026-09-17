@@ -44,7 +44,7 @@ const CAT_LABEL = Object.fromEntries(CATS.map(c => [c.key, c.label]));
 const INITIAL_CARDS = 10;
 const BATCH_CARDS = 20;
 const STORE_KEY = "brainapp-state";
-const APP_VERSION = "20260917-112557";   // podmieniane przy budowaniu
+const APP_VERSION = "20260917-120520";   // podmieniane przy budowaniu
 
 let allCards = [];
 let queues = {};
@@ -189,8 +189,24 @@ function cardHTML(item) {
 // Karta liczy sie jako przeczytana, gdy przewijanie zatrzyma sie na niej
 // w aktualnie ogladanej dziedzinie.
 const bgEl = document.getElementById("bg");
+let lastBgCat = "all";
+
+// Pasek pod gestami iPhone'a maluje sie z tla dokumentu, nie z karty - dlatego
+// ten sam kolor trzeba nalozyc takze na html/body, inaczej zostaje czarna belka.
 function setBg(cat) {
-  if (bgEl && GRAD[cat]) bgEl.style.background = GRAD[cat];
+  if (!GRAD[cat]) return;
+  lastBgCat = cat;
+  const mode = document.getElementById("app").getAttribute("data-theme");
+  let paint = GRAD[cat];
+  if (mode === "anthracite") paint = "#262624";
+  else if (mode === "nightlight") paint = "#1c1712";
+  else if (mode === "night") {
+    // przyciemnienie odpowiadajace filtrowi nakladanemu na karty
+    paint = "linear-gradient(rgba(0,0,0,0.46),rgba(0,0,0,0.46))," + paint;
+  }
+  if (bgEl) bgEl.style.background = paint;
+  document.body.style.background = paint;
+  document.documentElement.style.background = paint;
 }
 
 function markSettled(cat) {
@@ -376,6 +392,7 @@ const THEME_TITLE = {
 
 function applyTheme(mode) {
   document.getElementById("app").setAttribute("data-theme", mode);
+  setBg(lastBgCat);
   const btn = document.getElementById("theme-toggle");
   btn.innerHTML = THEME_ICON[mode];
   btn.title = THEME_TITLE[mode];

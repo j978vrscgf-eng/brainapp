@@ -19,9 +19,6 @@ html, body {
   background: linear-gradient(160deg, #16161c, #2a2a33);
   transition: background 0.35s ease;
 }
-[data-theme="night"] #bg { filter: brightness(0.55) saturate(0.8); }
-[data-theme="anthracite"] #bg { background: #262624 !important; }
-[data-theme="nightlight"] #bg { background: #1c1712 !important; }
 
 #app {
   position: relative;
