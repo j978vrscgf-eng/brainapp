@@ -9,6 +9,7 @@ const GRAD = {
   chemia:          "linear-gradient(160deg,#0a4a3f,#1fae8e)",
   mowa_ciala:      "linear-gradient(160deg,#3a2e1f,#8a6d3f)",
   rozwoj:          "linear-gradient(160deg,#10324f,#2f9bd8)",
+  ulubione:        "linear-gradient(160deg,#4a0d1c,#e0405e)",
   notatnik:        "linear-gradient(160deg,#14161a,#20242b)"
 };
 
@@ -25,18 +26,21 @@ const BASE_CATS = [
   { key: "rozwoj",          label: "Najlepsza wersja siebie", accent: "#2f9bd8", on: "#ffffff" }
 ];
 
-// Notatnik jest prywatny: pojawia sie dopiero po jednorazowym wejsciu
-// na adres z koncowka #notatnik i zostaje juz tylko na tym urzadzeniu.
+// Notatnik jest prywatny: odblokowuje go potrojne szybkie dotkniecie karty
+// (albo adres z koncowka #notatnik) i zostaje juz tylko na tym urzadzeniu.
 const NOTES_FLAG = "brainapp-notes-on";
+const GOTO_FLAG = "brainapp-goto";
 if (location.hash === "#notatnik") {
   try { localStorage.setItem(NOTES_FLAG, "1"); } catch (e) {}
 }
 let notesOn = false;
 try { notesOn = localStorage.getItem(NOTES_FLAG) === "1"; } catch (e) {}
 
-const CATS = notesOn
-  ? BASE_CATS.concat([{ key: "notatnik", label: "Notatnik", accent: "#7d8590", on: "#ffffff" }])
-  : BASE_CATS;
+const NOTES_CAT = { key: "notatnik", label: "Notatnik",  accent: "#7d8590", on: "#ffffff" };
+const FAV_CAT   = { key: "ulubione", label: "Ulubione ♥", accent: "#e0405e", on: "#ffffff" };
+
+// Ulubione zawsze na samym koncu paska zakladek.
+const CATS = BASE_CATS.concat(notesOn ? [NOTES_CAT] : []).concat([FAV_CAT]);
 
 const CAT_ORDER = CATS.map(c => c.key);
 const CAT_LABEL = Object.fromEntries(CATS.map(c => [c.key, c.label]));
@@ -44,14 +48,29 @@ const CAT_LABEL = Object.fromEntries(CATS.map(c => [c.key, c.label]));
 const INITIAL_CARDS = 10;
 const BATCH_CARDS = 20;
 const STORE_KEY = "brainapp-state";
-const APP_VERSION = "20260917-231019";   // podmieniane przy budowaniu
+const APP_VERSION = "20260917-232301";   // podmieniane przy budowaniu
 
 let allCards = [];
 let queues = {};
 let currentCat = "all";
 let vocabDir = "pl-it";
 let seenCounts = {};   // id karty -> ile razy realnie pokazana na ekranie
+let favs = {};         // id karty -> 1, jesli dodana do ulubionych
+let favsDirty = false; // zakladka Ulubione wymaga przebudowy
 const settleTimers = {}; // kategoria -> timer "przewijanie ucichlo"
+
+// Stan notatnika musi byc zadeklarowany tutaj, a nie przy jego sekcji nizej:
+// budowanie zakladek dzieje sie wczesniej i siegalo po te zmienne, zanim
+// powstaly. Konczylo sie to wyjatkiem, ktory przerywal budowanie reszty.
+const NOTES_STORE = "brainapp-notes";
+const GROQ_KEY_STORE = "brainapp-groq-key";
+const GROQ_URL = "https://api.groq.com/openai/v1/audio/transcriptions";
+const GROQ_MODEL = "whisper-large-v3-turbo";
+let notes = [];
+let openNoteId = null;
+let rec = null;
+let recChunks = [];
+let recStream = null;
 
 const pager = document.getElementById("pager");
 
@@ -79,7 +98,7 @@ function loadState() {
 
 function saveNow() {
   try {
-    localStorage.setItem(STORE_KEY, JSON.stringify({ v: 1, seen: seenCounts, cat: currentCat, vocabDir }));
+    localStorage.setItem(STORE_KEY, JSON.stringify({ v: 1, seen: seenCounts, fav: favs, cat: currentCat, vocabDir }));
   } catch (e) {}
 }
 
@@ -108,6 +127,7 @@ function orderBySeen(list) {
 // dziedzina pokaze sie raz, zanim cokolwiek wroci, a licznik przeczytan jest
 // wspolny dla "Wszystko" i dziedzin, wiec nie dubluja sie nawzajem.
 function poolOf(cat) {
+  if (cat === "ulubione") return allCards.filter(c => favs[cardId(c)]);
   return cat === "all" ? allCards : allCards.filter(c => c.cat === cat);
 }
 
@@ -150,20 +170,29 @@ function vocabParts(item) {
     : { pl: item.back, it: item.front };
 }
 
+// Serduszko jest zawsze w karcie, tylko gasnie - dzieki temu dodanie do
+// ulubionych jest samym przelaczeniem klasy, bez przebudowy karty.
+function favMark(item) {
+  return `<div class="fav${favs[cardId(item)] ? " on" : ""}">♥</div>`;
+}
+
 function cardHTML(item) {
   const label = CAT_LABEL[item.cat] || item.cat;
   const rep = repMark(item);
+  const fav = favMark(item);
   if (item.type === "vocab") {
     const { pl, it } = vocabParts(item);
     const plFirst = vocabDir === "pl-it";
+    // "veiled" = tlumaczenie rozmyte do pierwszego dotkniecia. Bez proby
+    // przypomnienia sobie slowa nauka jest samym czytaniem.
     return `
-      <div class="card theme-${item.cat}" data-cat="${item.cat}" data-id="${esc(cardId(item))}" data-pl="${esc(pl)}" data-it="${esc(it)}">
+      <div class="card veiled theme-${item.cat}" data-cat="${item.cat}" data-id="${esc(cardId(item))}" data-pl="${esc(pl)}" data-it="${esc(it)}">
         <div class="pill">${label} · <span class="dir">${plFirst ? "PL → IT" : "IT → PL"}</span></div>
         <div class="term">${plFirst ? pl : it}</div>
         <div class="sep"></div>
         <div class="translation">${plFirst ? it : pl}</div>
-        ${rep}
-        <div class="hint">dwuklik = zmiana kierunku</div>
+        ${fav}${rep}
+        <div class="hint">dotknij = odsłoń · dwuklik = ♥</div>
       </div>`;
   }
   if (item.type === "def") {
@@ -173,7 +202,7 @@ function cardHTML(item) {
         <div class="term">${item.term}</div>
         <div class="sep"></div>
         <div class="body">${item.text}</div>
-        ${rep}
+        ${fav}${rep}
         <div class="hint">przesuń w górę ↑</div>
       </div>`;
   }
@@ -181,8 +210,18 @@ function cardHTML(item) {
     <div class="card theme-${item.cat}" data-cat="${item.cat}" data-id="${esc(cardId(item))}">
       <div class="pill">${label} · ciekawostka</div>
       <div class="body" style="font-size:22px;font-weight:600;">${item.text}</div>
-      ${rep}
+      ${fav}${rep}
       <div class="hint">przesuń w górę ↑</div>
+    </div>`;
+}
+
+function favEmptyHTML() {
+  return `
+    <div class="card theme-ulubione" data-cat="ulubione">
+      <div class="pill">Ulubione</div>
+      <div class="term">Pusto</div>
+      <div class="sep"></div>
+      <div class="body">Dwuklik na dowolnej karcie dodaje ją tutaj.<br>Pojawi się wtedy serduszko w rogu.</div>
     </div>`;
 }
 
@@ -266,6 +305,10 @@ function appendBatch(cat, n = BATCH_CARDS) {
   const pane = paneOf(cat);
   if (!pane || cat === "notatnik") return;
   const count = Math.min(n, poolSize(cat));
+  if (!count) {
+    if (cat === "ulubione" && !pane.children.length) pane.innerHTML = favEmptyHTML();
+    return;
+  }
   const drawn = new Set();   // zadnych duplikatow w obrebie jednej partii
   const html = [];
   for (let i = 0; i < count; i++) {
@@ -292,21 +335,28 @@ function buildTabs() {
 function buildPanes() {
   pager.innerHTML = CAT_ORDER.map(c => `<div class="pane" data-cat="${c}"></div>`).join("");
   for (const cat of CAT_ORDER) {
-    const pane = paneOf(cat);
-    if (cat === "notatnik") { notes = loadNotes(); renderNotes(); continue; }
-    appendBatch(cat, INITIAL_CARDS);
-    pane.addEventListener("scroll", () => {
-      scheduleMark(cat);
-      if (pane.scrollTop + pane.clientHeight >= pane.scrollHeight - window.innerHeight * 2) {
-        appendBatch(cat);
-      }
-    }, { passive: true });
+    // Awaria jednej zakladki nie moze przerwac budowania pozostalych.
+    try {
+      const pane = paneOf(cat);
+      if (!pane) continue;
+      if (cat === "notatnik") { notes = loadNotes(); renderNotes(); continue; }
+      appendBatch(cat, INITIAL_CARDS);
+      pane.addEventListener("scroll", () => {
+        scheduleMark(cat);
+        if (pane.scrollTop + pane.clientHeight >= pane.scrollHeight - window.innerHeight * 2) {
+          appendBatch(cat);
+        }
+      }, { passive: true });
+    } catch (e) {
+      console.error("zakladka " + cat + ":", e);
+    }
   }
-  const wl = paneOf("wloski");
-  if (wl) wl.addEventListener("dblclick", toggleVocabDir);
 }
 
 function setActive(cat) {
+  // Ulubione odswiezamy dopiero przy wejsciu, zeby zdjecie serduszka nie
+  // wyrywalo karty sprzed oczu w trakcie czytania.
+  if (cat === "ulubione" && favsDirty && currentCat !== "ulubione") rebuildFavs();
   currentCat = cat;
   setBg(cat);
   document.querySelectorAll(".tab").forEach(t => {
@@ -330,22 +380,80 @@ pager.addEventListener("scroll", () => {
   scheduleMark(currentCat);
 }, { passive: true });
 
-// Wlasna obsluga podwojnego tapniecia: iOS czesto polyka natywne dblclick.
+/* ------------------------------------------------- ulubione i odslanianie */
+function paintFav(id) {
+  const on = !!favs[id];
+  pager.querySelectorAll(".card").forEach(c => {
+    if (c.dataset.id !== id) return;
+    const h = c.querySelector(".fav");
+    if (h) h.classList.toggle("on", on);
+  });
+}
+
+// Zwraca nowy stan (true = dodana), albo null gdy karta nie ma identyfikatora.
+function toggleFav(card) {
+  const id = card.dataset.id;
+  if (!id) return null;
+  const on = !favs[id];
+  if (on) favs[id] = 1; else delete favs[id];
+  paintFav(id);
+  const h = card.querySelector(".fav");
+  if (h && on) { h.classList.remove("pop"); void h.offsetWidth; h.classList.add("pop"); }
+  favsDirty = true;
+  saveState();
+  return on;
+}
+
+function rebuildFavs() {
+  const pane = paneOf("ulubione");
+  if (!pane) return;
+  pane.innerHTML = "";
+  refillDeck("ulubione");
+  appendBatch("ulubione", INITIAL_CARDS);
+  pane.scrollTop = 0;
+  favsDirty = false;
+}
+
+function openNotes() {
+  if (notesOn) { goToCat("notatnik"); return; }
+  // Odblokowanie zmienia liste zakladek, wiec najprosciej przeladowac -
+  // caly stan i tak siedzi w localStorage.
+  saveNow();
+  try {
+    localStorage.setItem(NOTES_FLAG, "1");
+    localStorage.setItem(GOTO_FLAG, "notatnik");
+  } catch (e) {}
+  location.replace(location.pathname);
+}
+
+// Wlasna obsluga wielokrotnego tapniecia: iOS czesto polyka natywne dblclick.
+// Kazde dotkniecie dziala od razu, bez czekania na nastepne:
+//   1 - odslania tlumaczenie
+//   2 - dodaje lub zdejmuje serduszko
+//   3 - cofa zmiane z drugiego tapniecia i otwiera notatnik
+let tapCount = 0, tapCard = null, favApplied = null;
 let lastTapAt = 0, lastTapX = 0, lastTapY = 0;
+
 pager.addEventListener("pointerup", (e) => {
   const now = Date.now();
   const near = Math.abs(e.clientX - lastTapX) < 34 && Math.abs(e.clientY - lastTapY) < 34;
-  if (now - lastTapAt < 380 && near) {
-    const card = e.target && e.target.closest ? e.target.closest(".card") : null;
-    if (currentCat === "wloski" || (card && card.dataset.pl)) {
-      toggleVocabDir();
-      lastTapAt = 0;
-      return;
-    }
-  }
+  const card = e.target && e.target.closest ? e.target.closest(".card") : null;
+
+  if (card && card === tapCard && near && now - lastTapAt < 420) tapCount++;
+  else { tapCount = 1; tapCard = card; favApplied = null; }
+
   lastTapAt = now;
   lastTapX = e.clientX;
   lastTapY = e.clientY;
+  if (!card) return;
+
+  if (tapCount === 1) { card.classList.remove("veiled"); return; }
+  if (tapCount === 2) { favApplied = toggleFav(card); return; }
+  if (tapCount === 3) {
+    if (favApplied !== null) toggleFav(card);
+    favApplied = null;
+    openNotes();
+  }
 }, { passive: true });
 
 function toggleVocabDir() {
@@ -371,6 +479,7 @@ function start(data) {
 
   const saved = loadState();
   if (saved.seen && typeof saved.seen === "object") seenCounts = saved.seen;
+  if (saved.fav && typeof saved.fav === "object") favs = saved.fav;
   if (saved.vocabDir === "it-pl" || saved.vocabDir === "pl-it") vocabDir = saved.vocabDir;
 
   buildQueues();
@@ -378,10 +487,19 @@ function start(data) {
   buildPanes();
   scheduleMark(currentCat);
 
-  if (saved.cat && CAT_ORDER.includes(saved.cat) && saved.cat !== "all") {
+  // Jednorazowe przekierowanie po odblokowaniu notatnika ma pierwszenstwo
+  // przed zakladka zapamietana z poprzedniej sesji.
+  let goto = null;
+  try {
+    goto = localStorage.getItem(GOTO_FLAG);
+    if (goto) localStorage.removeItem(GOTO_FLAG);
+  } catch (e) {}
+
+  const target = (goto && CAT_ORDER.includes(goto)) ? goto : saved.cat;
+  if (target && CAT_ORDER.includes(target) && target !== "all") {
     requestAnimationFrame(() => {
-      pager.scrollLeft = CAT_ORDER.indexOf(saved.cat) * pager.clientWidth;
-      setActive(saved.cat);
+      pager.scrollLeft = CAT_ORDER.indexOf(target) * pager.clientWidth;
+      setActive(target);
     });
   }
 }
@@ -442,16 +560,8 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
    Prywatna zakladka. Notatki i klucz API leza wylacznie w localStorage
    tego urzadzenia - nic nie jest wysylane poza transkrypcja nagrania.        */
 
-const NOTES_STORE = "brainapp-notes";
-const GROQ_KEY_STORE = "brainapp-groq-key";
-const GROQ_URL = "https://api.groq.com/openai/v1/audio/transcriptions";
-const GROQ_MODEL = "whisper-large-v3-turbo";
-
-let notes = [];
-let openNoteId = null;
-let rec = null;
-let recChunks = [];
-let recStream = null;
+/* Stan i klucze tej sekcji sa zadeklarowane na gorze pliku - patrz komentarz
+   przy zmiennych, budowanie zakladek potrzebuje ich wczesniej.              */
 
 function loadNotes() {
   try { return JSON.parse(localStorage.getItem(NOTES_STORE)) || []; } catch (e) { return []; }
@@ -663,9 +773,19 @@ function sheetHTML() {
         <span class="sheet-row-sub">pobierz najnowszą wersję i przeładuj</span>
       </button>
 
+      <button class="sheet-row" data-dir="1">
+        <span class="sheet-row-main">Kierunek słówek</span>
+        <span class="sheet-row-sub">${vocabDir === "pl-it" ? "polski → włoski" : "włoski → polski"}</span>
+      </button>
+
+      <button class="sheet-row" data-unfav="1">
+        <span class="sheet-row-main">Wyczyść ulubione</span>
+        <span class="sheet-row-sub">zapisanych kart: ${Object.keys(favs).length}</span>
+      </button>
+
       <button class="sheet-row" data-notes="1">
         <span class="sheet-row-main">Notatnik</span>
-        <span class="sheet-row-sub">${notesLabel}</span>
+        <span class="sheet-row-sub">${notesLabel} · otwiera go potrójne dotknięcie karty</span>
       </button>
 
       <button class="sheet-row" data-apikey="1">
@@ -707,6 +827,22 @@ function openSheet() {
       }
     } catch (e) {}
     location.replace(location.pathname + "?v=" + Date.now());
+  };
+
+  el.querySelector("[data-dir]").onclick = () => {
+    toggleVocabDir();
+    openSheet();
+  };
+
+  el.querySelector("[data-unfav]").onclick = () => {
+    if (!Object.keys(favs).length) return;
+    if (!confirm("Usunąć wszystkie ulubione? Kart to nie kasuje.")) return;
+    favs = {};
+    saveNow();
+    pager.querySelectorAll(".card .fav").forEach(h => h.classList.remove("on"));
+    favsDirty = true;
+    rebuildFavs();
+    openSheet();
   };
 
   el.querySelector("[data-notes]").onclick = () => {
@@ -758,7 +894,8 @@ function currentCardText(cat) {
   if (!el) return null;
   const term = el.querySelector(".term");
   const body = el.querySelector(".body");
-  const translation = el.querySelector(".translation");
+  // zaslonietego tlumaczenia nie czytamy - zdradziloby odpowiedz
+  const translation = el.classList.contains("veiled") ? null : el.querySelector(".translation");
   const parts = [term, body, translation].filter(Boolean).map(n => n.textContent.trim());
   return parts.join(". ");
 }

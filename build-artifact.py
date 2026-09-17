@@ -23,6 +23,23 @@ js = re.sub(
     flags=re.S,
 )
 
+# Stempel musi powstac PRZED zlozeniem artifact.html, inaczej wersja offline
+# pokazuje numer z poprzedniej kompilacji.
+stamp = time.strftime("%Y%m%d-%H%M%S")
+VER_RE = r'const APP_VERSION = "[^"]*";'
+VER_NEW = f'const APP_VERSION = "{stamp}";'
+
+js_path = BASE / "app.js"
+js_path.write_text(re.sub(VER_RE, VER_NEW, js_path.read_text(encoding="utf-8"), count=1),
+                   encoding="utf-8")
+js = re.sub(VER_RE, VER_NEW, js, count=1)
+
+# stempel w service workerze - inaczej telefon trzymalby stara tresc
+sw_path = BASE / "service-worker.js"
+sw = re.sub(r'const CACHE_NAME = "[^"]+";', f'const CACHE_NAME = "brainapp-{stamp}";',
+            sw_path.read_text(encoding="utf-8"), count=1)
+sw_path.write_text(sw, encoding="utf-8")
+
 html = f"""<meta charset="utf-8">
 <title>TheBrainApp</title>
 <link rel="apple-touch-icon" href="data:image/png;base64,{icon}">
@@ -50,20 +67,7 @@ const CONTENT_DATA = {json.dumps(data, ensure_ascii=False)};
 
 (BASE / "artifact.html").write_text(html, encoding="utf-8")
 
-# stempel wersji w service workerze - inaczej telefon trzymalby stara tresc
-sw_path = BASE / "service-worker.js"
-sw = sw_path.read_text(encoding="utf-8")
-stamp = time.strftime("%Y%m%d-%H%M%S")
-sw = re.sub(r'const CACHE_NAME = "[^"]+";', f'const CACHE_NAME = "brainapp-{stamp}";', sw, count=1)
-
-# ten sam stempel jako widoczna wersja aplikacji
-js_path = BASE / "app.js"
-js_src = js_path.read_text(encoding="utf-8")
-js_src = re.sub(r'const APP_VERSION = "[^"]*";', f'const APP_VERSION = "{stamp}";', js_src, count=1)
-js_path.write_text(js_src, encoding="utf-8")
-js = re.sub(r'const APP_VERSION = "[^"]*";', f'const APP_VERSION = "{stamp}";', js, count=1)
-sw_path.write_text(sw, encoding="utf-8")
-print("cache service workera:", stamp)
+print("wersja:", stamp)
 
 counts = {k: len(v) for k, v in data.items()}
 print("kategorie:", counts)

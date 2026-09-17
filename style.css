@@ -214,6 +214,43 @@ html, body {
   font-weight: 500;
   font-style: italic;
   opacity: 0.85;
+  transition: filter 0.24s ease, opacity 0.24s ease;
+}
+
+/* Tlumaczenie zaslonione do pierwszego dotkniecia. Rozmycie zamiast ukrycia,
+   zeby karta nie przeskakiwala przy odslanianiu. */
+.card.veiled .translation {
+  filter: blur(11px);
+  opacity: 0.5;
+  user-select: none;
+}
+
+/* serduszko ulubionych */
+.card .fav {
+  position: absolute;
+  top: calc(99px + env(safe-area-inset-top));
+  right: 24px;
+  font-size: 21px;
+  line-height: 1;
+  color: #ff5f78;
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity 0.22s ease, transform 0.22s ease;
+  pointer-events: none;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.35);
+}
+
+.card .fav.on {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.card .fav.pop { animation: favpop 0.42s ease; }
+
+@keyframes favpop {
+  0%   { transform: scale(0.6); }
+  45%  { transform: scale(1.4); }
+  100% { transform: scale(1); }
 }
 
 .card .hint {
@@ -238,6 +275,7 @@ html, body {
 }
 
 /* ------------------------------------------- motywy kolorystyczne kategorii */
+.theme-ulubione        { background: linear-gradient(160deg, #4a0d1c, #e0405e); }
 .theme-wloski          { background: linear-gradient(160deg, #7a2b1a, #d9603a); }
 .theme-gotowanie       { background: linear-gradient(160deg, #7a5a05, #e0a63a); }
 .theme-architektura    { background: linear-gradient(160deg, #1e2a3a, #3f6e8f); }
