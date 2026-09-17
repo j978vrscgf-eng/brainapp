@@ -234,6 +234,7 @@ html, body {
   line-height: 1;
   opacity: 0.22;
   pointer-events: none;
+  transition: opacity 0.4s ease;
 }
 
 /* ------------------------------------------- motywy kolorystyczne kategorii */

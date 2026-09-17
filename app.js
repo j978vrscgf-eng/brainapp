@@ -44,7 +44,7 @@ const CAT_LABEL = Object.fromEntries(CATS.map(c => [c.key, c.label]));
 const INITIAL_CARDS = 10;
 const BATCH_CARDS = 20;
 const STORE_KEY = "brainapp-state";
-const APP_VERSION = "20260917-120520";   // podmieniane przy budowaniu
+const APP_VERSION = "20260917-130129";   // podmieniane przy budowaniu
 
 let allCards = [];
 let queues = {};
@@ -221,8 +221,12 @@ function markSettled(cat) {
   const id = el.dataset.id;
   if (id) {
     seenCounts[id] = (seenCounts[id] || 0) + 1;
-    if (seenCounts[id] > 1 && !el.querySelector(".rep")) {
-      el.insertAdjacentHTML("beforeend", '<div class="rep">∞</div>');
+    // Znak powtorki gasnie, gdy karta zostanie realnie przeczytana ponownie.
+    // Przy kolejnym pojawieniu sie karty wroci - to potwierdzenie, nie pietno.
+    const rep = el.querySelector(".rep");
+    if (rep) {
+      rep.style.opacity = "0";
+      setTimeout(() => rep.remove(), 450);
     }
     saveState();
   }
