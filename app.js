@@ -44,7 +44,7 @@ const CAT_LABEL = Object.fromEntries(CATS.map(c => [c.key, c.label]));
 const INITIAL_CARDS = 10;
 const BATCH_CARDS = 20;
 const STORE_KEY = "brainapp-state";
-const APP_VERSION = "20260917-025428";   // podmieniane przy budowaniu
+const APP_VERSION = "20260917-112557";   // podmieniane przy budowaniu
 
 let allCards = [];
 let queues = {};
@@ -578,8 +578,12 @@ async function transcribe(blob, status) {
     status.textContent = "Brak klucza API — ustaw go na liście notatek, albo dyktuj mikrofonem klawiatury.";
     return null;
   }
+  const ext = blob.type.includes("webm") ? "webm"
+    : blob.type.includes("ogg") ? "ogg"
+    : blob.type.includes("wav") ? "wav"
+    : "m4a"; // mp4/aac (domyslne w Safari) i wszystko nierozpoznane
   const fd = new FormData();
-  fd.append("file", blob, "nagranie.m4a");
+  fd.append("file", blob, "nagranie." + ext);
   fd.append("model", GROQ_MODEL);
   fd.append("language", "pl");
   try {
